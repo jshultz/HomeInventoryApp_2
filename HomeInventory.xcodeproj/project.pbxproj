@@ -8,34 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */; };
-		DECD00911BE17EAC006A5B7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00901BE17EAC006A5B7E /* ViewController.swift */; };
+		DECD00911BE17EAC006A5B7E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00901BE17EAC006A5B7E /* ProfileController.swift */; };
 		DECD00941BE17EAC006A5B7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECD00921BE17EAC006A5B7E /* Main.storyboard */; };
 		DECD00971BE17EAC006A5B7E /* HomeInventory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DECD00951BE17EAC006A5B7E /* HomeInventory.xcdatamodeld */; };
 		DECD00991BE17EAC006A5B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECD00981BE17EAC006A5B7E /* Assets.xcassets */; };
 		DECD009C1BE17EAC006A5B7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECD009A1BE17EAC006A5B7E /* LaunchScreen.storyboard */; };
-		DECD00A91BE17F97006A5B7E /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00A31BE17F97006A5B7E /* Room+CoreDataProperties.swift */; };
-		DECD00AA1BE17F97006A5B7E /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00A41BE17F97006A5B7E /* Room.swift */; };
-		DECD00AB1BE17F97006A5B7E /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00A51BE17F97006A5B7E /* Profile+CoreDataProperties.swift */; };
 		DECD00AC1BE17F97006A5B7E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00A61BE17F97006A5B7E /* Profile.swift */; };
-		DECD00AD1BE17F97006A5B7E /* Inventory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00A71BE17F97006A5B7E /* Inventory+CoreDataProperties.swift */; };
-		DECD00AE1BE17F97006A5B7E /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00A81BE17F97006A5B7E /* Inventory.swift */; };
+		DECD00B01BE19287006A5B7E /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00AF1BE19287006A5B7E /* EditProfileController.swift */; };
+		DECD00B21BE1BE80006A5B7E /* RoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B11BE1BE80006A5B7E /* RoomsTableViewController.swift */; };
+		DECD00B41BE1BFEE006A5B7E /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B31BE1BFEE006A5B7E /* ItemsTableViewController.swift */; };
+		DECD00BB1BE1C411006A5B7E /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B61BE1C411006A5B7E /* Room+CoreDataProperties.swift */; };
+		DECD00BC1BE1C411006A5B7E /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B71BE1C411006A5B7E /* Room.swift */; };
+		DECD00BD1BE1C411006A5B7E /* Inventory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B81BE1C411006A5B7E /* Inventory+CoreDataProperties.swift */; };
+		DECD00BE1BE1C411006A5B7E /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B91BE1C411006A5B7E /* Inventory.swift */; };
+		DECD00C01BE1C5DC006A5B7E /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00BF1BE1C5DC006A5B7E /* Profile+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DECD008B1BE17EAC006A5B7E /* HomeInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DECD00901BE17EAC006A5B7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DECD00901BE17EAC006A5B7E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		DECD00931BE17EAC006A5B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DECD00961BE17EAC006A5B7E /* HomeInventory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeInventory.xcdatamodel; sourceTree = "<group>"; };
 		DECD00981BE17EAC006A5B7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DECD009B1BE17EAC006A5B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DECD009D1BE17EAC006A5B7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DECD00A31BE17F97006A5B7E /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DECD00A41BE17F97006A5B7E /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
-		DECD00A51BE17F97006A5B7E /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DECD00A61BE17F97006A5B7E /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		DECD00A71BE17F97006A5B7E /* Inventory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inventory+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DECD00A81BE17F97006A5B7E /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		DECD00AF1BE19287006A5B7E /* EditProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
+		DECD00B11BE1BE80006A5B7E /* RoomsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsTableViewController.swift; sourceTree = "<group>"; };
+		DECD00B31BE1BFEE006A5B7E /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
+		DECD00B61BE1C411006A5B7E /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DECD00B71BE1C411006A5B7E /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		DECD00B81BE1C411006A5B7E /* Inventory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inventory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DECD00B91BE1C411006A5B7E /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		DECD00BF1BE1C5DC006A5B7E /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,19 +74,22 @@
 		DECD008D1BE17EAC006A5B7E /* HomeInventory */ = {
 			isa = PBXGroup;
 			children = (
+				DECD00BF1BE1C5DC006A5B7E /* Profile+CoreDataProperties.swift */,
+				DECD00B61BE1C411006A5B7E /* Room+CoreDataProperties.swift */,
+				DECD00B71BE1C411006A5B7E /* Room.swift */,
+				DECD00B81BE1C411006A5B7E /* Inventory+CoreDataProperties.swift */,
+				DECD00B91BE1C411006A5B7E /* Inventory.swift */,
 				DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */,
-				DECD00901BE17EAC006A5B7E /* ViewController.swift */,
+				DECD00901BE17EAC006A5B7E /* ProfileController.swift */,
 				DECD00921BE17EAC006A5B7E /* Main.storyboard */,
+				DECD00B31BE1BFEE006A5B7E /* ItemsTableViewController.swift */,
+				DECD00B11BE1BE80006A5B7E /* RoomsTableViewController.swift */,
 				DECD00981BE17EAC006A5B7E /* Assets.xcassets */,
 				DECD009A1BE17EAC006A5B7E /* LaunchScreen.storyboard */,
 				DECD009D1BE17EAC006A5B7E /* Info.plist */,
 				DECD00951BE17EAC006A5B7E /* HomeInventory.xcdatamodeld */,
-				DECD00A31BE17F97006A5B7E /* Room+CoreDataProperties.swift */,
-				DECD00A41BE17F97006A5B7E /* Room.swift */,
-				DECD00A51BE17F97006A5B7E /* Profile+CoreDataProperties.swift */,
 				DECD00A61BE17F97006A5B7E /* Profile.swift */,
-				DECD00A71BE17F97006A5B7E /* Inventory+CoreDataProperties.swift */,
-				DECD00A81BE17F97006A5B7E /* Inventory.swift */,
+				DECD00AF1BE19287006A5B7E /* EditProfileController.swift */,
 			);
 			path = HomeInventory;
 			sourceTree = "<group>";
@@ -156,15 +165,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECD00A91BE17F97006A5B7E /* Room+CoreDataProperties.swift in Sources */,
+				DECD00B21BE1BE80006A5B7E /* RoomsTableViewController.swift in Sources */,
+				DECD00B41BE1BFEE006A5B7E /* ItemsTableViewController.swift in Sources */,
+				DECD00B01BE19287006A5B7E /* EditProfileController.swift in Sources */,
+				DECD00BE1BE1C411006A5B7E /* Inventory.swift in Sources */,
 				DECD00971BE17EAC006A5B7E /* HomeInventory.xcdatamodeld in Sources */,
-				DECD00911BE17EAC006A5B7E /* ViewController.swift in Sources */,
-				DECD00AE1BE17F97006A5B7E /* Inventory.swift in Sources */,
+				DECD00911BE17EAC006A5B7E /* ProfileController.swift in Sources */,
 				DECD00AC1BE17F97006A5B7E /* Profile.swift in Sources */,
+				DECD00BD1BE1C411006A5B7E /* Inventory+CoreDataProperties.swift in Sources */,
 				DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */,
-				DECD00AB1BE17F97006A5B7E /* Profile+CoreDataProperties.swift in Sources */,
-				DECD00AD1BE17F97006A5B7E /* Inventory+CoreDataProperties.swift in Sources */,
-				DECD00AA1BE17F97006A5B7E /* Room.swift in Sources */,
+				DECD00BB1BE1C411006A5B7E /* Room+CoreDataProperties.swift in Sources */,
+				DECD00C01BE1C5DC006A5B7E /* Profile+CoreDataProperties.swift in Sources */,
+				DECD00BC1BE1C411006A5B7E /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

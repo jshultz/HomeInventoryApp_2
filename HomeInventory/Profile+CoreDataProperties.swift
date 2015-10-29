@@ -21,5 +21,6 @@ extension Profile {
     @NSManaged var city: String?
     @NSManaged var state: String?
     @NSManaged var zip: NSNumber?
+    @NSManaged var phone: String?
 
 }

@@ -16,5 +16,6 @@ extension Room {
 
     @NSManaged var id: NSNumber?
     @NSManaged var name: String?
+    @NSManaged var rooms_to_items: NSSet?
 
 }
