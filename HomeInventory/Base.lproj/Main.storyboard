@@ -379,11 +379,11 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-Md-Dqb">
-                                <rect key="frame" x="20" y="161" width="560" height="305"/>
+                                <rect key="frame" x="20" y="64" width="560" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="305" id="JiI-7I-W0q"/>
+                                    <constraint firstAttribute="height" constant="492" id="JiI-7I-W0q"/>
                                     <constraint firstAttribute="width" constant="560" id="ieL-9f-TGH"/>
                                 </constraints>
                                 <prototypes>
@@ -391,7 +391,7 @@
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wJ9-Ku-VQs" id="MUF-iu-Nfl">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81P-fY-pFC">
@@ -419,18 +419,22 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5jg-dB-Ng2" id="onb-iI-6xN"/>
+                                    <outlet property="delegate" destination="5jg-dB-Ng2" id="yYk-Ph-7dl"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="b3u-0t-nV0" firstAttribute="top" secondItem="HMk-Md-Dqb" secondAttribute="bottom" constant="90" id="3NM-0e-CwW"/>
+                            <constraint firstItem="b3u-0t-nV0" firstAttribute="top" secondItem="HMk-Md-Dqb" secondAttribute="bottom" id="3NM-0e-CwW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b3u-0t-nV0" secondAttribute="trailing" constant="-20" id="8FO-yv-eG7"/>
                             <constraint firstItem="HMk-Md-Dqb" firstAttribute="leading" secondItem="z8n-yV-SGK" secondAttribute="leadingMargin" id="Glf-Lb-Zcc"/>
                             <constraint firstItem="loH-i2-KDo" firstAttribute="top" secondItem="b3u-0t-nV0" secondAttribute="bottom" id="MUT-IT-yTa"/>
                             <constraint firstItem="HMk-Md-Dqb" firstAttribute="trailing" secondItem="z8n-yV-SGK" secondAttribute="trailingMargin" id="c8F-LV-7YS"/>
                             <constraint firstItem="b3u-0t-nV0" firstAttribute="leading" secondItem="z8n-yV-SGK" secondAttribute="leadingMargin" constant="-20" id="r9L-uh-Pl6"/>
-                            <constraint firstItem="HMk-Md-Dqb" firstAttribute="top" secondItem="Oqt-Mn-Qv3" secondAttribute="bottom" constant="97" id="wqi-LH-Vg7"/>
+                            <constraint firstItem="HMk-Md-Dqb" firstAttribute="top" secondItem="Oqt-Mn-Qv3" secondAttribute="bottom" id="wqi-LH-Vg7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rooms" id="H6T-JI-tRF">
