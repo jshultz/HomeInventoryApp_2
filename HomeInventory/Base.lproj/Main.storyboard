@@ -352,10 +352,10 @@
             </objects>
             <point key="canvasLocation" x="-972" y="361"/>
         </scene>
-        <!--Home Inventory-->
+        <!--Rooms-->
         <scene sceneID="S7G-Vb-dsE">
             <objects>
-                <viewController id="5jg-dB-Ng2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Rooms Table View" id="5jg-dB-Ng2" customClass="RoomsViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oqt-Mn-Qv3"/>
                         <viewControllerLayoutGuide type="bottom" id="loH-i2-KDo"/>
@@ -378,22 +378,71 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-Md-Dqb">
+                                <rect key="frame" x="20" y="161" width="560" height="305"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="305" id="JiI-7I-W0q"/>
+                                    <constraint firstAttribute="width" constant="560" id="ieL-9f-TGH"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="wJ9-Ku-VQs" customClass="RoomsTableViewCell" customModule="HomeInventory" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wJ9-Ku-VQs" id="MUF-iu-Nfl">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81P-fY-pFC">
+                                                    <rect key="frame" x="8" y="11" width="442" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="MKa-jH-tGd"/>
+                                                        <constraint firstAttribute="width" constant="442" id="orW-wg-OJF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="81P-fY-pFC" secondAttribute="bottom" constant="4" id="Box-TX-0tE"/>
+                                                <constraint firstItem="81P-fY-pFC" firstAttribute="top" secondItem="MUF-iu-Nfl" secondAttribute="topMargin" constant="3" id="Jfv-Gl-RHF"/>
+                                                <constraint firstItem="81P-fY-pFC" firstAttribute="leading" secondItem="MUF-iu-Nfl" secondAttribute="leadingMargin" id="fmL-G6-aqP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="roomNameLabel" destination="81P-fY-pFC" id="iUq-kw-lCQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="b3u-0t-nV0" firstAttribute="top" secondItem="HMk-Md-Dqb" secondAttribute="bottom" constant="90" id="3NM-0e-CwW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b3u-0t-nV0" secondAttribute="trailing" constant="-20" id="8FO-yv-eG7"/>
+                            <constraint firstItem="HMk-Md-Dqb" firstAttribute="leading" secondItem="z8n-yV-SGK" secondAttribute="leadingMargin" id="Glf-Lb-Zcc"/>
                             <constraint firstItem="loH-i2-KDo" firstAttribute="top" secondItem="b3u-0t-nV0" secondAttribute="bottom" id="MUT-IT-yTa"/>
+                            <constraint firstItem="HMk-Md-Dqb" firstAttribute="trailing" secondItem="z8n-yV-SGK" secondAttribute="trailingMargin" id="c8F-LV-7YS"/>
                             <constraint firstItem="b3u-0t-nV0" firstAttribute="leading" secondItem="z8n-yV-SGK" secondAttribute="leadingMargin" constant="-20" id="r9L-uh-Pl6"/>
+                            <constraint firstItem="HMk-Md-Dqb" firstAttribute="top" secondItem="Oqt-Mn-Qv3" secondAttribute="bottom" constant="97" id="wqi-LH-Vg7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home Inventory" id="H6T-JI-tRF">
+                    <navigationItem key="navigationItem" title="Rooms" id="H6T-JI-tRF">
                         <barButtonItem key="rightBarButtonItem" title="Add Rooms" id="hKJ-aq-cbS">
                             <connections>
                                 <segue destination="jtf-jp-D50" kind="show" identifier="addRooms" id="wEf-KC-gpl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="roomsTable" destination="HMk-Md-Dqb" id="uYv-9C-0pQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CiE-Ss-gsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -402,7 +451,7 @@
         <!--Add Rooms-->
         <scene sceneID="UzT-os-jy1">
             <objects>
-                <viewController id="jtf-jp-D50" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Add Edit Room" id="jtf-jp-D50" customClass="RoomViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9K1-xU-l42"/>
                         <viewControllerLayoutGuide type="bottom" id="tDT-dO-W8k"/>
@@ -428,12 +477,18 @@
                                 <rect key="frame" x="20" y="105" width="49" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButton:" destination="jtf-jp-D50" eventType="touchUpInside" id="XaO-lD-1p7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Rooms" id="eMj-6x-plt"/>
+                    <connections>
+                        <outlet property="roomNameField" destination="yiZ-Ul-cAv" id="IT1-h5-LQg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJw-pH-HoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

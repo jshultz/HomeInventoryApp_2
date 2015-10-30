@@ -20,6 +20,6 @@ extension Inventory {
     @NSManaged var purchased_date: NSDate?
     @NSManaged var purchase_price: NSDecimalNumber?
     @NSManaged var room: String?
-    @NSManaged var items_to_rooms: Room?
+    @NSManaged var items_to_rooms: Rooms?
 
 }

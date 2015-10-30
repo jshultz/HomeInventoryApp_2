@@ -7,7 +7,7 @@
         <attribute name="purchase_price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="purchased_date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="room" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="items_to_rooms" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="rooms_to_items" inverseEntity="Room" syncable="YES"/>
+        <relationship name="items_to_rooms" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rooms" inverseName="rooms_to_items" inverseEntity="Rooms" syncable="YES"/>
     </entity>
     <entity name="Profile" representedClassName="Profile" syncable="YES">
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
@@ -19,14 +19,15 @@
         <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="zip" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="Room" representedClassName="Room" syncable="YES">
+    <entity name="Rooms" representedClassName="Rooms" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="room_description" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="rooms_to_items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Inventory" inverseName="items_to_rooms" inverseEntity="Inventory" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Profile" positionX="-407" positionY="-18" width="128" height="163"/>
         <element name="Inventory" positionX="-38" positionY="-27" width="128" height="148"/>
-        <element name="Room" positionX="-189" positionY="-27" width="128" height="88"/>
+        <element name="Profile" positionX="-407" positionY="-18" width="128" height="163"/>
+        <element name="Rooms" positionX="-189" positionY="-27" width="128" height="105"/>
     </elements>
 </model>
