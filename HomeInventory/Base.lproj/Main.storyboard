@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Inventory Table-->
+        <!--Inventory-->
         <scene sceneID="a4t-gm-70e">
             <objects>
-                <viewController title="Inventory Table" id="V8e-b1-BsA" sceneMemberID="viewController">
+                <viewController title="Inventory" id="V8e-b1-BsA" userLabel="Inventory" customClass="InventoryTableViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bhW-55-V6X"/>
                         <viewControllerLayoutGuide type="bottom" id="OqV-3F-Pcf"/>
@@ -28,22 +28,38 @@
                                     <barButtonItem title="Item" id="wbV-5O-SQ0"/>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ocy-NW-4OX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ocy-NW-4OX" userLabel="Inventory Table">
                                 <rect key="frame" x="20" y="64" width="560" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="6gW-zk-H7s">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="6gW-zk-H7s" customClass="InventoryTableViewCell" customModule="HomeInventory" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6gW-zk-H7s" id="kNi-BO-ioo">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBZ-BA-gtz">
+                                                    <rect key="frame" x="8" y="11" width="292" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="InventoryNameLabel" destination="bBZ-BA-gtz" id="Rpf-qy-921"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="V8e-b1-BsA" id="c4I-Sp-xvd"/>
+                                    <outlet property="delegate" destination="V8e-b1-BsA" id="bVl-FE-541"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -59,6 +75,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Inventory" id="Nka-p1-wjE"/>
+                    <connections>
+                        <outlet property="inventoryTable" destination="Ocy-NW-4OX" id="RIn-8V-bfN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLZ-5I-4hM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

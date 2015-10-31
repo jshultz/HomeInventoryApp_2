@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */; };
+		DE0C11CE1BE47D2500282E36 /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C11CD1BE47D2500282E36 /* InventoryTableViewCell.swift */; };
 		DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6B1BE3969200672069 /* RoomsViewController.swift */; };
 		DEC51F6E1BE3A5AA00672069 /* RoomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6D1BE3A5AA00672069 /* RoomsTableViewCell.swift */; };
 		DEC51F701BE3ADAD00672069 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTableViewController.swift; sourceTree = "<group>"; };
+		DE0C11CD1BE47D2500282E36 /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
 		DEC51F6B1BE3969200672069 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		DEC51F6D1BE3A5AA00672069 /* RoomsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsTableViewCell.swift; sourceTree = "<group>"; };
 		DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				DECD00BF1BE1C5DC006A5B7E /* Profile+CoreDataProperties.swift */,
 				DECD00B81BE1C411006A5B7E /* Inventory+CoreDataProperties.swift */,
 				DECD00B91BE1C411006A5B7E /* Inventory.swift */,
+				DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */,
+				DE0C11CD1BE47D2500282E36 /* InventoryTableViewCell.swift */,
 				DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */,
 				DECD00901BE17EAC006A5B7E /* ProfileController.swift */,
 				DECD00921BE17EAC006A5B7E /* Main.storyboard */,
@@ -175,9 +181,11 @@
 				DECD00971BE17EAC006A5B7E /* HomeInventory.xcdatamodeld in Sources */,
 				DEC51F731BE3BC4F00672069 /* Rooms+CoreDataProperties.swift in Sources */,
 				DECD00911BE17EAC006A5B7E /* ProfileController.swift in Sources */,
+				DE0C11CE1BE47D2500282E36 /* InventoryTableViewCell.swift in Sources */,
 				DECD00AC1BE17F97006A5B7E /* Profile.swift in Sources */,
 				DECD00BD1BE1C411006A5B7E /* Inventory+CoreDataProperties.swift in Sources */,
 				DEC51F6E1BE3A5AA00672069 /* RoomsTableViewCell.swift in Sources */,
+				DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */,
 				DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */,
 				DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */,
 				DECD00C01BE1C5DC006A5B7E /* Profile+CoreDataProperties.swift in Sources */,
