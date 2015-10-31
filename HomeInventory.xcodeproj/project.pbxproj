@@ -25,6 +25,8 @@
 		DECD00BD1BE1C411006A5B7E /* Inventory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B81BE1C411006A5B7E /* Inventory+CoreDataProperties.swift */; };
 		DECD00BE1BE1C411006A5B7E /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B91BE1C411006A5B7E /* Inventory.swift */; };
 		DECD00C01BE1C5DC006A5B7E /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00BF1BE1C5DC006A5B7E /* Profile+CoreDataProperties.swift */; };
+		DEF622141BE5165200D28EC9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF622131BE5165200D28EC9 /* AddItemViewController.swift */; };
+		DEF622161BE516FB00D28EC9 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF622151BE516FB00D28EC9 /* EditItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		DECD00B81BE1C411006A5B7E /* Inventory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inventory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DECD00B91BE1C411006A5B7E /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DECD00BF1BE1C5DC006A5B7E /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DEF622131BE5165200D28EC9 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		DEF622151BE516FB00D28EC9 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				DECD00A61BE17F97006A5B7E /* Profile.swift */,
 				DECD00AF1BE19287006A5B7E /* EditProfileController.swift */,
 				DEC51F6B1BE3969200672069 /* RoomsViewController.swift */,
+				DEF622131BE5165200D28EC9 /* AddItemViewController.swift */,
+				DEF622151BE516FB00D28EC9 /* EditItemViewController.swift */,
 			);
 			path = HomeInventory;
 			sourceTree = "<group>";
@@ -174,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF622161BE516FB00D28EC9 /* EditItemViewController.swift in Sources */,
 				DEC51F741BE3BC4F00672069 /* Rooms.swift in Sources */,
 				DECD00B01BE19287006A5B7E /* EditProfileController.swift in Sources */,
 				DECD00BE1BE1C411006A5B7E /* Inventory.swift in Sources */,
@@ -187,6 +194,7 @@
 				DEC51F6E1BE3A5AA00672069 /* RoomsTableViewCell.swift in Sources */,
 				DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */,
 				DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */,
+				DEF622141BE5165200D28EC9 /* AddItemViewController.swift in Sources */,
 				DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */,
 				DECD00C01BE1C5DC006A5B7E /* Profile+CoreDataProperties.swift in Sources */,
 			);
