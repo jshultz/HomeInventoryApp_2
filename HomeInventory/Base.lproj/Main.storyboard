@@ -6,6 +6,64 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Inventory Table-->
+        <scene sceneID="a4t-gm-70e">
+            <objects>
+                <viewController title="Inventory Table" id="V8e-b1-BsA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bhW-55-V6X"/>
+                        <viewControllerLayoutGuide type="bottom" id="OqV-3F-Pcf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Out-2f-sCY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xL8-al-faK">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yPW-HY-1qc"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Item" id="wbV-5O-SQ0"/>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ocy-NW-4OX">
+                                <rect key="frame" x="20" y="64" width="560" height="492"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="6gW-zk-H7s">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6gW-zk-H7s" id="kNi-BO-ioo">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ocy-NW-4OX" firstAttribute="leading" secondItem="Out-2f-sCY" secondAttribute="leadingMargin" id="2Di-8f-ent"/>
+                            <constraint firstItem="Ocy-NW-4OX" firstAttribute="top" secondItem="bhW-55-V6X" secondAttribute="bottom" id="C2F-FR-sDY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xL8-al-faK" secondAttribute="trailing" constant="-20" id="aY5-i8-Qid"/>
+                            <constraint firstItem="Ocy-NW-4OX" firstAttribute="trailing" secondItem="Out-2f-sCY" secondAttribute="trailingMargin" id="dE0-O0-ORP"/>
+                            <constraint firstItem="xL8-al-faK" firstAttribute="top" secondItem="Ocy-NW-4OX" secondAttribute="bottom" id="qbZ-am-vFx"/>
+                            <constraint firstItem="OqV-3F-Pcf" firstAttribute="top" secondItem="xL8-al-faK" secondAttribute="bottom" id="sHA-Jf-keM"/>
+                            <constraint firstItem="xL8-al-faK" firstAttribute="leading" secondItem="Out-2f-sCY" secondAttribute="leadingMargin" constant="-20" id="whx-yx-6yY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Inventory" id="Nka-p1-wjE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uLZ-5I-4hM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482" y="361"/>
+        </scene>
         <!--Profile View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -416,6 +474,7 @@
                                         <animations/>
                                         <connections>
                                             <outlet property="roomNameLabel" destination="81P-fY-pFC" id="iUq-kw-lCQ"/>
+                                            <segue destination="V8e-b1-BsA" kind="show" id="ItQ-hh-V4l"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
