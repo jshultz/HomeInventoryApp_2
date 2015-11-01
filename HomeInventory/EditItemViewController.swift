@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class EditItemViewController: UIViewController {
+class EditItemViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
