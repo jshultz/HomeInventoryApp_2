@@ -10,17 +10,46 @@ import UIKit
 import CoreData
 
 class AddItemViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var purchasedDate: UITextField!
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func purchasedDateEditing(var sender: AnyObject) {
+        
+    }
+    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        
+        purchasedDate.text = dateFormatter.stringFromDate(sender.date)
+        
+    }
+    
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+
+
     
 
     /*
