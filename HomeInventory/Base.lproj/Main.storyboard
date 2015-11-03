@@ -159,13 +159,6 @@
                                 <rect key="frame" x="0.0" y="384" width="600" height="216"/>
                                 <animations/>
                             </pickerView>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mxm-wM-mhd">
-                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
-                                <animations/>
-                                <date key="date" timeIntervalSinceReferenceDate="468165838.63050902">
-                                    <!--2015-11-02 14:03:58 +0000-->
-                                </date>
-                            </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lri-il-o5c">
                                 <rect key="frame" x="155" y="228" width="425" height="30"/>
                                 <animations/>
@@ -173,19 +166,29 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZo-D5-mnf">
-                                <rect key="frame" x="155" y="151" width="425" height="30"/>
+                                <rect key="frame" x="155" y="151" width="371" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="purchaseDateEdit:" destination="c6e-oH-cB4" eventType="editingDidBegin" id="hde-Fx-C23"/>
+                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWW-md-daT">
+                                <rect key="frame" x="539" y="151" width="37" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="c6e-oH-cB4" eventType="touchUpInside" id="n6A-j2-Jja"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="mxm-wM-mhd" firstAttribute="centerX" secondItem="EFN-iV-utH" secondAttribute="centerX" id="PpI-n2-KYK"/>
-                            <constraint firstItem="Xer-AJ-CbO" firstAttribute="top" secondItem="mxm-wM-mhd" secondAttribute="bottom" id="o6h-cQ-RGP"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="purchaseDateField" destination="PZo-D5-mnf" id="a5V-J2-Nb5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2m-cI-a4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

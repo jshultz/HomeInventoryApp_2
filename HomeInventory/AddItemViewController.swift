@@ -11,9 +11,12 @@ import CoreData
 
 class AddItemViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var purchasedDate: UITextField!
+    @IBOutlet weak var purchaseDateField: UITextField!
     
-
+    
+    @IBAction func doneButton(sender: AnyObject) {
+        purchaseDateField.resignFirstResponder()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,26 +24,22 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func purchasedDateEditing(var sender: AnyObject) {
+    @IBAction func purchaseDateEdit( sender: AnyObject) {
+        
+        let datePickerView  : UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        purchaseDateField.inputView = datePickerView
+        datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+
         
     }
     
-    func datePickerValueChanged(sender:UIDatePicker) {
-        
-        let dateFormatter = NSDateFormatter()
-        
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        
-        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-        
-        purchasedDate.text = dateFormatter.stringFromDate(sender.date)
-        
+    func handleDatePicker(sender: UIDatePicker) {
+        let timeFormatter = NSDateFormatter()
+        timeFormatter.dateStyle = .NoStyle
+        timeFormatter.timeStyle = .ShortStyle
+        purchaseDateField.text = timeFormatter.stringFromDate(sender.date)
     }
-    
-    
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
