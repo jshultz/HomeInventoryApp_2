@@ -690,7 +690,7 @@
                                         <animations/>
                                         <connections>
                                             <outlet property="roomNameLabel" destination="81P-fY-pFC" id="iUq-kw-lCQ"/>
-                                            <segue destination="V8e-b1-BsA" kind="show" id="ItQ-hh-V4l"/>
+                                            <segue destination="V8e-b1-BsA" kind="show" identifier="showInventory" id="ItQ-hh-V4l"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

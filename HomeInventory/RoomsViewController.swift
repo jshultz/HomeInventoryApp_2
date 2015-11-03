@@ -82,6 +82,20 @@ class RoomsViewController: UIViewController, NSFetchedResultsControllerDelegate,
             print("something done gone wrong")
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "newPlace" {
+
+        } else if segue.identifier == "showInventory" {
+            let cell = sender as! UITableViewCell
+            let indexPath = roomsTable.indexPathForCell(cell)
+            let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
+
+            let room:Rooms = fetchedResultController.objectAtIndexPath(indexPath!) as! Rooms
+            
+            inventoryController.room = room
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

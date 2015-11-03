@@ -11,7 +11,11 @@ import CoreData
 
 var activeInventory = -1
 
+
+
 class InventoryTableViewController: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDelegate {
+    
+    var room: Rooms? = nil
     
     @IBOutlet weak var inventoryTable: UITableView!
     

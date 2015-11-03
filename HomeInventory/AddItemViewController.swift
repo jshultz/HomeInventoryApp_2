@@ -35,10 +35,10 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     func handleDatePicker(sender: UIDatePicker) {
-        let timeFormatter = NSDateFormatter()
-        timeFormatter.dateStyle = .NoStyle
-        timeFormatter.timeStyle = .ShortStyle
-        purchaseDateField.text = timeFormatter.stringFromDate(sender.date)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .NoStyle
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        purchaseDateField.text = dateFormatter.stringFromDate(sender.date)
     }
 
     override func didReceiveMemoryWarning() {
