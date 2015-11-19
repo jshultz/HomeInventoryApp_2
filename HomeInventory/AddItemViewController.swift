@@ -11,6 +11,16 @@ import CoreData
 
 class AddItemViewController: UIViewController, UITextFieldDelegate {
     
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+    var room: Rooms? = nil
+    
+    @IBOutlet weak var itemNameField: UITextField!
+    
+    @IBOutlet weak var descriptionField: UITextField!
+    
+    @IBOutlet weak var purchasePriceField: UITextField!
+    
     @IBOutlet weak var purchaseDateField: UITextField!
     
     
@@ -20,6 +30,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("the room: ", room)
 
         // Do any additional setup after loading the view.
     }
@@ -40,6 +52,39 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         dateFormatter.dateFormat = "dd MMM yyyy"
         purchaseDateField.text = dateFormatter.stringFromDate(sender.date)
     }
+    
+    @IBAction func submitButton(sender: AnyObject) {
+        
+        let inventoryEntity = NSEntityDescription.entityForName("Inventory", inManagedObjectContext: managedObjectContext)
+        
+        let newItem = Inventory(entity: inventoryEntity!,
+            insertIntoManagedObjectContext: managedObjectContext)
+        
+        newItem.setValue(itemNameField.text, forKey: "name")
+        newItem.setValue(descriptionField.text, forKey: "item_description")
+        
+
+//        item.purchased_date = NSDate(purchaseDateField.text)
+//        item.purchase_price = purchasePriceField.text
+        
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("the cake was a lie")
+        }
+        
+        // Add Address to Person
+        room!.setValue(NSSet(object: newItem), forKey: "rooms_to_items")
+        
+        do {
+            try room!.managedObjectContext?.save()
+        } catch {
+            let saveError = error as NSError
+            print(saveError)
+        }
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

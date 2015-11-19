@@ -170,10 +170,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ddr-2a-RqU">
-                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
-                                <animations/>
-                            </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lri-il-o5c">
                                 <rect key="frame" x="155" y="228" width="425" height="30"/>
                                 <animations/>
@@ -215,6 +211,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deq-Hk-Xio">
+                                <rect key="frame" x="65" y="273" width="82" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Add an Item"/>
+                                <connections>
+                                    <action selector="submitButton:" destination="c6e-oH-cB4" eventType="touchUpInside" id="sBa-tl-NjP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -249,7 +253,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionField" destination="jby-bu-Iv7" id="JzU-ML-hV5"/>
+                        <outlet property="itemNameField" destination="soF-Qd-AeS" id="E23-zq-DYT"/>
                         <outlet property="purchaseDateField" destination="PZo-D5-mnf" id="a5V-J2-Nb5"/>
+                        <outlet property="purchasePriceField" destination="nLy-u7-WjX" id="LN6-UY-jqI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2m-cI-a4v" userLabel="First Responder" sceneMemberID="firstResponder"/>

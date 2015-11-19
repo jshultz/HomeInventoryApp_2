@@ -83,9 +83,9 @@ class InventoryTableViewController: UIViewController, NSFetchedResultsController
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! InventoryTableViewCell
         
-        let room = fetchedResultController.objectAtIndexPath(indexPath) as! Rooms
+        let items = fetchedResultController.objectAtIndexPath(indexPath) as! Inventory
         
-        cell.InventoryNameLabel?.text = room.name
+        cell.InventoryNameLabel?.text = items.name
 
         return cell
     }
@@ -131,14 +131,25 @@ class InventoryTableViewController: UIViewController, NSFetchedResultsController
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "newPlace" {
+            
+        } else if segue.identifier == "addItem" {
+            
+            let addItemController:AddItemViewController = segue.destinationViewController as! AddItemViewController
+            
+            addItemController.room = self.room
+        }
+        
+        
     }
-    */
+
 
 }
