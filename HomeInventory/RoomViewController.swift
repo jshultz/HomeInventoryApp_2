@@ -3,35 +3,38 @@
 //  HomeInventory
 //
 //  Created by Jason Shultz on 10/30/15.
-//  Copyright © 2015 HashRocket. All rights reserved.
+//  Copyright © 2015 Chaos Elevators, Inc.. All rights reserved.
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class RoomViewController: UIViewController, UITextFieldDelegate {
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let realm = try! Realm()
+    var notificationToken: NotificationToken?
     
-    var room: Rooms? = nil
+    var room: Room? = nil
     
     @IBOutlet weak var roomNameField: UITextField!
     
+    @IBOutlet weak var descriptionField: UITextField!
+    
+    
     @IBAction func submitButton(sender: AnyObject) {
         
-        let entityDescription = NSEntityDescription.entityForName("Rooms", inManagedObjectContext: managedObjectContext)
-        
-        let room = Rooms(entity: entityDescription!,
-            insertIntoManagedObjectContext: managedObjectContext)
-        
-        room.name = roomNameField.text
-        
-        do {
-            try managedObjectContext.save()
-            print("you made it?")
-            navigationController?.popViewControllerAnimated(true)
-        } catch {
-            print("something bad happened")
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        // Import many items in a background thread
+        dispatch_async(queue) {
+            // Get new realm and table since we are in a new thread
+            let realm = try! Realm()
+            let newRoom = Room()
+            
+            newRoom.name = self.roomNameField.text!
+            newRoom.room_description = self.descriptionField.text!
+            
+            realm.beginWrite()
+            try! realm.commitWrite()
         }
     }
     

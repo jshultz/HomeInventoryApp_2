@@ -2,16 +2,27 @@
 //  Profile.swift
 //  HomeInventory
 //
-//  Created by Jason Shultz on 10/28/15.
-//  Copyright © 2015 HashRocket. All rights reserved.
+//  Created by Jason Shultz on 11/18/15.
+//  Copyright © 2015 Chaos Elevators, Inc.. All rights reserved.
 //
 
+import RealmSwift
 import Foundation
-import CoreData
 
-@objc(Profile)
-class Profile: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
-
+class Profile: Object {
+    
+    dynamic var id = NSUUID().UUIDString
+    dynamic var fName = ""
+    dynamic var lName = ""
+    dynamic var street = ""
+    dynamic var city = ""
+    dynamic var state = ""
+    dynamic var zip = ""
+    dynamic var phone = ""
+    
+    // Specify properties to ignore (Realm won't persist these)
+    
+    //  override static func ignoredProperties() -> [String] {
+    //    return []
+    //  }
 }

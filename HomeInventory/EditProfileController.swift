@@ -3,11 +3,11 @@
 //  HomeInventory
 //
 //  Created by Jason Shultz on 10/28/15.
-//  Copyright © 2015 HashRocket. All rights reserved.
+//  Copyright © 2015 Chaos Elevators, Inc.. All rights reserved.
 //
 
 import UIKit
-import CoreData
+
 
 class EditProfileController: UIViewController, UITextFieldDelegate {
     

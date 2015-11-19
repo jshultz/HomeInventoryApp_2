@@ -3,7 +3,7 @@
 //  HomeInventory
 //
 //  Created by Jason Shultz on 10/30/15.
-//  Copyright © 2015 HashRocket. All rights reserved.
+//  Copyright © 2015 Chaos Elevators, Inc.. All rights reserved.
 //
 
 import UIKit
