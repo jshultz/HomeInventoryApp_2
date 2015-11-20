@@ -9,9 +9,11 @@
 import UIKit
 import RealmSwift
 
-var activeRoom = -1
+
 
 class RoomsViewController: UIViewController, UITableViewDelegate {
+    
+    var activeRoom = -1
     
     var room: Room? = nil
     
@@ -62,12 +64,9 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
 
         } else if segue.identifier == "showInventory" {
             let cell = sender as! UITableViewCell
-            print("cell ", cell)
+            let indexPath = roomsTable.indexPathForCell(cell)
             let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
-
-//            let room:Room = cell
-            
-            inventoryController.room = room
+            inventoryController.room = array[activeRoom]
         }
     }
 

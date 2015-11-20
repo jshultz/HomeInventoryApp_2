@@ -9,12 +9,11 @@
 import UIKit
 import RealmSwift
 
-var activeInventory = -1
+
 
 class InventoryTableViewController: UIViewController, UITableViewDelegate {
-    
+    var activeInventory = -1
     var room: Room? = nil
-    
     let realm = try! Realm()
     let array = try! Realm().objects(Inventory).sorted("name")
     var notificationToken: NotificationToken?
@@ -29,6 +28,7 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        print("room: ", room)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
