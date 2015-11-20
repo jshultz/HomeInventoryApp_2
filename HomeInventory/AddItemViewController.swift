@@ -53,24 +53,20 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func submitButton(sender: AnyObject) {
+                
+        let realm = try! Realm()
+        // Add row via dictionary. Order is ignored.
         
-        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        let item = Inventory()
         
-        dispatch_async(queue) {
-            // Get new realm and table since we are in a new thread
-            let realm = try! Realm()
-            // Add row via dictionary. Order is ignored.
-            
-            let item = Inventory()
-            
-            item.name = self.itemNameField.text!
-            item.item_description = self.descriptionField.text!
-            
-            try! realm.write {
-                realm.add(item)
-//                self.room!.items.append(item)
-            }
-            
+        item.name = self.itemNameField.text!
+        item.item_description = self.descriptionField.text!
+        item.purchased_date = self.purchaseDateField.text!
+        item.purchase_price = self.purchasePriceField.text!
+                
+        try! realm.write {
+            realm.add(item)
+            self.room!.items.append(item)
         }
         
     }

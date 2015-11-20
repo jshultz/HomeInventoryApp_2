@@ -14,8 +14,7 @@ import RealmSwift
 class InventoryTableViewController: UIViewController, UITableViewDelegate {
     var activeInventory = -1
     var room: Room? = nil
-    let realm = try! Realm()
-    let array = try! Realm().objects(Inventory).sorted("name")
+    var array = []
     var notificationToken: NotificationToken?
     
     @IBOutlet weak var inventoryTable: UITableView!
@@ -29,6 +28,14 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         setupUI()
         print("room: ", room)
+        
+        let realm = try! Realm()
+        
+        let found_room = try! Realm().objects(Room).filter(NSPredicate(format: "id = %@", "\(room!.id)"))
+        
+        print("found_room", found_room.first!.items)
+        
+        array = try! Array(Realm().objects(Room).filter(NSPredicate(format: "id = %@", "\(room!.id)")).first!.items)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

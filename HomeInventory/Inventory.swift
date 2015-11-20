@@ -14,7 +14,7 @@ class Inventory: Object {
     dynamic var id = NSUUID().UUIDString
     dynamic var name = ""
     dynamic var item_description = ""
-    dynamic var purchased_date = NSDate(timeIntervalSince1970: 1)
+    dynamic var purchased_date = ""
     dynamic var purchase_price = ""
     dynamic var room: Room? // Can be optional
     
