@@ -34,6 +34,7 @@ class RoomViewController: UIViewController, UITextFieldDelegate {
             newRoom.room_description = self.descriptionField.text!
             
             realm.beginWrite()
+            realm.add(newRoom)
             try! realm.commitWrite()
         }
     }

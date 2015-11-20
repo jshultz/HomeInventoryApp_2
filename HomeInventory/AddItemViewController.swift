@@ -7,13 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 
 class AddItemViewController: UIViewController, UITextFieldDelegate {
-    
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
-    var room: Rooms? = nil
+        
+    var room: Room? = nil
     
     @IBOutlet weak var itemNameField: UITextField!
     
@@ -55,32 +54,23 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitButton(sender: AnyObject) {
         
-        let inventoryEntity = NSEntityDescription.entityForName("Inventory", inManagedObjectContext: managedObjectContext)
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         
-        let newItem = Inventory(entity: inventoryEntity!,
-            insertIntoManagedObjectContext: managedObjectContext)
-        
-        newItem.setValue(itemNameField.text, forKey: "name")
-        newItem.setValue(descriptionField.text, forKey: "item_description")
-        
-
-//        item.purchased_date = NSDate(purchaseDateField.text)
-//        item.purchase_price = purchasePriceField.text
-        
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print("the cake was a lie")
-        }
-        
-        // Add Address to Person
-        room!.setValue(NSSet(object: newItem), forKey: "rooms_to_items")
-        
-        do {
-            try room!.managedObjectContext?.save()
-        } catch {
-            let saveError = error as NSError
-            print(saveError)
+        dispatch_async(queue) {
+            // Get new realm and table since we are in a new thread
+            let realm = try! Realm()
+            // Add row via dictionary. Order is ignored.
+            
+            let item = Inventory()
+            
+            item.name = self.itemNameField.text!
+            item.item_description = self.descriptionField.text!
+            
+            try! realm.write {
+                realm.add(item)
+//                self.room!.items.append(item)
+            }
+            
         }
         
     }

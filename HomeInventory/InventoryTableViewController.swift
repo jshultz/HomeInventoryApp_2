@@ -7,52 +7,29 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 var activeInventory = -1
 
-
-
-class InventoryTableViewController: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDelegate {
+class InventoryTableViewController: UIViewController, UITableViewDelegate {
     
-    var room: Rooms? = nil
+    var room: Room? = nil
+    
+    let realm = try! Realm()
+    let array = try! Realm().objects(Inventory).sorted("name")
+    var notificationToken: NotificationToken?
     
     @IBOutlet weak var inventoryTable: UITableView!
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    var fetchedResultController: NSFetchedResultsController = NSFetchedResultsController()
-    
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
-        inventoryTable.reloadData()
-    }
-    
-    func getFetchedResultController() -> NSFetchedResultsController {
-        fetchedResultController = NSFetchedResultsController(fetchRequest: placeFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        return fetchedResultController
-    }
-    
-    func placeFetchRequest() -> NSFetchRequest {
-        let fetchRequest = NSFetchRequest(entityName: "Inventory")
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        return fetchRequest
-    }
-    
-    override func viewWillAppear(animated: Bool) {
+    func setupUI() {
         
-        fetchedResultController = getFetchedResultController()
-        fetchedResultController.delegate = self
-        do {
-            try fetchedResultController.performFetch()
-            inventoryTable.reloadData()
-        } catch {
-            print("something done gone wrong")
-        }
+        self.title = room?.name
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -67,26 +44,20 @@ class InventoryTableViewController: UIViewController, NSFetchedResultsController
 
     // MARK: - Table view data source
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        let numberOfSections = fetchedResultController.sections?.count
-        return numberOfSections!
-    }
-
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let numberOfRowsInSection = fetchedResultController.sections?[section].numberOfObjects
-        return numberOfRowsInSection!
+        return array.count
     }
 
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! InventoryTableViewCell
         
-        let items = fetchedResultController.objectAtIndexPath(indexPath) as! Inventory
+        let object = array[indexPath.row]
+        cell.textLabel?.text = object.name
+//        cell.detailTextLabel?.text = object.date.description
         
-        cell.InventoryNameLabel?.text = items.name
-
         return cell
     }
     

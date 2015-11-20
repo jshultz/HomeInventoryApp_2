@@ -7,11 +7,10 @@
 //
 
 import UIKit
+import RealmSwift
 
 
 class EditProfileController: UIViewController, UITextFieldDelegate {
-    
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     @IBOutlet weak var firstName: UITextField!
     
@@ -30,22 +29,25 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitButton(sender: AnyObject) {
         
-        let entityDescription = NSEntityDescription.entityForName("Profile", inManagedObjectContext: managedObjectContext)
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         
-        let profile = Profile(entity: entityDescription!,
-            insertIntoManagedObjectContext: managedObjectContext)
-        
-        profile.fName = firstName.text
-        profile.lName = lastName.text
-        profile.street = streetAddress.text
-        profile.city = cityField.text
-        profile.state = stateField.text
-        profile.zip = Int(zipField.text!)
-        
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print("the cake was a lie")
+        dispatch_async(queue) {
+            // Get new realm and table since we are in a new thread
+            let realm = try! Realm()
+            // Add row via dictionary. Order is ignored.
+            
+            let profile = Profile()
+            
+            profile.fName = self.firstName.text!
+            profile.lName = self.lastName.text!
+            profile.street = self.streetAddress.text!
+            profile.city = self.cityField.text!
+            profile.state = self.stateField.text!
+            profile.zip = self.zipField.text!
+            
+            try! realm.write {
+                realm.add(profile)
+            }
         }
     }
     

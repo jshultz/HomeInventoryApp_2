@@ -7,61 +7,47 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 var activeRoom = -1
 
-class RoomsViewController: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDelegate {
+class RoomsViewController: UIViewController, UITableViewDelegate {
+    
+    var room: Room? = nil
+    
+    let realm = try! Realm()
+    let array = try! Realm().objects(Room)
+    var notificationToken: NotificationToken?
     
     @IBOutlet weak var roomsTable: UITableView!
-    
-    
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    var fetchedResultController: NSFetchedResultsController = NSFetchedResultsController()
-    
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
-        roomsTable.reloadData()
-    }
-    
-    func getFetchedResultController() -> NSFetchedResultsController {
-        fetchedResultController = NSFetchedResultsController(fetchRequest: placeFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        return fetchedResultController
-    }
-    
-    func placeFetchRequest() -> NSFetchRequest {
-        let fetchRequest = NSFetchRequest(entityName: "Rooms")
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        return fetchRequest
-    }
-
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
 
         // Do any additional setup after loading the view.
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        let numberOfSections = fetchedResultController.sections?.count
-        return numberOfSections!
+    func setupUI() {
+        
+        self.title = room?.name
+        
+        roomsTable.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let numberOfRowsInSection = fetchedResultController.sections?[section].numberOfObjects
-        return numberOfRowsInSection!
+        return array.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-                
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! RoomsTableViewCell
         
-        let room = fetchedResultController.objectAtIndexPath(indexPath) as! Rooms
-        
-        cell.roomNameLabel?.text = room.name
+        let object = array[indexPath.row]
+        cell.textLabel?.text = object.name
+        //        cell.detailTextLabel?.text = object.date.description
         
         return cell
     }
@@ -71,27 +57,15 @@ class RoomsViewController: UIViewController, NSFetchedResultsControllerDelegate,
         return indexPath
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
-        fetchedResultController = getFetchedResultController()
-        fetchedResultController.delegate = self
-        do {
-            try fetchedResultController.performFetch()
-            roomsTable.reloadData()
-        } catch {
-            print("something done gone wrong")
-        }
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "newPlace" {
 
         } else if segue.identifier == "showInventory" {
             let cell = sender as! UITableViewCell
-            let indexPath = roomsTable.indexPathForCell(cell)
+            print("cell ", cell)
             let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
 
-            let room:Rooms = fetchedResultController.objectAtIndexPath(indexPath!) as! Rooms
+//            let room:Room = cell
             
             inventoryController.room = room
         }
