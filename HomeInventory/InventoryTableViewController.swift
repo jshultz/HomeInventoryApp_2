@@ -9,39 +9,32 @@
 import UIKit
 import RealmSwift
 
-
-
 class InventoryTableViewController: UIViewController, UITableViewDelegate {
     var activeInventory = -1
     var room: Room? = nil
     var array = []
+    let realm = try! Realm()
     var notificationToken: NotificationToken?
     
     @IBOutlet weak var inventoryTable: UITableView!
-    
-    func setupUI() {
-        
-        self.title = room?.name
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        print("room: ", room)
         
-        let realm = try! Realm()
+        // Set realm notification block
+        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+            print("hello? ", self.room)
+            self.array = Array(self.room!.items)
+            self.inventoryTable.reloadData()
+        }
         
-        let found_room = try! Realm().objects(Room).filter(NSPredicate(format: "id = %@", "\(room!.id)"))
-        
-        print("found_room", found_room.first!.items)
-        
+        inventoryTable.reloadData()
+    }
+    
+    func setupUI() {
+        self.title = room?.name
         array = try! Array(Realm().objects(Room).filter(NSPredicate(format: "id = %@", "\(room!.id)")).first!.items)
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,13 +51,9 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
 
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! InventoryTableViewCell
-        
         let object = array[indexPath.row]
         cell.textLabel?.text = object.name
-//        cell.detailTextLabel?.text = object.date.description
-        
         return cell
     }
     
@@ -72,42 +61,6 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         activeInventory = indexPath.row
         return indexPath
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
 
     // MARK: - Navigation

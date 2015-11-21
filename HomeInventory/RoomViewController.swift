@@ -23,19 +23,24 @@ class RoomViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitButton(sender: AnyObject) {
         
-        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-        // Import many items in a background thread
-        dispatch_async(queue) {
-            // Get new realm and table since we are in a new thread
-            let realm = try! Realm()
-            let newRoom = Room()
+        // Get new realm and table since we are in a new thread
+        let realm = try! Realm()
+        let newRoom = Room()
+        
+        newRoom.name = self.roomNameField.text!
+        newRoom.room_description = self.descriptionField.text!
+        
+        realm.beginWrite()
+        realm.add(newRoom)
+        
+        do {
+            try realm.commitWrite()
+            if let navController = self.navigationController {
+                navController.popViewControllerAnimated(true)
+            }
             
-            newRoom.name = self.roomNameField.text!
-            newRoom.room_description = self.descriptionField.text!
-            
-            realm.beginWrite()
-            realm.add(newRoom)
-            try! realm.commitWrite()
+        } catch {
+            print("could not add room")
         }
     }
     

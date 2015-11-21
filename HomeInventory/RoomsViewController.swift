@@ -14,9 +14,7 @@ import RealmSwift
 class RoomsViewController: UIViewController, UITableViewDelegate {
     
     var activeRoom = -1
-    
     var room: Room? = nil
-    
     let realm = try! Realm()
     let array = try! Realm().objects(Room)
     var notificationToken: NotificationToken?
@@ -25,17 +23,18 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
-
+        // Set realm notification block
+        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+            self.roomsTable.reloadData()
+        }
         // Do any additional setup after loading the view.
     }
     
     func setupUI() {
         
         self.title = room?.name
-        
-        roomsTable.reloadData()
+
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

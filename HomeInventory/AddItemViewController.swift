@@ -14,6 +14,11 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         
     var room: Room? = nil
     
+    var return_room: Room? = nil
+    
+    var notificationToken: NotificationToken?
+
+    
     @IBOutlet weak var itemNameField: UITextField!
     
     @IBOutlet weak var descriptionField: UITextField!
@@ -29,9 +34,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("the room: ", room)
-
         // Do any additional setup after loading the view.
     }
     
@@ -63,12 +65,24 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         item.item_description = self.descriptionField.text!
         item.purchased_date = self.purchaseDateField.text!
         item.purchase_price = self.purchasePriceField.text!
-                
-        try! realm.write {
-            realm.add(item)
-            self.room!.items.append(item)
-        }
         
+        realm.beginWrite()
+        realm.add(item)
+        
+        do {
+            
+            self.room!.items.append(item)
+            try realm.commitWrite()
+            
+            return_room = self.room
+            
+            if let navController = self.navigationController {
+                navController.popViewControllerAnimated(true)
+            }
+            
+        } catch {
+            print("could not add room")
+        }
     }
     
 
@@ -91,5 +105,11 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let roomsController:RoomsViewController = segue.destinationViewController as! RoomsViewController
+        print("sending this back: ", return_room)
+        roomsController.room = return_room
+    }
 
 }
