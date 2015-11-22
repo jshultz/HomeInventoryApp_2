@@ -30,7 +30,6 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         
         setupUI()
-        print("item: ", self.item)
         
         itemNameLabel.text = self.item?.name
         itemDescriptionLabel.text = self.item?.item_description
@@ -39,7 +38,6 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
         let imagePath = fileInDocumentsDirectory(myImageName!)
         
         if let loadedImage = loadImageFromPath(imagePath) {
-            print(" Loaded Image: \(loadedImage)")
             itemPhoto.image = loadImageFromPath(imagePath)
         } else { print("some error message 2") }
         

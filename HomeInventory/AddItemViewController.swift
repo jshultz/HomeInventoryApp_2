@@ -62,9 +62,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             imageView.contentMode = .ScaleAspectFit
             imageView.image = pickedImage
         }
-        //        let thing = saveImage(imageView.image!, path: fileInDocumentsDirectory("tempImage"))
-        
-        //        print("thing: ", thing)
         
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -121,7 +118,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let pngImageData = UIImagePNGRepresentation(image)
         //let jpgImageData = UIImageJPEGRepresentation(image, 1.0)   // if you want to save as JPEG
         let result = pngImageData!.writeToFile(path, atomically: true)
-        print("path: ", path)
         return path
         
     }

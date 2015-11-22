@@ -54,7 +54,6 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        print("activeRoom: ", activeRoom)
         activeRoom = indexPath.row
         return indexPath
     }
