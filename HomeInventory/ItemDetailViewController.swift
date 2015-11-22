@@ -38,7 +38,9 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
         let imagePath = fileInDocumentsDirectory(myImageName!)
         
         if let loadedImage = loadImageFromPath(imagePath) {
-            itemPhoto.image = loadImageFromPath(imagePath)
+            if self.item?.photo != "" {
+                itemPhoto.image = loadImageFromPath(imagePath)
+            }
         } else { print("some error message 2") }
         
         

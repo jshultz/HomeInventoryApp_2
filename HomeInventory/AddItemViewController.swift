@@ -43,7 +43,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
     }
     
-    
     @IBAction func doneButton(sender: AnyObject) {
         purchaseDateField.resignFirstResponder()
     }

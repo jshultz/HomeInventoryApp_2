@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */; };
 		DE0C11CE1BE47D2500282E36 /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C11CD1BE47D2500282E36 /* InventoryTableViewCell.swift */; };
+		DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */; };
 		DEA354CE1BFD81F500DB6CC0 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA354C31BFD7F6000DB6CC0 /* Realm.framework */; };
 		DEA354CF1BFD81F500DB6CC0 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA354C31BFD7F6000DB6CC0 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEA354D01BFD81F500DB6CC0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA354C41BFD7F6000DB6CC0 /* RealmSwift.framework */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTableViewController.swift; sourceTree = "<group>"; };
 		DE0C11CD1BE47D2500282E36 /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
+		DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-placeholder-300x300.png"; sourceTree = "<group>"; };
 		DEA354C31BFD7F6000DB6CC0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		DEA354C41BFD7F6000DB6CC0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		DEC51F6B1BE3969200672069 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE38CF1F1C0229C800F3A5AD /* images */ = {
+			isa = PBXGroup;
+			children = (
+				DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		DEA354CD1BFD81CB00DB6CC0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		DECD008D1BE17EAC006A5B7E /* HomeInventory */ = {
 			isa = PBXGroup;
 			children = (
+				DE38CF1F1C0229C800F3A5AD /* images */,
 				DED029D61BFD84AB00E63B8F /* Models */,
 				DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */,
 				DE0C11CD1BE47D2500282E36 /* InventoryTableViewCell.swift */,
@@ -206,6 +217,7 @@
 			files = (
 				DECD009C1BE17EAC006A5B7E /* LaunchScreen.storyboard in Resources */,
 				DECD00991BE17EAC006A5B7E /* Assets.xcassets in Resources */,
+				DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */,
 				DECD00941BE17EAC006A5B7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

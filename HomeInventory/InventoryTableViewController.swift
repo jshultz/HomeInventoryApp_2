@@ -42,6 +42,26 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func fileInDocumentsDirectory(filename: String) -> String {
+        let fileURL = getDocumentsURL().URLByAppendingPathComponent(filename)
+        return fileURL.path!
+    }
+    
+    func getDocumentsURL() -> NSURL {
+        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        return documentsURL
+    }
+    
+    func loadImageFromPath(path: String) -> UIImage? {
+        var image = UIImage()
+        let data = NSData(contentsOfFile: path)
+        if (data != nil) {
+            image = UIImage(data: data!)!
+        } else {
+        }
+        return image
+    }
 
     // MARK: - Table view data source
 
@@ -54,8 +74,18 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! InventoryTableViewCell
         let object = array[indexPath.row]
-        print("object", object)
         cell.textLabel?.text = object.name
+        
+        let item = realm.objects(Inventory).filter(NSPredicate(format: "id = %@", "\(object.id)")).first
+        
+        let myImageName = item!.photo
+        let imagePath = fileInDocumentsDirectory(myImageName)
+        
+        if let loadedImage = loadImageFromPath(imagePath) {
+            if item!.photo != "" {
+                cell.photoView.image = loadImageFromPath(imagePath)
+            }
+        } else { print("some error message 2") }
         return cell
     }
     
