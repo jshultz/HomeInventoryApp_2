@@ -8,16 +8,23 @@
 
 import UIKit
 import RealmSwift
+import Photos
+import PhotosUI
 
 
-class AddItemViewController: UIViewController, UITextFieldDelegate {
+class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
     var room: Room? = nil
     
     var return_room: Room? = nil
     
     var notificationToken: NotificationToken?
+    
+    var imageFilePath:String = ""
+    
+    let imagePicker = UIImagePickerController()
 
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var itemNameField: UITextField!
     
@@ -27,6 +34,15 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var purchaseDateField: UITextField!
     
+    @IBAction func addPhotoButton(sender: AnyObject) {
+        
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+
+    }
+    
     
     @IBAction func doneButton(sender: AnyObject) {
         purchaseDateField.resignFirstResponder()
@@ -35,6 +51,26 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        imagePicker.delegate = self
+    }
+    
+    // MARK: - UIImagePickerControllerDelegate Methods
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.contentMode = .ScaleAspectFit
+            imageView.image = pickedImage
+        }
+//        let thing = saveImage(imageView.image!, path: fileInDocumentsDirectory("tempImage"))
+        
+//        print("thing: ", thing)
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func purchaseDateEdit( sender: AnyObject) {
@@ -43,8 +79,34 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         datePickerView.datePickerMode = UIDatePickerMode.Date
         purchaseDateField.inputView = datePickerView
         datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
-
+    }
+    
+    // Get path for a file in the directory
+    
+    func fileInDocumentsDirectory(filename: String) -> String {
+        return getDocumentsDirectory().stringByAppendingPathComponent(filename)
+    }
+    
+    func getDocumentsDirectory() -> NSString {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = paths[0]
         
+        return documentsDirectory
+    }
+    
+    func randomStringWithLength (len : Int) -> NSString {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        
+        let randomString : NSMutableString = NSMutableString(capacity: len)
+        
+        for (var i=0; i < len; i++){
+            let length = UInt32 (letters.length)
+            let rand = arc4random_uniform(length)
+            randomString.appendFormat("%C", letters.characterAtIndex(Int(rand)))
+        }
+        
+        return randomString
     }
     
     func handleDatePicker(sender: UIDatePicker) {
@@ -52,6 +114,16 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         dateFormatter.dateStyle = .NoStyle
         dateFormatter.dateFormat = "dd MMM yyyy"
         purchaseDateField.text = dateFormatter.stringFromDate(sender.date)
+    }
+    
+    func saveImage (image: UIImage, path: String ) -> String{
+        
+        let pngImageData = UIImagePNGRepresentation(image)
+        //let jpgImageData = UIImageJPEGRepresentation(image, 1.0)   // if you want to save as JPEG
+        let result = pngImageData!.writeToFile(path, atomically: true)
+        print("path: ", path)
+        return path
+        
     }
     
     @IBAction func submitButton(sender: AnyObject) {
@@ -65,6 +137,10 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         item.item_description = self.descriptionField.text!
         item.purchased_date = self.purchaseDateField.text!
         item.purchase_price = self.purchasePriceField.text!
+        if (imageView.image != nil) {
+            let filename = "\(randomStringWithLength(10)).jpg"
+            item.photo = saveImage(imageView.image!, path: fileInDocumentsDirectory("\(filename)"))
+        }
         
         realm.beginWrite()
         realm.add(item)
@@ -90,11 +166,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-
-
-    
 
     /*
     // MARK: - Navigation

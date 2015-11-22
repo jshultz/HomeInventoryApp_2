@@ -212,13 +212,25 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deq-Hk-Xio">
-                                <rect key="frame" x="65" y="273" width="82" height="30"/>
+                                <rect key="frame" x="65" y="550" width="82" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Add an Item"/>
                                 <connections>
                                     <action selector="submitButton:" destination="c6e-oH-cB4" eventType="touchUpInside" id="sBa-tl-NjP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blK-w9-tXi">
+                                <rect key="frame" x="63" y="260" width="84" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Add a Photo"/>
+                                <connections>
+                                    <action selector="addPhotoButton:" destination="c6e-oH-cB4" eventType="touchUpInside" id="g4S-z6-ger"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u85-zf-xpN">
+                                <rect key="frame" x="155" y="266" width="258" height="209"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -254,6 +266,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionField" destination="jby-bu-Iv7" id="JzU-ML-hV5"/>
+                        <outlet property="imageView" destination="u85-zf-xpN" id="WEv-z7-oJE"/>
                         <outlet property="itemNameField" destination="soF-Qd-AeS" id="E23-zq-DYT"/>
                         <outlet property="purchaseDateField" destination="PZo-D5-mnf" id="a5V-J2-Nb5"/>
                         <outlet property="purchasePriceField" destination="nLy-u7-WjX" id="LN6-UY-jqI"/>
