@@ -26,6 +26,7 @@
 		DECD00B01BE19287006A5B7E /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00AF1BE19287006A5B7E /* EditProfileController.swift */; };
 		DECD00BE1BE1C411006A5B7E /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B91BE1C411006A5B7E /* Inventory.swift */; };
 		DED029D51BFD83E600E63B8F /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED029D41BFD83E600E63B8F /* Room.swift */; };
+		DEDE97D21C017BAA007ECE78 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */; };
 		DEF622141BE5165200D28EC9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF622131BE5165200D28EC9 /* AddItemViewController.swift */; };
 		DEF622161BE516FB00D28EC9 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF622151BE516FB00D28EC9 /* EditItemViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		DECD00AF1BE19287006A5B7E /* EditProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		DECD00B91BE1C411006A5B7E /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DED029D41BFD83E600E63B8F /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = Models/Room.swift; sourceTree = "<group>"; };
+		DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		DEF622131BE5165200D28EC9 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		DEF622151BE516FB00D28EC9 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 				DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */,
 				DECD00901BE17EAC006A5B7E /* ProfileController.swift */,
 				DECD00921BE17EAC006A5B7E /* Main.storyboard */,
+				DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */,
 				DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */,
 				DEC51F6D1BE3A5AA00672069 /* RoomsTableViewCell.swift */,
 				DECD00981BE17EAC006A5B7E /* Assets.xcassets */,
@@ -242,6 +245,7 @@
 				DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */,
 				DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */,
 				DED029D51BFD83E600E63B8F /* Room.swift in Sources */,
+				DEDE97D21C017BAA007ECE78 /* ItemDetailViewController.swift in Sources */,
 				DEF622141BE5165200D28EC9 /* AddItemViewController.swift in Sources */,
 				DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */,
 			);

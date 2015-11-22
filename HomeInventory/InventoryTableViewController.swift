@@ -11,6 +11,7 @@ import RealmSwift
 
 class InventoryTableViewController: UIViewController, UITableViewDelegate {
     var activeInventory = -1
+    var activeRoom = -1
     var room: Room? = nil
     var array = []
     let realm = try! Realm()
@@ -53,11 +54,13 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! InventoryTableViewCell
         let object = array[indexPath.row]
+        print("object", object)
         cell.textLabel?.text = object.name
         return cell
     }
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        print("indexPath: ", indexPath)
         activeInventory = indexPath.row
         return indexPath
     }
@@ -77,6 +80,13 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
             let addItemController:AddItemViewController = segue.destinationViewController as! AddItemViewController
             
             addItemController.room = self.room
+        } else if segue.identifier == "showItem" {
+            
+            let itemDetailController:ItemDetailViewController = segue.destinationViewController as! ItemDetailViewController
+            
+            itemDetailController.room = self.room
+            print("activeInventory: ", activeInventory)
+            itemDetailController.item = Inventory(value: array[activeInventory])
         }
         
         

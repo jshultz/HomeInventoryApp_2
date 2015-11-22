@@ -23,6 +23,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     var imageFilePath:String = ""
     
     let imagePicker = UIImagePickerController()
+    
+    var filename: String?
 
     @IBOutlet weak var imageView: UIImageView!
     
@@ -52,6 +54,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        print("room: ", room)
+        
         imagePicker.delegate = self
     }
     
@@ -62,9 +66,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             imageView.contentMode = .ScaleAspectFit
             imageView.image = pickedImage
         }
-//        let thing = saveImage(imageView.image!, path: fileInDocumentsDirectory("tempImage"))
-        
-//        print("thing: ", thing)
         
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -92,6 +93,24 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let documentsDirectory = paths[0]
         
         return documentsDirectory
+    }
+    
+    func lastPhoto() -> String {
+        var filename: String?
+        if #available(iOS 9.0, *) {
+            let fetchOptions: PHFetchOptions = PHFetchOptions()
+            fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+            
+            let fetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
+            let lastAsset: PHAsset = fetchResult.lastObject as! PHAsset
+            let resources = PHAssetResource.assetResourcesForAsset(lastAsset)
+            if let resource = resources.first {
+                filename = resource.originalFilename
+                return filename!
+            }
+            return filename!
+        }
+        return filename!
     }
     
     func randomStringWithLength (len : Int) -> NSString {
@@ -126,6 +145,12 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
     }
     
+    func saveButt(sender: AnyObject) {
+        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.6)
+        let compressedJPGImage = UIImage(data: imageData!)
+        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
+    }
+    
     @IBAction func submitButton(sender: AnyObject) {
                 
         let realm = try! Realm()
@@ -138,8 +163,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         item.purchased_date = self.purchaseDateField.text!
         item.purchase_price = self.purchasePriceField.text!
         if (imageView.image != nil) {
-            let filename = "\(randomStringWithLength(10)).jpg"
-            item.photo = saveImage(imageView.image!, path: fileInDocumentsDirectory("\(filename)"))
+            saveButt(imageView.image!)
+            item.photo = lastPhoto()
         }
         
         realm.beginWrite()
