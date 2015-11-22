@@ -13,7 +13,7 @@ import PhotosUI
 
 
 class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        
+    
     var room: Room? = nil
     
     var return_room: Room? = nil
@@ -24,8 +24,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     let imagePicker = UIImagePickerController()
     
-    var filename: String?
-
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var itemNameField: UITextField!
@@ -42,19 +40,17 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         imagePicker.sourceType = .PhotoLibrary
         
         presentViewController(imagePicker, animated: true, completion: nil)
-
+        
     }
     
     
     @IBAction func doneButton(sender: AnyObject) {
         purchaseDateField.resignFirstResponder()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        print("room: ", room)
         
         imagePicker.delegate = self
     }
@@ -66,6 +62,9 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             imageView.contentMode = .ScaleAspectFit
             imageView.image = pickedImage
         }
+        //        let thing = saveImage(imageView.image!, path: fileInDocumentsDirectory("tempImage"))
+        
+        //        print("thing: ", thing)
         
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -93,24 +92,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let documentsDirectory = paths[0]
         
         return documentsDirectory
-    }
-    
-    func lastPhoto() -> String {
-        var filename: String?
-        if #available(iOS 9.0, *) {
-            let fetchOptions: PHFetchOptions = PHFetchOptions()
-            fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
-            
-            let fetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
-            let lastAsset: PHAsset = fetchResult.lastObject as! PHAsset
-            let resources = PHAssetResource.assetResourcesForAsset(lastAsset)
-            if let resource = resources.first {
-                filename = resource.originalFilename
-                return filename!
-            }
-            return filename!
-        }
-        return filename!
     }
     
     func randomStringWithLength (len : Int) -> NSString {
@@ -145,14 +126,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
     }
     
-    func saveButt(sender: AnyObject) {
-        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.6)
-        let compressedJPGImage = UIImage(data: imageData!)
-        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
-    }
-    
     @IBAction func submitButton(sender: AnyObject) {
-                
+        
         let realm = try! Realm()
         // Add row via dictionary. Order is ignored.
         
@@ -163,8 +138,9 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         item.purchased_date = self.purchaseDateField.text!
         item.purchase_price = self.purchasePriceField.text!
         if (imageView.image != nil) {
-            saveButt(imageView.image!)
-            item.photo = lastPhoto()
+            let filename = "\(randomStringWithLength(10)).jpg"
+            saveImage(imageView.image!, path: fileInDocumentsDirectory("\(filename)"))
+            item.photo = filename
         }
         
         realm.beginWrite()
@@ -186,19 +162,18 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         }
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
     
@@ -207,5 +182,5 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         print("sending this back: ", return_room)
         roomsController.room = return_room
     }
-
+    
 }
