@@ -42,10 +42,6 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
                 itemPhoto.image = loadImageFromPath(imagePath)
             }
         } else { print("some error message 2") }
-        
-        
-        
-        
     }
     
     func fileInDocumentsDirectory(filename: String) -> String {

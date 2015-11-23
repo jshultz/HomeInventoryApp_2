@@ -72,9 +72,12 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
 
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! InventoryTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         let object = array[indexPath.row]
-        cell.textLabel?.text = object.name
+        
+        let imageView = cell.viewWithTag(10) as! UIImageView
+        let label = cell.viewWithTag(20) as! UILabel
+        label.text = object.name
         
         let item = realm.objects(Inventory).filter(NSPredicate(format: "id = %@", "\(object.id)")).first
         
@@ -83,7 +86,8 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         
         if let loadedImage = loadImageFromPath(imagePath) {
             if item!.photo != "" {
-                cell.photoView.image = loadImageFromPath(imagePath)
+                imageView.image = loadImageFromPath(imagePath)
+                //cell.photoView.image = loadImageFromPath(imagePath)
             }
         } else { print("some error message 2") }
         return cell
