@@ -21,4 +21,8 @@ class Room: Object {
 //  override static func ignoredProperties() -> [String] {
 //    return []
 //  }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

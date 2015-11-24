@@ -30,7 +30,9 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         
         setupUI()
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         itemNameLabel.text = self.item?.name
         itemDescriptionLabel.text = self.item?.item_description
         
@@ -68,6 +70,7 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
     
     func setupUI() {
         self.title = self.item?.name
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,14 +79,19 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    /*
+
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editItem" {
+            let addItemController:AddItemViewController = segue.destinationViewController as! AddItemViewController
+            
+            addItemController.item = self.item
+        }
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
     }
-    */
+
     
 }

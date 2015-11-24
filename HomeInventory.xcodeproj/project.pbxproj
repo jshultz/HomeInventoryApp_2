@@ -28,7 +28,6 @@
 		DED029D51BFD83E600E63B8F /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED029D41BFD83E600E63B8F /* Room.swift */; };
 		DEDE97D21C017BAA007ECE78 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */; };
 		DEF622141BE5165200D28EC9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF622131BE5165200D28EC9 /* AddItemViewController.swift */; };
-		DEF622161BE516FB00D28EC9 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF622151BE516FB00D28EC9 /* EditItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,7 +67,6 @@
 		DED029D41BFD83E600E63B8F /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = Models/Room.swift; sourceTree = "<group>"; };
 		DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		DEF622131BE5165200D28EC9 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
-		DEF622151BE516FB00D28EC9 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,21 +121,20 @@
 			children = (
 				DE38CF1F1C0229C800F3A5AD /* images */,
 				DED029D61BFD84AB00E63B8F /* Models */,
-				DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */,
+				DEF622131BE5165200D28EC9 /* AddItemViewController.swift */,
 				DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */,
-				DECD00901BE17EAC006A5B7E /* ProfileController.swift */,
-				DECD00921BE17EAC006A5B7E /* Main.storyboard */,
+				DECD00AF1BE19287006A5B7E /* EditProfileController.swift */,
+				DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */,
 				DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */,
+				DECD00921BE17EAC006A5B7E /* Main.storyboard */,
+				DECD00901BE17EAC006A5B7E /* ProfileController.swift */,
 				DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */,
 				DEC51F6D1BE3A5AA00672069 /* RoomsTableViewCell.swift */,
+				DEC51F6B1BE3969200672069 /* RoomsViewController.swift */,
 				DECD00981BE17EAC006A5B7E /* Assets.xcassets */,
 				DECD009A1BE17EAC006A5B7E /* LaunchScreen.storyboard */,
-				DECD009D1BE17EAC006A5B7E /* Info.plist */,
 				DECD00951BE17EAC006A5B7E /* HomeInventory.xcdatamodeld */,
-				DECD00AF1BE19287006A5B7E /* EditProfileController.swift */,
-				DEC51F6B1BE3969200672069 /* RoomsViewController.swift */,
-				DEF622131BE5165200D28EC9 /* AddItemViewController.swift */,
-				DEF622151BE516FB00D28EC9 /* EditItemViewController.swift */,
+				DECD009D1BE17EAC006A5B7E /* Info.plist */,
 			);
 			path = HomeInventory;
 			sourceTree = "<group>";
@@ -242,7 +239,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEF622161BE516FB00D28EC9 /* EditItemViewController.swift in Sources */,
 				DECD00B01BE19287006A5B7E /* EditProfileController.swift in Sources */,
 				DECD00BE1BE1C411006A5B7E /* Inventory.swift in Sources */,
 				DEC51F701BE3ADAD00672069 /* RoomViewController.swift in Sources */,

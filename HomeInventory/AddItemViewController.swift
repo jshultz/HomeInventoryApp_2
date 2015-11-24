@@ -16,6 +16,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     var room: Room? = nil
     
+    var item: Inventory? = nil
+    
     var return_room: Room? = nil
     
     var notificationToken: NotificationToken?
@@ -23,6 +25,9 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     var imageFilePath:String = ""
     
     let imagePicker = UIImagePickerController()
+    
+    @IBOutlet weak var createButton: UIButton!
+    
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -52,6 +57,24 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         // Do any additional setup after loading the view.
         
         imagePicker.delegate = self
+        
+        setupUI()
+    }
+    
+    func setupUI() {
+        if (item != nil) {
+            self.title = item?.name
+            itemNameField.text = item?.name
+            descriptionField.text = item?.item_description
+            purchaseDateField.text = item?.purchased_date
+            purchasePriceField.text = item?.purchase_price
+            createButton.setTitle("Submit Changes", forState: UIControlState.Normal)
+            
+            
+        } else {
+            self.title = room?.name
+        }
+
     }
     
     // MARK: - UIImagePickerControllerDelegate Methods
@@ -126,35 +149,61 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let realm = try! Realm()
         // Add row via dictionary. Order is ignored.
         
-        let item = Inventory()
-        
-        item.name = self.itemNameField.text!
-        item.item_description = self.descriptionField.text!
-        item.purchased_date = self.purchaseDateField.text!
-        item.purchase_price = self.purchasePriceField.text!
-        if (imageView.image != nil) {
-            let filename = "\(randomStringWithLength(10)).jpg"
-            saveImage(imageView.image!, path: fileInDocumentsDirectory("\(filename)"))
-            item.photo = filename
-        }
-        
-        realm.beginWrite()
-        realm.add(item)
-        
-        do {
+        if (self.item != nil) {
             
-            self.room!.items.append(item)
-            try realm.commitWrite()
+            let updated_item = Inventory()
             
-            return_room = self.room
-            
-            if let navController = self.navigationController {
-                navController.popViewControllerAnimated(true)
+            updated_item.id = (item?.id)!
+            updated_item.name = self.itemNameField.text!
+            updated_item.item_description = self.descriptionField.text!
+            updated_item.purchase_price = self.purchasePriceField.text!
+            updated_item.purchased_date = self.purchaseDateField.text!
+            if (self.imageView.image != nil) {
+                let filename = "\(self.randomStringWithLength(10)).jpg"
+                self.saveImage(self.imageView.image!, path: self.fileInDocumentsDirectory("\(filename)"))
+                updated_item.photo = filename
             }
             
-        } catch {
-            print("could not add room")
+            try! realm.write {
+                realm.add(updated_item, update: true)
+            }
+            item = updated_item
+            print("item", item)
+            performSegueWithIdentifier("showDetail", sender: self)
+            
+        } else {
+            
+            let item = Inventory()
+            
+            item.name = self.itemNameField.text!
+            item.item_description = self.descriptionField.text!
+            item.purchased_date = self.purchaseDateField.text!
+            item.purchase_price = self.purchasePriceField.text!
+            if (imageView.image != nil) {
+                let filename = "\(randomStringWithLength(10)).jpg"
+                saveImage(imageView.image!, path: fileInDocumentsDirectory("\(filename)"))
+                item.photo = filename
+            }
+            
+            realm.beginWrite()
+            realm.add(item)
+            
+            do {
+                
+                self.room!.items.append(item)
+                try realm.commitWrite()
+                
+                return_room = self.room
+                
+                if let navController = self.navigationController {
+                    navController.popViewControllerAnimated(true)
+                }
+                
+            } catch {
+                print("could not add item")
+            }
         }
+
     }
     
     
@@ -173,9 +222,14 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let roomsController:RoomsViewController = segue.destinationViewController as! RoomsViewController
-        print("sending this back: ", return_room)
-        roomsController.room = return_room
+        
+        if segue.identifier == "showDetail" {
+            let itemDetailController:ItemDetailViewController = segue.destinationViewController as! ItemDetailViewController
+            
+            itemDetailController.room = self.room
+            itemDetailController.item = self.item
+        }
+        
     }
     
 }
