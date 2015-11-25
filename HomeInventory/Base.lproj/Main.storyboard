@@ -18,29 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xL8-al-faK">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="yPW-HY-1qc"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Profile" id="wbV-5O-SQ0">
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="showProfile" id="7Nj-sB-cvk"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="daL-Aq-eQ9"/>
-                                    <barButtonItem title="Rooms" id="hxv-9v-izV">
-                                        <connections>
-                                            <segue destination="5jg-dB-Ng2" kind="show" identifier="showRooms" id="TwH-xS-YD2"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nm0-HX-niZ"/>
-                                    <barButtonItem title="Inventory" id="aWP-jT-8z7"/>
-                                </items>
-                            </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ocy-NW-4OX" userLabel="Inventory Table">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ocy-NW-4OX" userLabel="Inventory Table">
                                 <rect key="frame" x="20" y="64" width="560" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -93,13 +71,24 @@
                         <constraints>
                             <constraint firstItem="Ocy-NW-4OX" firstAttribute="leading" secondItem="Out-2f-sCY" secondAttribute="leadingMargin" id="2Di-8f-ent"/>
                             <constraint firstItem="Ocy-NW-4OX" firstAttribute="top" secondItem="bhW-55-V6X" secondAttribute="bottom" id="C2F-FR-sDY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xL8-al-faK" secondAttribute="trailing" constant="-20" id="aY5-i8-Qid"/>
                             <constraint firstItem="Ocy-NW-4OX" firstAttribute="trailing" secondItem="Out-2f-sCY" secondAttribute="trailingMargin" id="dE0-O0-ORP"/>
-                            <constraint firstItem="xL8-al-faK" firstAttribute="top" secondItem="Ocy-NW-4OX" secondAttribute="bottom" id="qbZ-am-vFx"/>
-                            <constraint firstItem="OqV-3F-Pcf" firstAttribute="top" secondItem="xL8-al-faK" secondAttribute="bottom" id="sHA-Jf-keM"/>
-                            <constraint firstItem="xL8-al-faK" firstAttribute="leading" secondItem="Out-2f-sCY" secondAttribute="leadingMargin" constant="-20" id="whx-yx-6yY"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Profile" id="wbV-5O-SQ0">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="showProfile" id="7Nj-sB-cvk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="daL-Aq-eQ9"/>
+                        <barButtonItem title="Rooms" id="hxv-9v-izV">
+                            <connections>
+                                <segue destination="5jg-dB-Ng2" kind="show" identifier="showRooms" id="TwH-xS-YD2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="nm0-HX-niZ"/>
+                        <barButtonItem title="Inventory" id="aWP-jT-8z7"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Inventory" id="Nka-p1-wjE">
                         <barButtonItem key="rightBarButtonItem" title="Add Item" id="8ni-B1-0Pl">
                             <connections>
@@ -107,6 +96,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="inventoryTable" destination="Ocy-NW-4OX" id="RIn-8V-bfN"/>
                     </connections>
@@ -419,7 +409,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXG-OE-sRz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXG-OE-sRz">
                                 <rect key="frame" x="52" y="96" width="83" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -429,7 +419,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bR-kg-6yd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bR-kg-6yd">
                                 <rect key="frame" x="53" y="125" width="82" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -439,7 +429,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1p-nw-qV8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1p-nw-qV8">
                                 <rect key="frame" x="88" y="154" width="47" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -449,7 +439,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYd-JU-f5V">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYd-JU-f5V">
                                 <rect key="frame" x="99" y="183" width="31" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -459,7 +449,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQg-2n-5F3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQg-2n-5F3">
                                 <rect key="frame" x="94" y="212" width="41" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -469,7 +459,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCx-Gf-oY5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCx-Gf-oY5">
                                 <rect key="frame" x="20" y="241" width="115" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -529,7 +519,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jju-ME-KIR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jju-ME-KIR">
                                 <rect key="frame" x="143" y="96" width="235" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -540,16 +530,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W35-dw-NYv">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="B0k-L8-thb"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Profile" id="yOa-o1-RAe"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -559,7 +539,6 @@
                             <constraint firstItem="hiQ-m0-Z91" firstAttribute="top" secondItem="w0x-Zi-tdL" secondAttribute="bottom" constant="8" id="8D6-Sa-hOr"/>
                             <constraint firstItem="SXG-OE-sRz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="8MT-mj-5O2"/>
                             <constraint firstItem="SXG-OE-sRz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="A7v-77-O30"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="W35-dw-NYv" secondAttribute="trailing" constant="-20" id="BBf-74-rRR"/>
                             <constraint firstItem="jCx-Gf-oY5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DR8-bI-OOs"/>
                             <constraint firstItem="XKW-j4-IMC" firstAttribute="leading" secondItem="N1p-nw-qV8" secondAttribute="trailing" constant="8" id="DuC-rA-Lg3"/>
                             <constraint firstItem="BQg-2n-5F3" firstAttribute="top" secondItem="vYd-JU-f5V" secondAttribute="bottom" constant="8" id="DuO-dj-IzX"/>
@@ -569,7 +548,6 @@
                             <constraint firstItem="jCx-Gf-oY5" firstAttribute="top" secondItem="BQg-2n-5F3" secondAttribute="bottom" constant="8" id="P9R-fs-LWf"/>
                             <constraint firstItem="N1p-nw-qV8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68" id="ScT-nQ-RS1"/>
                             <constraint firstItem="2bR-kg-6yd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="33" id="SzH-VO-D9J"/>
-                            <constraint firstItem="W35-dw-NYv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="T2K-sV-qxz"/>
                             <constraint firstItem="hiQ-m0-Z91" firstAttribute="leading" secondItem="BQg-2n-5F3" secondAttribute="trailing" constant="8" id="T66-1L-6eV"/>
                             <constraint firstItem="oDp-GR-yRP" firstAttribute="top" secondItem="hiQ-m0-Z91" secondAttribute="bottom" constant="8" id="TvD-pi-aZs"/>
                             <constraint firstItem="Jju-ME-KIR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="UwR-Y9-43h"/>
@@ -579,10 +557,24 @@
                             <constraint firstItem="w0x-Zi-tdL" firstAttribute="leading" secondItem="vYd-JU-f5V" secondAttribute="trailing" constant="13" id="evg-KT-J0c"/>
                             <constraint firstItem="Jju-ME-KIR" firstAttribute="leading" secondItem="SXG-OE-sRz" secondAttribute="trailing" constant="8" id="gq0-RC-uOl"/>
                             <constraint firstItem="w0x-Zi-tdL" firstAttribute="top" secondItem="XKW-j4-IMC" secondAttribute="bottom" constant="8" id="kX6-cL-xWe"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="W35-dw-NYv" secondAttribute="bottom" id="owG-g8-XS4"/>
                             <constraint firstItem="N1p-nw-qV8" firstAttribute="top" secondItem="2bR-kg-6yd" secondAttribute="bottom" constant="8" id="ttA-KZ-dOr"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Profile" id="yOa-o1-RAe"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="LEP-a4-taf"/>
+                        <barButtonItem title="Rooms" id="A3c-17-Ofz">
+                            <connections>
+                                <segue destination="5jg-dB-Ng2" kind="show" identifier="showRooms" id="9FB-LY-VOI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Bhc-PE-Epv"/>
+                        <barButtonItem title="Inventory" id="kDl-0z-IDo">
+                            <connections>
+                                <segue destination="V8e-b1-BsA" kind="show" identifier="showInventory" id="pfC-jz-YBr"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Profile" id="78H-2D-HD1">
                         <barButtonItem key="rightBarButtonItem" title="Edit Profile" id="ExT-Cp-9kg">
                             <connections>
@@ -615,7 +607,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rzU-X7-yta">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rzU-X7-yta">
                                 <rect key="frame" x="20" y="72" width="284" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -625,7 +617,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3b9-XA-nsi">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3b9-XA-nsi">
                                 <rect key="frame" x="20" y="110" width="284" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -634,7 +626,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Gh-Hn-cRz">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Gh-Hn-cRz">
                                 <rect key="frame" x="20" y="148" width="284" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -644,7 +636,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jep-8E-maf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jep-8E-maf">
                                 <rect key="frame" x="20" y="186" width="284" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -653,7 +645,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jys-Cm-DA9">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jys-Cm-DA9">
                                 <rect key="frame" x="20" y="224" width="284" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -662,7 +654,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BRb-XU-YjZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BRb-XU-YjZ">
                                 <rect key="frame" x="20" y="262" width="284" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -671,7 +663,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RT1-ih-xoO">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RT1-ih-xoO">
                                 <rect key="frame" x="20" y="300" width="284" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -680,7 +672,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTW-Bw-4V2">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTW-Bw-4V2">
                                 <rect key="frame" x="20" y="338" width="49" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -737,7 +729,7 @@
         <!--Navigation Controller-->
         <scene sceneID="izu-az-2UW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nDE-Zo-g3i" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nDE-Zo-g3i" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DLO-gT-VYi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -745,6 +737,11 @@
                         <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8tS-Dg-BCu">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </toolbar>
                     <connections>
                         <segue destination="5jg-dB-Ng2" kind="relationship" relationship="rootViewController" id="tX5-gI-FgU"/>
                     </connections>
@@ -765,30 +762,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3u-0t-nV0">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="7ir-a2-hcD"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Profile" id="Roq-kf-vZN">
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="showProfile" id="vhn-S4-MFx"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="m1w-EE-LU5"/>
-                                    <barButtonItem title="Rooms" id="Cow-Xc-xkW"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e5D-Rr-7Tc"/>
-                                    <barButtonItem title="Inventory" id="ck2-4V-gOj">
-                                        <connections>
-                                            <segue destination="V8e-b1-BsA" kind="show" identifier="showAllInventory" id="ycM-3G-cHc"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-Md-Dqb">
-                                <rect key="frame" x="20" y="64" width="560" height="492"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-Md-Dqb">
+                                <rect key="frame" x="15" y="20" width="560" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -819,15 +794,26 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="b3u-0t-nV0" firstAttribute="top" secondItem="HMk-Md-Dqb" secondAttribute="bottom" id="3NM-0e-CwW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="b3u-0t-nV0" secondAttribute="trailing" constant="-20" id="8FO-yv-eG7"/>
                             <constraint firstItem="HMk-Md-Dqb" firstAttribute="leading" secondItem="z8n-yV-SGK" secondAttribute="leadingMargin" id="Glf-Lb-Zcc"/>
-                            <constraint firstItem="loH-i2-KDo" firstAttribute="top" secondItem="b3u-0t-nV0" secondAttribute="bottom" id="MUT-IT-yTa"/>
                             <constraint firstItem="HMk-Md-Dqb" firstAttribute="trailing" secondItem="z8n-yV-SGK" secondAttribute="trailingMargin" id="c8F-LV-7YS"/>
-                            <constraint firstItem="b3u-0t-nV0" firstAttribute="leading" secondItem="z8n-yV-SGK" secondAttribute="leadingMargin" constant="-20" id="r9L-uh-Pl6"/>
                             <constraint firstItem="HMk-Md-Dqb" firstAttribute="top" secondItem="Oqt-Mn-Qv3" secondAttribute="bottom" id="wqi-LH-Vg7"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Profile" id="Roq-kf-vZN">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="showProfile" id="vhn-S4-MFx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="m1w-EE-LU5"/>
+                        <barButtonItem title="Rooms" id="Cow-Xc-xkW"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="e5D-Rr-7Tc"/>
+                        <barButtonItem title="Inventory" id="ck2-4V-gOj">
+                            <connections>
+                                <segue destination="V8e-b1-BsA" kind="show" identifier="showAllInventory" id="ycM-3G-cHc"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Rooms" id="H6T-JI-tRF">
                         <barButtonItem key="rightBarButtonItem" title="Add Rooms" id="hKJ-aq-cbS">
                             <connections>
@@ -919,10 +905,10 @@
         <image name="default-placeholder-300x300.png" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NN0-FJ-hpN"/>
-        <segue reference="jXP-wK-aKc"/>
-        <segue reference="H26-hE-opi"/>
-        <segue reference="WKZ-DZ-vHI"/>
-        <segue reference="86b-P6-6tp"/>
+        <segue reference="7Nj-sB-cvk"/>
+        <segue reference="pfC-jz-YBr"/>
+        <segue reference="J9A-vX-ehj"/>
+        <segue reference="3qq-NX-pri"/>
+        <segue reference="9FB-LY-VOI"/>
     </inferredMetricsTieBreakers>
 </document>
