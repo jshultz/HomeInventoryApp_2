@@ -68,6 +68,17 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             descriptionField.text = item?.item_description
             purchaseDateField.text = item?.purchased_date
             purchasePriceField.text = item?.purchase_price
+            
+            let myImageName = item?.photo
+            let imagePath = fileInDocumentsDirectory(myImageName!)
+            
+            if let loadedImage = loadImageFromPath(imagePath) {
+                if self.item?.photo != "" {
+                    imageView.image = loadImageFromPath(imagePath)
+                }
+            } else { print("some error message 2") }
+            
+            
             createButton.setTitle("Submit Changes", forState: UIControlState.Normal)
             
             
@@ -111,6 +122,16 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let documentsDirectory = paths[0]
         
         return documentsDirectory
+    }
+    
+    func loadImageFromPath(path: String) -> UIImage? {
+        var image = UIImage()
+        let data = NSData(contentsOfFile: path)
+        if (data != nil) {
+            image = UIImage(data: data!)!
+        } else {
+        }
+        return image
     }
     
     func randomStringWithLength (len : Int) -> NSString {

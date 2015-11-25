@@ -19,7 +19,8 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var itemNameLabel: UILabel!
     
-    @IBOutlet weak var itemDescriptionLabel: UILabel!
+    @IBOutlet weak var itemDescriptionLabel: UITextView!
+    
     
     @IBOutlet weak var itemPhoto: UIImageView!
     
