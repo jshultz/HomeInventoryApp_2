@@ -34,8 +34,14 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
     }
     
     func setupUI() {
-        self.title = room?.name
-        array = try! Array(Realm().objects(Room).filter(NSPredicate(format: "id = %@", "\(room!.id)")).first!.items)
+        if (room != nil) {
+            self.title = room?.name
+            array = try! Array(Realm().objects(Room).filter(NSPredicate(format: "id = %@", "\(room!.id)")).first!.items)
+        } else {
+            self.title = "All Your Stuff"
+            array = try! Array(Realm().objects(Inventory))
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
