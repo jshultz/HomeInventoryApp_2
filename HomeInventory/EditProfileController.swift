@@ -11,7 +11,11 @@ import RealmSwift
 
 class EditProfileController: UIViewController, UITextFieldDelegate {
     
+    let realm = try! Realm()
+    
     var profile: Profile? = nil
+    
+    var notificationToken: NotificationToken?
     
     @IBOutlet weak var firstName: UITextField!
     
@@ -30,12 +34,10 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitButton(sender: AnyObject) {
         
-        let realm = try! Realm()
-        
         if (self.profile != nil) {
             let profile = Profile()
             
-            profile.id = (profile.id)
+            profile.id = (self.profile!.id)
             profile.fName = self.firstName.text!
             profile.lName = self.lastName.text!
             profile.street = self.streetAddress.text!
@@ -46,7 +48,8 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
 
             
             try! realm.write {
-                realm.add(profile, update: true)
+                self.realm.add(profile, update: true)
+                print("i wrote it")
             }
 
         } else {
@@ -61,7 +64,7 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
             profile.phone = self.phoneNumber.text!
             
             try! realm.write {
-                realm.add(profile)
+                self.realm.add(profile)
             }
         }
                 
@@ -88,6 +91,8 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
             stateField.text = profile.state
             zipField.text = profile.zip
             phoneNumber.text = profile.phone
+            
+            self.profile = profile
         }
         
     }

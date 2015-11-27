@@ -11,7 +11,9 @@ import RealmSwift
 
 class ProfileController: UIViewController {
     
+    let realm = try! Realm()
     var profile:Profile? = nil
+    var notificationToken: NotificationToken?
     
     @IBOutlet weak var firstName: UILabel!
     
@@ -34,8 +36,6 @@ class ProfileController: UIViewController {
     
     func setupUI() {
         
-        let realm = try! Realm() // Create realm pointing to default file
-        
         if let profile = realm.objects(Profile).first {
             firstName.text = profile.fName
             lastName.text = profile.lName
@@ -43,7 +43,11 @@ class ProfileController: UIViewController {
             cityLabel.text = profile.city
             stateLabel.text = profile.state
             numberLabel.text = profile.phone
+            
+            self.profile = profile
         }
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,6 +68,7 @@ class ProfileController: UIViewController {
     // Pass the selected object to the new view controller.
         
         if segue.identifier == "editProfile" {
+            print("profile: ", self.profile)
             let editProfileController:EditProfileController = segue.destinationViewController as! EditProfileController
             
             if (profile != nil) {

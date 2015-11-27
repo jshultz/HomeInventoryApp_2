@@ -24,7 +24,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="6gW-zk-H7s">
-                                        <rect key="frame" x="0.0" y="92" width="560" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6gW-zk-H7s" id="kNi-BO-ioo">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
@@ -985,10 +985,10 @@
         <image name="room.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pQZ-pj-LuA"/>
-        <segue reference="Hla-cG-zqL"/>
-        <segue reference="UXx-Z6-pfC"/>
         <segue reference="3qq-NX-pri"/>
+        <segue reference="pfC-jz-YBr"/>
+        <segue reference="pQZ-pj-LuA"/>
+        <segue reference="9FB-LY-VOI"/>
         <segue reference="jXP-wK-aKc"/>
     </inferredMetricsTieBreakers>
 </document>
