@@ -17,13 +17,12 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
     var room: Room? = nil
     var item: Inventory? = nil
     
-    @IBOutlet weak var itemNameLabel: UILabel!
-    
     @IBOutlet weak var itemDescriptionLabel: UITextView!
     
     
     @IBOutlet weak var itemPhoto: UIImageView!
     
+    @IBOutlet weak var itemPurchasedLabel: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +33,15 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        itemNameLabel.text = self.item?.name
         itemDescriptionLabel.text = self.item?.item_description
+        
+        let purchaseTitle:String = ((item?.name) != nil) ? String(item!.name) : "An unknown item"
+        
+        let purchaseDate:String = ((item?.purchased_date) != nil) ? String(item!.purchased_date) : "an unkown"
+        
+        let purchasePrice:String = ((item?.purchase_price) != nil) ? String(item!.purchase_price) : "an unknown"
+        
+        self.itemPurchasedLabel.text = "\(purchaseTitle) as purchased on \(purchaseDate) for \(purchasePrice)."
         
         let myImageName = self.item?.photo
         let imagePath = fileInDocumentsDirectory(myImageName!)

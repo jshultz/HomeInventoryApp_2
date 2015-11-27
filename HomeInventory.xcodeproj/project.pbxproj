@@ -14,7 +14,6 @@
 		DEA354D01BFD81F500DB6CC0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA354C41BFD7F6000DB6CC0 /* RealmSwift.framework */; };
 		DEA354D11BFD81F500DB6CC0 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA354C41BFD7F6000DB6CC0 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6B1BE3969200672069 /* RoomsViewController.swift */; };
-		DEC51F6E1BE3A5AA00672069 /* RoomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6D1BE3A5AA00672069 /* RoomsTableViewCell.swift */; };
 		DEC51F701BE3ADAD00672069 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */; };
 		DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */; };
 		DECD00911BE17EAC006A5B7E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00901BE17EAC006A5B7E /* ProfileController.swift */; };
@@ -27,6 +26,9 @@
 		DECD00BE1BE1C411006A5B7E /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B91BE1C411006A5B7E /* Inventory.swift */; };
 		DED029D51BFD83E600E63B8F /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED029D41BFD83E600E63B8F /* Room.swift */; };
 		DEDE97D21C017BAA007ECE78 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */; };
+		DEF4D45A1C07EB3600C02B3E /* inventory.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF4D4581C07EB3600C02B3E /* inventory.png */; };
+		DEF4D45B1C07EB3600C02B3E /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF4D4591C07EB3600C02B3E /* room.png */; };
+		DEF4D45D1C07EBEC00C02B3E /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF4D45C1C07EBEC00C02B3E /* profile.png */; };
 		DEF622141BE5165200D28EC9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF622131BE5165200D28EC9 /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +53,6 @@
 		DEA354C31BFD7F6000DB6CC0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		DEA354C41BFD7F6000DB6CC0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		DEC51F6B1BE3969200672069 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
-		DEC51F6D1BE3A5AA00672069 /* RoomsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsTableViewCell.swift; sourceTree = "<group>"; };
 		DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		DECD008B1BE17EAC006A5B7E /* HomeInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +67,9 @@
 		DECD00B91BE1C411006A5B7E /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DED029D41BFD83E600E63B8F /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = Models/Room.swift; sourceTree = "<group>"; };
 		DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		DEF4D4581C07EB3600C02B3E /* inventory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inventory.png; sourceTree = "<group>"; };
+		DEF4D4591C07EB3600C02B3E /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = room.png; sourceTree = "<group>"; };
+		DEF4D45C1C07EBEC00C02B3E /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		DEF622131BE5165200D28EC9 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +89,9 @@
 		DE38CF1F1C0229C800F3A5AD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				DEF4D45C1C07EBEC00C02B3E /* profile.png */,
+				DEF4D4581C07EB3600C02B3E /* inventory.png */,
+				DEF4D4591C07EB3600C02B3E /* room.png */,
 				DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */,
 			);
 			name = images;
@@ -129,7 +136,6 @@
 				DECD00921BE17EAC006A5B7E /* Main.storyboard */,
 				DECD00901BE17EAC006A5B7E /* ProfileController.swift */,
 				DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */,
-				DEC51F6D1BE3A5AA00672069 /* RoomsTableViewCell.swift */,
 				DEC51F6B1BE3969200672069 /* RoomsViewController.swift */,
 				DECD00981BE17EAC006A5B7E /* Assets.xcassets */,
 				DECD009A1BE17EAC006A5B7E /* LaunchScreen.storyboard */,
@@ -210,7 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DECD009C1BE17EAC006A5B7E /* LaunchScreen.storyboard in Resources */,
+				DEF4D45D1C07EBEC00C02B3E /* profile.png in Resources */,
 				DECD00991BE17EAC006A5B7E /* Assets.xcassets in Resources */,
+				DEF4D45A1C07EB3600C02B3E /* inventory.png in Resources */,
+				DEF4D45B1C07EB3600C02B3E /* room.png in Resources */,
 				DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */,
 				DECD00941BE17EAC006A5B7E /* Main.storyboard in Resources */,
 			);
@@ -245,7 +254,6 @@
 				DECD00971BE17EAC006A5B7E /* HomeInventory.xcdatamodeld in Sources */,
 				DECD00911BE17EAC006A5B7E /* ProfileController.swift in Sources */,
 				DECD00AC1BE17F97006A5B7E /* Profile.swift in Sources */,
-				DEC51F6E1BE3A5AA00672069 /* RoomsTableViewCell.swift in Sources */,
 				DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */,
 				DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */,
 				DED029D51BFD83E600E63B8F /* Room.swift in Sources */,

@@ -93,7 +93,6 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         if let loadedImage = loadImageFromPath(imagePath) {
             if item!.photo != "" {
                 imageView.image = loadImageFromPath(imagePath)
-                //cell.photoView.image = loadImageFromPath(imagePath)
             }
         } else { print("some error message 2") }
         return cell
