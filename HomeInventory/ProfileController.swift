@@ -11,6 +11,8 @@ import RealmSwift
 
 class ProfileController: UIViewController {
     
+    var profile:Profile? = nil
+    
     @IBOutlet weak var firstName: UILabel!
     
     @IBOutlet weak var lastName: UILabel!
@@ -30,7 +32,7 @@ class ProfileController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func fetchLocation() {
+    func setupUI() {
         
         let realm = try! Realm() // Create realm pointing to default file
         
@@ -42,21 +44,38 @@ class ProfileController: UIViewController {
             stateLabel.text = profile.state
             numberLabel.text = profile.phone
         }
-        
-        
-        
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
-        fetchLocation()
+        setupUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "editProfile" {
+            let editProfileController:EditProfileController = segue.destinationViewController as! EditProfileController
+            
+            if (profile != nil) {
+                editProfileController.profile = self.profile
+            } else {
+                editProfileController.profile = nil
+            }
+            
+        }
+        
+    }
+
 
 
 }

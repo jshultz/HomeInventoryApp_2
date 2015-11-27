@@ -9,8 +9,9 @@
 import UIKit
 import RealmSwift
 
-
 class EditProfileController: UIViewController, UITextFieldDelegate {
+    
+    var profile: Profile? = nil
     
     @IBOutlet weak var firstName: UITextField!
     
@@ -29,13 +30,26 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitButton(sender: AnyObject) {
         
-        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        let realm = try! Realm()
         
-        dispatch_async(queue) {
-            // Get new realm and table since we are in a new thread
-            let realm = try! Realm()
-            // Add row via dictionary. Order is ignored.
+        if (self.profile != nil) {
+            let profile = Profile()
             
+            profile.id = (profile.id)
+            profile.fName = self.firstName.text!
+            profile.lName = self.lastName.text!
+            profile.street = self.streetAddress.text!
+            profile.city = self.cityField.text!
+            profile.state = self.stateField.text!
+            profile.zip = self.zipField.text!
+            profile.phone = self.phoneNumber.text!
+
+            
+            try! realm.write {
+                realm.add(profile, update: true)
+            }
+
+        } else {
             let profile = Profile()
             
             profile.fName = self.firstName.text!
@@ -44,26 +58,45 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
             profile.city = self.cityField.text!
             profile.state = self.stateField.text!
             profile.zip = self.zipField.text!
+            profile.phone = self.phoneNumber.text!
             
             try! realm.write {
                 realm.add(profile)
             }
         }
+                
+        print("profile: ", profile)
+        
+        performSegueWithIdentifier("showProfile", sender: self)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-//    func textFieldShouldReturn(textfield: UITextField) -> Bool {
-//        descriptionField.resignFirstResponder()
-//        return true
-//    }
+    func setupUI() {
+        
+        let realm = try! Realm() // Create realm pointing to default file
+        
+        print("profile passed: ", profile)
+        
+        if let profile = realm.objects(Profile).first {
+            firstName.text = profile.fName
+            lastName.text = profile.lName
+            streetAddress.text = profile.street
+            cityField.text = profile.city
+            stateField.text = profile.state
+            zipField.text = profile.zip
+            phoneNumber.text = profile.phone
+        }
+        
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupUI()
         // Do any additional setup after loading the view.
 
     }
@@ -71,6 +104,16 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showProfile" {
+            let profileController:ProfileController = segue.destinationViewController as! ProfileController
+            
+            profileController.profile = self.profile
+        }
+        
     }
     
 

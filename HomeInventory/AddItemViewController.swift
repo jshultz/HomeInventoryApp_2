@@ -189,7 +189,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
                 realm.add(updated_item, update: true)
             }
             item = updated_item
-            print("item", item)
+
             performSegueWithIdentifier("showDetail", sender: self)
             
         } else {
