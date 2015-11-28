@@ -818,7 +818,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -985,10 +985,10 @@
         <image name="room.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3qq-NX-pri"/>
+        <segue reference="TwH-xS-YD2"/>
         <segue reference="pfC-jz-YBr"/>
-        <segue reference="pQZ-pj-LuA"/>
-        <segue reference="9FB-LY-VOI"/>
-        <segue reference="jXP-wK-aKc"/>
+        <segue reference="7Nj-sB-cvk"/>
+        <segue reference="3qq-NX-pri"/>
+        <segue reference="J9A-vX-ehj"/>
     </inferredMetricsTieBreakers>
 </document>

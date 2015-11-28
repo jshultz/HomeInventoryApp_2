@@ -103,6 +103,20 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         activeInventory = indexPath.row
         return indexPath
     }
+    
+
+    // Override to support editing the table view.
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            realm.beginWrite()
+            realm.delete(array[activeInventory] as! Object)
+            try! realm.commitWrite()
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+
 
 
     // MARK: - Navigation
