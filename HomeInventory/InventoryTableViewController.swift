@@ -132,6 +132,12 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
             let addItemController:AddItemViewController = segue.destinationViewController as! AddItemViewController
             
             addItemController.room = self.room
+        } else if segue.identifier == "editRoom" {
+            
+            let editRoomController:EditRoomViewController = segue.destinationViewController as! EditRoomViewController
+            
+            editRoomController.room = self.room
+            
         } else if segue.identifier == "showItem" {
             
             let itemDetailController:ItemDetailViewController = segue.destinationViewController as! ItemDetailViewController

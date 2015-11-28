@@ -41,7 +41,7 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
         
         let purchasePrice:String = ((item?.purchase_price) != nil) ? String(item!.purchase_price) : "an unknown"
         
-        self.itemPurchasedLabel.text = "\(purchaseTitle) as purchased on \(purchaseDate) for \(purchasePrice)."
+        self.itemPurchasedLabel.text = "\(purchaseTitle) was purchased on \(purchaseDate) for \(purchasePrice)."
         
         let myImageName = self.item?.photo
         let imagePath = fileInDocumentsDirectory(myImageName!)

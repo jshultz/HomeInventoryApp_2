@@ -67,8 +67,6 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
                 self.realm.add(profile)
             }
         }
-                
-        print("profile: ", profile)
         
         performSegueWithIdentifier("showProfile", sender: self)
     }

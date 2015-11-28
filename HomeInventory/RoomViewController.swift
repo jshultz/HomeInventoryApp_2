@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class RoomViewController: UIViewController, UITextFieldDelegate {
+class EditRoomViewController: UIViewController, UITextFieldDelegate {
     
     let realm = try! Realm()
     var notificationToken: NotificationToken?
@@ -23,34 +23,55 @@ class RoomViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitButton(sender: AnyObject) {
         
-        // Get new realm and table since we are in a new thread
-        let realm = try! Realm()
-        let newRoom = Room()
-        
-        newRoom.name = self.roomNameField.text!
-        newRoom.room_description = self.descriptionField.text!
-        
-        realm.beginWrite()
-        realm.add(newRoom)
-        
-        do {
-            try realm.commitWrite()
-            if let navController = self.navigationController {
-                navController.popViewControllerAnimated(true)
+        if (self.room != nil) {
+            
+            try! realm.write {
+                self.room?.name = self.roomNameField.text!
+                self.room?.room_description = self.descriptionField.text!
             }
             
-        } catch {
-            print("could not add room")
+        } else {
+            let newRoom = Room()
+            
+            newRoom.name = self.roomNameField.text!
+            newRoom.room_description = self.descriptionField.text!
+            
+            realm.beginWrite()
+            realm.add(newRoom)
+            
+            do {
+                try realm.commitWrite()
+                if let navController = self.navigationController {
+                    navController.popViewControllerAnimated(true)
+                }
+                
+            } catch {
+                print("could not add room")
+            }
         }
+        
+        performSegueWithIdentifier("showRooms", sender: self)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    func setupUI() {
+        if (self.room != nil) {
+            self.title = self.room?.name
+            roomNameField.text = self.room?.name
+            descriptionField.text = self.room?.room_description
+        }
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         roomNameField.resignFirstResponder()
         return true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        setupUI()
     }
     
 
