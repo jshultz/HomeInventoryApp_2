@@ -62,11 +62,18 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            if array[activeRoom].items.count > 0 {
-                print("room has items")
+            print("indexPath.row: ", array[indexPath.row])
+            
+            if array[indexPath.row].items.count > 0 {
+                let alertController = UIAlertController(title: "Can't Delete the Room", message:
+                    "You can't delete a room that still has items.", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
             } else {
+                print("array[indexPath.row]:", array[indexPath.row])
                 realm.beginWrite()
-                realm.delete(array[activeRoom] as Object)
+                realm.delete(array[indexPath.row] as! Object)
                 try! realm.commitWrite()
             }
         } else if editingStyle == .Insert {
@@ -81,7 +88,7 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
             let cell = sender as! UITableViewCell
             let indexPath = roomsTable.indexPathForCell(cell)
             let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
-            inventoryController.room = array[activeRoom]
+            inventoryController.room = array[indexPath!.row]
         } else if segue.identifier == "showAllInventory" {
             let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
         }
