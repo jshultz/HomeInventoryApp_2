@@ -57,6 +57,22 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
         activeRoom = indexPath.row
         return indexPath
     }
+
+    // Override to support editing the table view.
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            if array[activeRoom].items.count > 0 {
+                print("room has items")
+            } else {
+                realm.beginWrite()
+                realm.delete(array[activeRoom] as Object)
+                try! realm.commitWrite()
+            }
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "newPlace" {
