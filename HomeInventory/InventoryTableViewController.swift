@@ -25,7 +25,6 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         
         // Set realm notification block
         notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
-            print("hello? ", self.room)
             self.array = Array(self.room!.items)
             self.inventoryTable.reloadData()
         }
