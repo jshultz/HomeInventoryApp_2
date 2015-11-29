@@ -20,9 +20,7 @@ class EditRoomViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var descriptionField: UITextField!
     
-    
-    @IBAction func submitButton(sender: AnyObject) {
-        
+    @IBAction func saveButton(sender: AnyObject) {
         if (self.room != nil) {
             
             try! realm.write {

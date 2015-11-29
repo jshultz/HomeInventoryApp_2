@@ -78,10 +78,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
                 }
             } else { print("some error message 2") }
             
-            
-            createButton.setTitle("Submit Changes", forState: UIControlState.Normal)
-            
-            
         } else {
             self.title = room?.name
         }
@@ -165,8 +161,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
     }
     
-    @IBAction func submitButton(sender: AnyObject) {
-        
+    @IBAction func saveButton(sender: AnyObject) {
         let realm = try! Realm()
         // Add row via dictionary. Order is ignored.
         
@@ -189,7 +184,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
                 realm.add(updated_item, update: true)
             }
             item = updated_item
-
+            
             performSegueWithIdentifier("showDetail", sender: self)
             
         } else {
@@ -224,7 +219,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
                 print("could not add item")
             }
         }
-
     }
     
     

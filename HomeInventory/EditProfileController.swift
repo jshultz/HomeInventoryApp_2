@@ -31,9 +31,7 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var phoneNumber: UITextField!
     
-    
-    @IBAction func submitButton(sender: AnyObject) {
-        
+    @IBAction func btnSave(sender: AnyObject) {
         if (self.profile != nil) {
             let profile = Profile()
             
@@ -45,13 +43,13 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
             profile.state = self.stateField.text!
             profile.zip = self.zipField.text!
             profile.phone = self.phoneNumber.text!
-
+            
             
             try! realm.write {
                 self.realm.add(profile, update: true)
                 print("i wrote it")
             }
-
+            
         } else {
             let profile = Profile()
             
