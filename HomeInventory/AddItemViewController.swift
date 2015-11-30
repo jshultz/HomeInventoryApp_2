@@ -48,6 +48,15 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
     }
     
+    
+    @IBAction func cancelButton(sender: AnyObject) {
+        if (item != nil) {
+            performSegueWithIdentifier("showDetail", sender: self)
+        } else {
+            performSegueWithIdentifier("showInventory", sender: self)
+        }
+    }
+    
     @IBAction func doneButton(sender: AnyObject) {
         purchaseDateField.resignFirstResponder()
     }

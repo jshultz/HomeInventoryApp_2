@@ -84,9 +84,14 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         let label = cell.viewWithTag(20) as! UILabel
         label.text = object.name
         
+        let shortDescription = cell.viewWithTag(30) as! UILabel
+        
+        
         let item = realm.objects(Inventory).filter(NSPredicate(format: "id = %@", "\(object.id)")).first
         
         let myImageName = item!.photo
+        shortDescription.text = item!.item_description.trunc(90)
+        
         let imagePath = fileInDocumentsDirectory(myImageName)
         
         if let loadedImage = loadImageFromPath(imagePath) {

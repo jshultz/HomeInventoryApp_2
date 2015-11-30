@@ -20,6 +20,15 @@ class EditRoomViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var descriptionField: UITextField!
     
+    @IBAction func cancelButton(sender: AnyObject) {
+        if (self.room != nil) {
+            performSegueWithIdentifier("showRoomInventory", sender: self)
+        } else {
+            performSegueWithIdentifier("showRooms", sender: self)
+        }
+    }
+    
+    
     @IBAction func saveButton(sender: AnyObject) {
         if (self.room != nil) {
             
@@ -85,14 +94,24 @@ class EditRoomViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showRoomInventory" {
+            
+            let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
+            
+            inventoryController.room = self.room
+            
+        } else if segue.identifier == "showRooms"{
+
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }
