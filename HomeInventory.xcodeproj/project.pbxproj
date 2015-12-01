@@ -382,7 +382,7 @@
 				);
 				INFOPLIST_FILE = HomeInventory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Chaos-Elevators--Inc.HomeInventory";
+				PRODUCT_BUNDLE_IDENTIFIER = "-QKXT44X7G-.com.chaoselevators.rooms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -398,7 +398,7 @@
 				);
 				INFOPLIST_FILE = HomeInventory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Chaos-Elevators--Inc.HomeInventory";
+				PRODUCT_BUNDLE_IDENTIFIER = "-QKXT44X7G-.com.chaoselevators.rooms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
