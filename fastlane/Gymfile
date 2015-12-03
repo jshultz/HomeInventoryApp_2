@@ -10,4 +10,4 @@ scheme "HomeInventory"
 
 # sdk "iphoneos9.0"
 
-output_directory "./build"
+output_directory "./fastlane/build"
