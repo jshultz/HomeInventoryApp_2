@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5C8CAFC82AF7904D47FE2C5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FA2FE161EC0CC8F11C6753 /* Pods.framework */; };
 		DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */; };
 		DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */; };
 		DEA31C691C0BB83100FAB110 /* string_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA31C681C0BB83100FAB110 /* string_extension.swift */; };
-		DEA354CE1BFD81F500DB6CC0 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA354C31BFD7F6000DB6CC0 /* Realm.framework */; };
-		DEA354CF1BFD81F500DB6CC0 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA354C31BFD7F6000DB6CC0 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DEA354D01BFD81F500DB6CC0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA354C41BFD7F6000DB6CC0 /* RealmSwift.framework */; };
-		DEA354D11BFD81F500DB6CC0 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA354C41BFD7F6000DB6CC0 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6B1BE3969200672069 /* RoomsViewController.swift */; };
 		DEC51F701BE3ADAD00672069 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */; };
 		DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */; };
@@ -27,33 +24,31 @@
 		DECD00BE1BE1C411006A5B7E /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B91BE1C411006A5B7E /* Inventory.swift */; };
 		DED029D51BFD83E600E63B8F /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED029D41BFD83E600E63B8F /* Room.swift */; };
 		DEDE97D21C017BAA007ECE78 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */; };
+		DEE2B1341C0F5AEC0030C114 /* HomeInventoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE2B1331C0F5AEC0030C114 /* HomeInventoryUITests.swift */; };
+		DEE2B13C1C0F5B6E0030C114 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE2B13B1C0F5B6E0030C114 /* SnapshotHelper.swift */; };
 		DEF4D45A1C07EB3600C02B3E /* inventory.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF4D4581C07EB3600C02B3E /* inventory.png */; };
 		DEF4D45B1C07EB3600C02B3E /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF4D4591C07EB3600C02B3E /* room.png */; };
 		DEF4D45D1C07EBEC00C02B3E /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF4D45C1C07EBEC00C02B3E /* profile.png */; };
 		DEF622141BE5165200D28EC9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF622131BE5165200D28EC9 /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		DEA354D21BFD81F500DB6CC0 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				DEA354D11BFD81F500DB6CC0 /* RealmSwift.framework in Embed Frameworks */,
-				DEA354CF1BFD81F500DB6CC0 /* Realm.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
+/* Begin PBXContainerItemProxy section */
+		DEE2B1361C0F5AEC0030C114 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DECD00831BE17EAC006A5B7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DECD008A1BE17EAC006A5B7E;
+			remoteInfo = HomeInventory;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25FA2FE161EC0CC8F11C6753 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3195AEDC59007088721135 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CE811725F7FA3E69CC32E736 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTableViewController.swift; sourceTree = "<group>"; };
 		DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-placeholder-300x300.png"; sourceTree = "<group>"; };
 		DEA31C681C0BB83100FAB110 /* string_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = string_extension.swift; sourceTree = "<group>"; };
-		DEA354C31BFD7F6000DB6CC0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		DEA354C41BFD7F6000DB6CC0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		DEC51F6B1BE3969200672069 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		DECD008B1BE17EAC006A5B7E /* HomeInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +64,10 @@
 		DECD00B91BE1C411006A5B7E /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DED029D41BFD83E600E63B8F /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = Models/Room.swift; sourceTree = "<group>"; };
 		DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		DEE2B1311C0F5AEC0030C114 /* HomeInventoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeInventoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEE2B1331C0F5AEC0030C114 /* HomeInventoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInventoryUITests.swift; sourceTree = "<group>"; };
+		DEE2B1351C0F5AEC0030C114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEE2B13B1C0F5B6E0030C114 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		DEF4D4581C07EB3600C02B3E /* inventory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inventory.png; sourceTree = "<group>"; };
 		DEF4D4591C07EB3600C02B3E /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = room.png; sourceTree = "<group>"; };
 		DEF4D45C1C07EBEC00C02B3E /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
@@ -80,14 +79,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEA354D01BFD81F500DB6CC0 /* RealmSwift.framework in Frameworks */,
-				DEA354CE1BFD81F500DB6CC0 /* Realm.framework in Frameworks */,
+				D5C8CAFC82AF7904D47FE2C5 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEE2B12E1C0F5AEC0030C114 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96406C6BD7001BABD08EC972 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE811725F7FA3E69CC32E736 /* Pods.debug.xcconfig */,
+				5A3195AEDC59007088721135 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DE38CF1F1C0229C800F3A5AD /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,8 +116,7 @@
 		DEA354CD1BFD81CB00DB6CC0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DEA354C31BFD7F6000DB6CC0 /* Realm.framework */,
-				DEA354C41BFD7F6000DB6CC0 /* RealmSwift.framework */,
+				25FA2FE161EC0CC8F11C6753 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,9 +124,11 @@
 		DECD00821BE17EAC006A5B7E = {
 			isa = PBXGroup;
 			children = (
+				DEE2B1321C0F5AEC0030C114 /* HomeInventoryUITests */,
 				DEA354CD1BFD81CB00DB6CC0 /* Frameworks */,
 				DECD008D1BE17EAC006A5B7E /* HomeInventory */,
 				DECD008C1BE17EAC006A5B7E /* Products */,
+				96406C6BD7001BABD08EC972 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				DECD008B1BE17EAC006A5B7E /* HomeInventory.app */,
+				DEE2B1311C0F5AEC0030C114 /* HomeInventoryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,6 +174,16 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		DEE2B1321C0F5AEC0030C114 /* HomeInventoryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DEE2B13B1C0F5B6E0030C114 /* SnapshotHelper.swift */,
+				DEE2B1331C0F5AEC0030C114 /* HomeInventoryUITests.swift */,
+				DEE2B1351C0F5AEC0030C114 /* Info.plist */,
+			);
+			path = HomeInventoryUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,11 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DECD00A01BE17EAC006A5B7E /* Build configuration list for PBXNativeTarget "HomeInventory" */;
 			buildPhases = (
+				45E762E707C46C6BA8F22CF5 /* Check Pods Manifest.lock */,
 				DECD00871BE17EAC006A5B7E /* Sources */,
 				DECD00881BE17EAC006A5B7E /* Frameworks */,
 				DECD00891BE17EAC006A5B7E /* Resources */,
-				DEA354CC1BFD7FEE00DB6CC0 /* ShellScript */,
-				DEA354D21BFD81F500DB6CC0 /* Embed Frameworks */,
+				C1ED7347026571A38B9D4876 /* Embed Pods Frameworks */,
+				C1C2F8901154C96596BA634E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,6 +206,24 @@
 			productName = HomeInventory;
 			productReference = DECD008B1BE17EAC006A5B7E /* HomeInventory.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DEE2B1301C0F5AEC0030C114 /* HomeInventoryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEE2B13A1C0F5AEC0030C114 /* Build configuration list for PBXNativeTarget "HomeInventoryUITests" */;
+			buildPhases = (
+				DEE2B12D1C0F5AEC0030C114 /* Sources */,
+				DEE2B12E1C0F5AEC0030C114 /* Frameworks */,
+				DEE2B12F1C0F5AEC0030C114 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEE2B1371C0F5AEC0030C114 /* PBXTargetDependency */,
+			);
+			name = HomeInventoryUITests;
+			productName = HomeInventoryUITests;
+			productReference = DEE2B1311C0F5AEC0030C114 /* HomeInventoryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -193,6 +238,10 @@
 					DECD008A1BE17EAC006A5B7E = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = C55H28YPP6;
+					};
+					DEE2B1301C0F5AEC0030C114 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = DECD008A1BE17EAC006A5B7E;
 					};
 				};
 			};
@@ -210,6 +259,7 @@
 			projectRoot = "";
 			targets = (
 				DECD008A1BE17EAC006A5B7E /* HomeInventory */,
+				DEE2B1301C0F5AEC0030C114 /* HomeInventoryUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,21 +279,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEE2B12F1C0F5AEC0030C114 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DEA354CC1BFD7FEE00DB6CC0 /* ShellScript */ = {
+		45E762E707C46C6BA8F22CF5 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1C2F8901154C96596BA634E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1ED7347026571A38B9D4876 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -268,7 +357,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEE2B12D1C0F5AEC0030C114 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEE2B1341C0F5AEC0030C114 /* HomeInventoryUITests.swift in Sources */,
+				DEE2B13C1C0F5B6E0030C114 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEE2B1371C0F5AEC0030C114 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DECD008A1BE17EAC006A5B7E /* HomeInventory */;
+			targetProxy = DEE2B1361C0F5AEC0030C114 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DECD00921BE17EAC006A5B7E /* Main.storyboard */ = {
@@ -373,9 +479,11 @@
 		};
 		DECD00A11BE17EAC006A5B7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE811725F7FA3E69CC32E736 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jasshultz@gmail.com (9TS442NYEK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -389,9 +497,11 @@
 		};
 		DECD00A21BE17EAC006A5B7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A3195AEDC59007088721135 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chaos Elevators, Inc. (7QKXT44X7G)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -400,6 +510,30 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-QKXT44X7G-.com.chaoselevators.rooms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DEE2B1381C0F5AEC0030C114 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HomeInventoryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Chaos-Elevators--Inc.HomeInventoryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HomeInventory;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DEE2B1391C0F5AEC0030C114 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HomeInventoryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Chaos-Elevators--Inc.HomeInventoryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HomeInventory;
+				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -420,6 +554,15 @@
 			buildConfigurations = (
 				DECD00A11BE17EAC006A5B7E /* Debug */,
 				DECD00A21BE17EAC006A5B7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEE2B13A1C0F5AEC0030C114 /* Build configuration list for PBXNativeTarget "HomeInventoryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEE2B1381C0F5AEC0030C114 /* Debug */,
+				DEE2B1391C0F5AEC0030C114 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
