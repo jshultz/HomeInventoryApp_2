@@ -215,7 +215,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             
             do {
                 
-                self.room!.items.append(item)
+                self.room?.items.append(item)
                 try realm.commitWrite()
                 
                 return_room = self.room

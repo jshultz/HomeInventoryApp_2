@@ -7,10 +7,15 @@
 //
 
 import XCTest
+import RealmSwift
 
 class HomeInventoryUITests: XCTestCase {
+
         
     override func setUp() {
+        
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+
         super.setUp()
         
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -33,8 +38,15 @@ class HomeInventoryUITests: XCTestCase {
     }
     
     func testExample() {
+        snapshot("0Launch")
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testSayHello() {
+//        let app = XCUIApplication()
+//        app.menuButtons.buttons.
+//        app.navigationBars.
     }
     
 }

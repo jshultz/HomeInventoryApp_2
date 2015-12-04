@@ -237,7 +237,7 @@
 				TargetAttributes = {
 					DECD008A1BE17EAC006A5B7E = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = C55H28YPP6;
+						DevelopmentTeam = 7QKXT44X7G;
 					};
 					DEE2B1301C0F5AEC0030C114 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -483,15 +483,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jasshultz@gmail.com (9TS442NYEK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HomeInventory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-QKXT44X7G-.com.chaoselevators.rooms";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chaoselevators.rooms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ef9c7c5b-4209-47ac-8ec0-7ddbfc0175c8";
 			};
 			name = Debug;
 		};
@@ -500,7 +501,7 @@
 			baseConfigurationReference = 5A3195AEDC59007088721135 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chaos Elevators, Inc. (7QKXT44X7G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chaos Elevators, Inc. (7QKXT44X7G)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -508,8 +509,9 @@
 				);
 				INFOPLIST_FILE = HomeInventory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-QKXT44X7G-.com.chaoselevators.rooms";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chaoselevators.rooms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ef9c7c5b-4209-47ac-8ec0-7ddbfc0175c8";
 			};
 			name = Release;
 		};
