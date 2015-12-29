@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="kCD-nd-Qvn" detailTextLabel="tFA-Lu-5Gg" imageView="3Kt-gE-XCP" rowHeight="78" style="IBUITableViewCellStyleSubtitle" id="6gW-zk-H7s">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="78"/>
+                                        <rect key="frame" x="0.0" y="92" width="560" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6gW-zk-H7s" id="kNi-BO-ioo">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="77.5"/>
@@ -684,10 +684,10 @@
             </objects>
             <point key="canvasLocation" x="1183" y="-349"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="izu-az-2UW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nDE-Zo-g3i" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nDE-Zo-g3i" customClass="NavigationViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems>
                         <barButtonItem image="profile.png" id="Ag4-w6-4k0"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="k85-fb-yDB"/>
@@ -727,7 +727,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-Md-Dqb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-Md-Dqb">
                                 <rect key="frame" x="20" y="0.0" width="560" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -881,11 +881,11 @@
         <image name="room.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1hy-Jg-ufn"/>
         <segue reference="3qq-NX-pri"/>
-        <segue reference="IQR-N5-ea2"/>
-        <segue reference="jXP-wK-aKc"/>
-        <segue reference="x8a-TA-cy3"/>
+        <segue reference="ycM-3G-cHc"/>
+        <segue reference="tX5-gI-FgU"/>
         <segue reference="wEf-KC-gpl"/>
+        <segue reference="vhn-S4-MFx"/>
+        <segue reference="J9A-vX-ehj"/>
     </inferredMetricsTieBreakers>
 </document>

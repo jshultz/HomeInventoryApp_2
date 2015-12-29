@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D5C8CAFC82AF7904D47FE2C5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FA2FE161EC0CC8F11C6753 /* Pods.framework */; };
 		DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */; };
+		DE25D7B71C33063C007B00C3 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */; };
 		DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */; };
 		DEA31C691C0BB83100FAB110 /* string_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA31C681C0BB83100FAB110 /* string_extension.swift */; };
 		DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6B1BE3969200672069 /* RoomsViewController.swift */; };
@@ -47,6 +48,7 @@
 		5A3195AEDC59007088721135 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CE811725F7FA3E69CC32E736 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTableViewController.swift; sourceTree = "<group>"; };
+		DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-placeholder-300x300.png"; sourceTree = "<group>"; };
 		DEA31C681C0BB83100FAB110 /* string_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = string_extension.swift; sourceTree = "<group>"; };
 		DEC51F6B1BE3969200672069 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				DECD00951BE17EAC006A5B7E /* HomeInventory.xcdatamodeld */,
 				DECD009D1BE17EAC006A5B7E /* Info.plist */,
 				DEA31C681C0BB83100FAB110 /* string_extension.swift */,
+				DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */,
 			);
 			path = HomeInventory;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				DEA31C691C0BB83100FAB110 /* string_extension.swift in Sources */,
 				DEDE97D21C017BAA007ECE78 /* ItemDetailViewController.swift in Sources */,
 				DEF622141BE5165200D28EC9 /* AddItemViewController.swift in Sources */,
+				DE25D7B71C33063C007B00C3 /* NavigationViewController.swift in Sources */,
 				DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
