@@ -73,7 +73,7 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
             } else {
                 print("array[indexPath.row]:", array[indexPath.row])
                 realm.beginWrite()
-                realm.delete(array[indexPath.row] as! Object)
+                realm.delete(array[indexPath.row] as Object)
                 try! realm.commitWrite()
             }
         } else if editingStyle == .Insert {

@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="kCD-nd-Qvn" detailTextLabel="tFA-Lu-5Gg" imageView="3Kt-gE-XCP" rowHeight="78" style="IBUITableViewCellStyleSubtitle" id="6gW-zk-H7s">
-                                        <rect key="frame" x="0.0" y="92" width="560" height="78"/>
+                                        <rect key="frame" x="0.0" y="28" width="560" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6gW-zk-H7s" id="kNi-BO-ioo">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="77.5"/>
@@ -129,15 +129,6 @@
                                     <action selector="purchaseDateEdit:" destination="c6e-oH-cB4" eventType="editingDidBegin" id="hde-Fx-C23"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWW-md-daT">
-                                <rect key="frame" x="539" y="153" width="37" height="30"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneButton:" destination="c6e-oH-cB4" eventType="touchUpInside" id="n6A-j2-Jja"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blK-w9-tXi">
                                 <rect key="frame" x="20" y="224" width="127" height="30"/>
                                 <constraints>
@@ -165,6 +156,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWW-md-daT">
+                                <rect key="frame" x="543" y="153" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButton:" destination="c6e-oH-cB4" eventType="touchUpInside" id="n6A-j2-Jja"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -881,11 +881,11 @@
         <image name="room.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3qq-NX-pri"/>
-        <segue reference="ycM-3G-cHc"/>
+        <segue reference="Kaa-fz-nBS"/>
+        <segue reference="TGR-Bf-iOZ"/>
+        <segue reference="qjJ-SE-PLM"/>
+        <segue reference="jXP-wK-aKc"/>
+        <segue reference="H26-hE-opi"/>
         <segue reference="tX5-gI-FgU"/>
-        <segue reference="wEf-KC-gpl"/>
-        <segue reference="vhn-S4-MFx"/>
-        <segue reference="J9A-vX-ehj"/>
     </inferredMetricsTieBreakers>
 </document>
