@@ -15,6 +15,7 @@ class Room: Object {
     dynamic var name = ""
     dynamic var room_description = ""
     let items = List<Inventory>()
+    let boxes = List<Box>()
     
 // Specify properties to ignore (Realm won't persist these)
     

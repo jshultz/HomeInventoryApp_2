@@ -82,6 +82,12 @@
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="nm0-HX-niZ"/>
                         <barButtonItem image="inventory.png" id="aWP-jT-8z7"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="naO-LT-cCz"/>
+                        <barButtonItem image="email.png" id="zvf-8E-qWY" userLabel="Email">
+                            <connections>
+                                <segue destination="pQL-UF-Cgl" kind="show" id="Lcg-WX-bAb"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Inventory" id="Nka-p1-wjE">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="T92-jA-FhG">
@@ -208,6 +214,12 @@
                                 <segue destination="V8e-b1-BsA" kind="show" identifier="showInventory" id="IQR-N5-ea2"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="im9-Ih-j4j"/>
+                        <barButtonItem image="email.png" id="YXv-B9-U39" userLabel="Email">
+                            <connections>
+                                <segue destination="pQL-UF-Cgl" kind="show" id="whP-mM-m6Y"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Title" id="dxq-9j-9tB">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="h8V-1Z-DNC">
@@ -325,6 +337,12 @@
                                 <segue destination="V8e-b1-BsA" kind="show" identifier="showInventory" id="NN0-FJ-hpN"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="yuH-wt-CaZ"/>
+                        <barButtonItem image="email.png" id="GWH-Yl-1ed" userLabel="Email">
+                            <connections>
+                                <segue destination="pQL-UF-Cgl" kind="show" id="zPS-Pt-dWs"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Title" id="tJY-fF-sBG">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="aBB-RV-Xs9">
@@ -343,6 +361,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BwL-gM-cQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1183" y="1142"/>
+        </scene>
+        <!--Feedback-->
+        <scene sceneID="yCj-Hh-ock">
+            <objects>
+                <viewController title="Feedback" id="pQL-UF-Cgl" customClass="MailViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M8f-1R-bfL"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Xp-DT-fIW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W54-dh-glX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your feedback here." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BuT-w2-uZD">
+                                <rect key="frame" x="20" y="107" width="560" height="313"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="9ZG-ca-zYe"/>
+                                    <constraint firstAttribute="height" constant="313" id="d2c-0C-CBd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We value your feedback. Please send us bugs, suggestions and more!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a63-dP-5aO">
+                                <rect key="frame" x="20" y="78" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0yQ-Uj-eV7"/>
+                                    <constraint firstAttribute="width" constant="560" id="qre-m9-Rcx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BuT-w2-uZD" firstAttribute="leading" secondItem="W54-dh-glX" secondAttribute="leadingMargin" id="4Hv-KH-x7i"/>
+                            <constraint firstItem="BuT-w2-uZD" firstAttribute="top" secondItem="a63-dP-5aO" secondAttribute="bottom" constant="8" id="BnF-D6-hl1"/>
+                            <constraint firstItem="a63-dP-5aO" firstAttribute="leading" secondItem="W54-dh-glX" secondAttribute="leadingMargin" id="VG5-3G-dcC"/>
+                            <constraint firstItem="a63-dP-5aO" firstAttribute="top" secondItem="M8f-1R-bfL" secondAttribute="bottom" constant="14" id="XIq-ih-RR0"/>
+                            <constraint firstItem="a63-dP-5aO" firstAttribute="trailing" secondItem="W54-dh-glX" secondAttribute="trailingMargin" id="ZvW-ON-Hs3"/>
+                            <constraint firstItem="BuT-w2-uZD" firstAttribute="trailing" secondItem="W54-dh-glX" secondAttribute="trailingMargin" id="vP5-gk-thO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Feedback" id="gKk-yl-lAj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="fQn-6b-HGa">
+                            <connections>
+                                <action selector="sendEmailButtonTapped:" destination="pQL-UF-Cgl" id="3sD-ON-j94"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="emailContents" destination="BuT-w2-uZD" id="Dbl-ht-RN7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bLE-iq-LEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249" y="-349"/>
         </scene>
         <!--Profile View-->
         <scene sceneID="tne-QT-ifu">
@@ -519,6 +597,12 @@
                                 <segue destination="V8e-b1-BsA" kind="show" identifier="showInventory" id="pfC-jz-YBr"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="oRx-BB-Ls7"/>
+                        <barButtonItem image="email.png" id="3uc-Gs-22s" userLabel="Email">
+                            <connections>
+                                <segue destination="pQL-UF-Cgl" kind="show" id="8lE-KG-dbN"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Profile" id="78H-2D-HD1">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ExT-Cp-9kg">
@@ -655,6 +739,12 @@
                                 <segue destination="V8e-b1-BsA" kind="show" identifier="showInventory" id="UXx-Z6-pfC"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="cev-Yf-v2Q"/>
+                        <barButtonItem image="email.png" id="8Lz-b3-sh3" userLabel="Email">
+                            <connections>
+                                <segue destination="pQL-UF-Cgl" kind="show" id="FYF-Re-EQ5"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Edit Profile" id="vJh-Em-S0h">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="T8A-DE-IaU">
@@ -727,7 +817,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-Md-Dqb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-Md-Dqb">
                                 <rect key="frame" x="20" y="0.0" width="560" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -778,6 +868,12 @@
                         <barButtonItem image="inventory.png" id="ck2-4V-gOj">
                             <connections>
                                 <segue destination="V8e-b1-BsA" kind="show" identifier="showAllInventory" id="ycM-3G-cHc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ofY-8o-T9M"/>
+                        <barButtonItem image="email.png" id="IFI-Io-fD2" userLabel="Email">
+                            <connections>
+                                <segue destination="pQL-UF-Cgl" kind="show" id="Apk-12-NaP"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -848,6 +944,12 @@
                                 <segue destination="V8e-b1-BsA" kind="show" identifier="showInventory" id="Kaa-fz-nBS"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Exf-ov-xMc"/>
+                        <barButtonItem image="email.png" id="wrO-Eq-cnl" userLabel="Email">
+                            <connections>
+                                <segue destination="pQL-UF-Cgl" kind="show" id="Bpb-iA-zHx"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Edit Rooms" id="eMj-6x-plt">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Yj9-Nx-rzS">
@@ -876,16 +978,18 @@
     </scenes>
     <resources>
         <image name="default-placeholder-300x300.png" width="300" height="300"/>
+        <image name="email.png" width="32" height="32"/>
         <image name="inventory.png" width="32" height="32"/>
         <image name="profile.png" width="32" height="32"/>
         <image name="room.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kaa-fz-nBS"/>
-        <segue reference="TGR-Bf-iOZ"/>
-        <segue reference="qjJ-SE-PLM"/>
-        <segue reference="jXP-wK-aKc"/>
         <segue reference="H26-hE-opi"/>
-        <segue reference="tX5-gI-FgU"/>
+        <segue reference="jXP-wK-aKc"/>
+        <segue reference="WKZ-DZ-vHI"/>
+        <segue reference="86b-P6-6tp"/>
+        <segue reference="NN0-FJ-hpN"/>
+        <segue reference="zPS-Pt-dWs"/>
+        <segue reference="TGR-Bf-iOZ"/>
     </inferredMetricsTieBreakers>
 </document>
