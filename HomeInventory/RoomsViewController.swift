@@ -15,20 +15,28 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
     
     var activeRoom = -1
     var room: Room? = nil
-    let realm = try! Realm()
-    let array = try! Realm().objects(Room)
+    var array = [Room]()
+    
+    lazy var realm:Realm = {
+        return try! Realm()
+    }()
+    
+    
     var notificationToken: NotificationToken?
     
     @IBOutlet weak var roomsTable: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        array = Array(realm.objects(Room.self))
+        
         setupUI()
         // Set realm notification block
         notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+            // TODO: you are going to need to update array
             self.roomsTable.reloadData()
         }
-        // Do any additional setup after loading the view.
     }
     
     func setupUI() {
