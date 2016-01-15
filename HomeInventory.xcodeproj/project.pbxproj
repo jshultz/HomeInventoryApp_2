@@ -11,6 +11,7 @@
 		DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */; };
 		DE25D7B71C33063C007B00C3 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */; };
 		DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */; };
+		DE559F6C1C4864B0001461CB /* boxes.png in Resources */ = {isa = PBXBuildFile; fileRef = DE559F6B1C4864B0001461CB /* boxes.png */; };
 		DEA31C691C0BB83100FAB110 /* string_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA31C681C0BB83100FAB110 /* string_extension.swift */; };
 		DEB62AF41C3F451700899E0A /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB62AF31C3F451700899E0A /* MailViewController.swift */; };
 		DEB62AFA1C3F46FB00899E0A /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = DEB62AF91C3F46FB00899E0A /* email.png */; };
@@ -53,6 +54,7 @@
 		DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTableViewController.swift; sourceTree = "<group>"; };
 		DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-placeholder-300x300.png"; sourceTree = "<group>"; };
+		DE559F6B1C4864B0001461CB /* boxes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boxes.png; sourceTree = "<group>"; };
 		DEA31C681C0BB83100FAB110 /* string_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = string_extension.swift; sourceTree = "<group>"; };
 		DEB62AF31C3F451700899E0A /* MailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
 		DEB62AF91C3F46FB00899E0A /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				DEF4D45C1C07EBEC00C02B3E /* profile.png */,
 				DEB62AF91C3F46FB00899E0A /* email.png */,
+				DE559F6B1C4864B0001461CB /* boxes.png */,
 				DEF4D4581C07EB3600C02B3E /* inventory.png */,
 				DEF4D4591C07EB3600C02B3E /* room.png */,
 				DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */,
@@ -283,6 +286,7 @@
 			files = (
 				DECD009C1BE17EAC006A5B7E /* LaunchScreen.storyboard in Resources */,
 				DEF4D45D1C07EBEC00C02B3E /* profile.png in Resources */,
+				DE559F6C1C4864B0001461CB /* boxes.png in Resources */,
 				DECD00991BE17EAC006A5B7E /* Assets.xcassets in Resources */,
 				DEF4D45A1C07EB3600C02B3E /* inventory.png in Resources */,
 				DEB62AFA1C3F46FB00899E0A /* email.png in Resources */,
