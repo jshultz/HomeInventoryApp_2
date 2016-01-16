@@ -14,6 +14,7 @@ class Box: Object {
     dynamic var id = NSUUID().UUIDString
     dynamic var name = ""
     dynamic var box_description = ""
+    dynamic var photo = ""
     let items = List<Inventory>()
     
     // Specify properties to ignore (Realm won't persist these)

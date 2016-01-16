@@ -3,45 +3,44 @@
 //  HomeInventory
 //
 //  Created by Jason Shultz on 10/30/15.
-//  Copyright © 2015 Chaos Elevators, Inc.. All rights reserved.
+//  Copyright © 2016 Chaos Elevators, Inc.. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
 
-class RoomsViewController: UIViewController, UITableViewDelegate {
+class BoxesTableViewController: UIViewController, UITableViewDelegate {
     
     var activeRoom = -1
-    var room: Room? = nil
-    var array = [Room]()
+    var box: Box? = nil
+    var array = [Box]()
+    var notificationToken: NotificationToken?
     
     lazy var realm:Realm = {
         return try! Realm()
     }()
     
+    @IBOutlet var boxesTable: UITableView!
     
-    var notificationToken: NotificationToken?
     
-    @IBOutlet weak var roomsTable: UITableView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        array = Array(realm.objects(Room.self))
+        array = Array(realm.objects(Box.self))
         
         setupUI()
         // Set realm notification block
         notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
             // TODO: you are going to need to update array
-            self.roomsTable.reloadData()
+            self.boxesTable.reloadData()
         }
     }
     
     func setupUI() {
         
-        self.title = room?.name
-
+        self.title = box?.name
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,7 +63,7 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
         activeRoom = indexPath.row
         return indexPath
     }
-
+    
     // Override to support editing the table view.
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -90,20 +89,20 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "newPlace" {
-
+            
         } else if segue.identifier == "showInventory" {
             let cell = sender as! UITableViewCell
-            let indexPath = roomsTable.indexPathForCell(cell)
+            let indexPath = boxesTable.indexPathForCell(cell)
             let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
-            inventoryController.room = array[indexPath!.row]
+//            inventoryController.room = array[indexPath!.row]
         } else if segue.identifier == "showAllInventory" {
             let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
