@@ -92,6 +92,7 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
         if segue.identifier == "newPlace" {
 
         } else if segue.identifier == "showInventory" {
+            print("in showInventory")
             let cell = sender as! UITableViewCell
             let indexPath = roomsTable.indexPathForCell(cell)
             let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController

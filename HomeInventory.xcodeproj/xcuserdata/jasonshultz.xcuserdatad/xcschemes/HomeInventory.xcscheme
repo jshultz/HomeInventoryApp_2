@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DECD008A1BE17EAC006A5B7E"
-               BuildableName = "HomeInventory.app"
-               BlueprintName = "HomeInventory"
+               BuildableName = "Rooms: Home Inventory.app"
+               BlueprintName = "Rooms: Home Inventory"
                ReferencedContainer = "container:HomeInventory.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DECD008A1BE17EAC006A5B7E"
-            BuildableName = "HomeInventory.app"
-            BlueprintName = "HomeInventory"
+            BuildableName = "Rooms: Home Inventory.app"
+            BlueprintName = "Rooms: Home Inventory"
             ReferencedContainer = "container:HomeInventory.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DECD008A1BE17EAC006A5B7E"
-            BuildableName = "HomeInventory.app"
-            BlueprintName = "HomeInventory"
+            BuildableName = "Rooms: Home Inventory.app"
+            BlueprintName = "Rooms: Home Inventory"
             ReferencedContainer = "container:HomeInventory.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DECD008A1BE17EAC006A5B7E"
-            BuildableName = "HomeInventory.app"
-            BlueprintName = "HomeInventory"
+            BuildableName = "Rooms: Home Inventory.app"
+            BlueprintName = "Rooms: Home Inventory"
             ReferencedContainer = "container:HomeInventory.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
