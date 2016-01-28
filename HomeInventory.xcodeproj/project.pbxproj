@@ -67,7 +67,7 @@
 		DEBDCF661C4712540051D171 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		DEC51F6B1BE3969200672069 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
-		DECD008B1BE17EAC006A5B7E /* Rooms: Home Inventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rooms: Home Inventory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DECD008B1BE17EAC006A5B7E /* Rooms Home Inventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rooms Home Inventory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECD00901BE17EAC006A5B7E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		DECD00931BE17EAC006A5B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		DECD008C1BE17EAC006A5B7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DECD008B1BE17EAC006A5B7E /* Rooms: Home Inventory.app */,
+				DECD008B1BE17EAC006A5B7E /* Rooms Home Inventory.app */,
 				DEE2B1311C0F5AEC0030C114 /* HomeInventoryUITests.xctest */,
 			);
 			name = Products;
@@ -165,24 +165,24 @@
 			children = (
 				DE38CF1F1C0229C800F3A5AD /* images */,
 				DED029D61BFD84AB00E63B8F /* Models */,
+				DEA494EA1C4A9A9300305D40 /* AddBoxViewController.swift */,
 				DEF622131BE5165200D28EC9 /* AddItemViewController.swift */,
 				DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */,
+				DEA494EC1C4AA7C600305D40 /* BoxesTableViewController.swift */,
 				DECD00AF1BE19287006A5B7E /* EditProfileController.swift */,
 				DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */,
 				DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */,
+				DECD009A1BE17EAC006A5B7E /* LaunchScreen.storyboard */,
+				DEB62AF31C3F451700899E0A /* MailViewController.swift */,
 				DECD00921BE17EAC006A5B7E /* Main.storyboard */,
 				DECD00901BE17EAC006A5B7E /* ProfileController.swift */,
 				DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */,
 				DEC51F6B1BE3969200672069 /* RoomsViewController.swift */,
 				DECD00981BE17EAC006A5B7E /* Assets.xcassets */,
-				DECD009A1BE17EAC006A5B7E /* LaunchScreen.storyboard */,
 				DECD00951BE17EAC006A5B7E /* HomeInventory.xcdatamodeld */,
 				DECD009D1BE17EAC006A5B7E /* Info.plist */,
 				DEA31C681C0BB83100FAB110 /* string_extension.swift */,
 				DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */,
-				DEB62AF31C3F451700899E0A /* MailViewController.swift */,
-				DEA494EA1C4A9A9300305D40 /* AddBoxViewController.swift */,
-				DEA494EC1C4AA7C600305D40 /* BoxesTableViewController.swift */,
 			);
 			path = HomeInventory;
 			sourceTree = "<group>";
@@ -211,9 +211,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DECD008A1BE17EAC006A5B7E /* Rooms: Home Inventory */ = {
+		DECD008A1BE17EAC006A5B7E /* Rooms Home Inventory */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DECD00A01BE17EAC006A5B7E /* Build configuration list for PBXNativeTarget "Rooms: Home Inventory" */;
+			buildConfigurationList = DECD00A01BE17EAC006A5B7E /* Build configuration list for PBXNativeTarget "Rooms Home Inventory" */;
 			buildPhases = (
 				45E762E707C46C6BA8F22CF5 /* Check Pods Manifest.lock */,
 				DECD00871BE17EAC006A5B7E /* Sources */,
@@ -226,9 +226,9 @@
 			);
 			dependencies = (
 			);
-			name = "Rooms: Home Inventory";
+			name = "Rooms Home Inventory";
 			productName = HomeInventory;
-			productReference = DECD008B1BE17EAC006A5B7E /* Rooms: Home Inventory.app */;
+			productReference = DECD008B1BE17EAC006A5B7E /* Rooms Home Inventory.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DEE2B1301C0F5AEC0030C114 /* HomeInventoryUITests */ = {
@@ -282,7 +282,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DECD008A1BE17EAC006A5B7E /* Rooms: Home Inventory */,
+				DECD008A1BE17EAC006A5B7E /* Rooms Home Inventory */,
 				DEE2B1301C0F5AEC0030C114 /* HomeInventoryUITests */,
 			);
 		};
@@ -403,7 +403,7 @@
 /* Begin PBXTargetDependency section */
 		DEE2B1371C0F5AEC0030C114 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DECD008A1BE17EAC006A5B7E /* Rooms: Home Inventory */;
+			target = DECD008A1BE17EAC006A5B7E /* Rooms Home Inventory */;
 			targetProxy = DEE2B1361C0F5AEC0030C114 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -589,7 +589,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DECD00A01BE17EAC006A5B7E /* Build configuration list for PBXNativeTarget "Rooms: Home Inventory" */ = {
+		DECD00A01BE17EAC006A5B7E /* Build configuration list for PBXNativeTarget "Rooms Home Inventory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DECD00A11BE17EAC006A5B7E /* Debug */,

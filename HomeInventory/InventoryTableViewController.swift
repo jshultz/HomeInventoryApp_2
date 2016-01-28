@@ -10,12 +10,12 @@ import UIKit
 import RealmSwift
 
 class InventoryTableViewController: UIViewController, UITableViewDelegate {
+    let realm = try! Realm()
     var activeInventory = -1
     var activeRoom = -1
     var room: Room? = nil
     var box:Box? = nil
     var array = []
-    let realm = try! Realm()
     var notificationToken: NotificationToken?
     
     @IBOutlet weak var inventoryTable: UITableView!
@@ -24,50 +24,85 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         setupUI()
         
-        // Set realm notification block
-        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
-            
+        if (self.room != nil) {
             if ((self.room?.items) != nil) {
                 self.array = Array(self.room!.items)
             }
-            
-            self.inventoryTable.reloadData()
         }
         
-        inventoryTable.reloadData()
+        if (self.box != nil) {
+            if ((self.box?.items) != nil) {
+                self.array = Array(self.box!.items)
+            }
+        }
+        self.inventoryTable.reloadData()
+        
+        
+        
+        // Set realm notification block
+        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+            
+            if (self.room != nil) {
+                if ((self.room?.items) != nil) {
+                    self.array = Array(self.room!.items)
+                }
+            }
+            
+            if (self.box != nil) {
+                if ((self.box?.items) != nil) {
+                    self.array = Array(self.box!.items)
+                }
+            }
+            self.inventoryTable.reloadData()
+
+        }
+    }
+    
+    @IBAction func editButton(sender: AnyObject) {
+        
+        if (room != nil) {
+            self.performSegueWithIdentifier("editRoom", sender: self)
+        } else {
+            self.performSegueWithIdentifier("editBox", sender: self)
+        }
+        
     }
     
     @IBAction func addThingToRoom(sender: AnyObject) {
         
-        showAlert("Add a Thing", errorMessage: "Add an Item (single thing) or a Box (box, dresser, etc.")
+        if (box == nil) {
+            showAlert("Add a Thing", errorMessage: "Add an Item (single thing) or a Box (box, dresser, etc.)")
+            
+        } else {
+            showAlert("Add a Thing", errorMessage: "Add an Item (single thing).")
+        }
+        
+        
         
     }
     
     func showAlert(errorTitle:String, errorMessage:String) {
-        print("in the alert")
         let alert = UIAlertController(title: "\(errorTitle)", message: "\(errorMessage)", preferredStyle: .Alert) // 1
         let firstAction = UIAlertAction(title: "Item", style: .Default) { (alert: UIAlertAction!) -> Void in
             NSLog("You pressed button one")
             self.performSegueWithIdentifier("addItem", sender: self)
             
         } // 2
-        
-        let secondAction = UIAlertAction(title: "Box", style: .Default) { (alert: UIAlertAction!) -> Void in
-            NSLog("You pressed button two")
-            self.performSegueWithIdentifier("addBox", sender: self)
-        } // 3
-        
         alert.addAction(firstAction) // 4
-        alert.addAction(secondAction) // 5
+        
+        if (box == nil) {
+            let secondAction = UIAlertAction(title: "Box", style: .Default) { (alert: UIAlertAction!) -> Void in
+                NSLog("You pressed button two")
+                self.performSegueWithIdentifier("addBox", sender: self)
+            } // 3
+            
+            alert.addAction(secondAction) // 5
+        }
+        
         presentViewController(alert, animated: true, completion:nil) // 6
     }
     
-    
     func setupUI() {
-        print("room: ", room)
-        
-        print("box: ", box)
-        
         if (room != nil) {
             self.title = room?.name
             array = try! Array(Realm().objects(Room).filter(NSPredicate(format: "id = %@", "\(room!.id)")).first!.items)
@@ -143,23 +178,27 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        print("indexPath: ", indexPath)
         activeInventory = indexPath.row
         return indexPath
     }
     
 
     // Override to support editing the table view.
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            realm.beginWrite()
-            realm.delete(array[indexPath.row] as! Object)
-            try! realm.commitWrite()
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
+//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if editingStyle == .Delete {
+//            
+//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                
+//                let realm = try! Realm()
+//                realm.beginWrite()
+//                realm.delete(self.array[indexPath.row] as! Object)
+//                try! realm.commitWrite()
+//            })
+//            
+//        } else if editingStyle == .Insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }
+//    }
 
 
 
@@ -177,6 +216,8 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
             let addItemController:AddItemViewController = segue.destinationViewController as! AddItemViewController
             
             addItemController.room = self.room
+            addItemController.box = self.box
+            
         } else if segue.identifier == "addBox" {
             
             let addBoxController:AddBoxViewController = segue.destinationViewController as! AddBoxViewController
@@ -187,6 +228,11 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
             let editRoomController:EditRoomViewController = segue.destinationViewController as! EditRoomViewController
             
             editRoomController.room = self.room
+        } else if segue.identifier == "editBox" {
+            
+            let addBoxController:AddBoxViewController = segue.destinationViewController as! AddBoxViewController
+            
+            addBoxController.box = self.box
             
         } else if segue.identifier == "showItem" {
             

@@ -53,6 +53,20 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
         } else { print("some error message 2") }
     }
     
+    
+    @IBAction func deleteItem(sender: AnyObject) {
+        
+        let realm = try! Realm()
+        
+        let deletedItem = realm.objects(Inventory).filter("id = %@", self.item!.id)
+        
+        try! realm.write {
+            realm.delete(deletedItem)
+        }
+        performSegueWithIdentifier("showInventory", sender: self)
+    }
+    
+    
     func fileInDocumentsDirectory(filename: String) -> String {
         
         let fileURL = getDocumentsURL().URLByAppendingPathComponent(filename)

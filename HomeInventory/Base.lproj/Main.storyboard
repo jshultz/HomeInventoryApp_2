@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nDE-Zo-g3i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nDE-Zo-g3i">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Inventory-->
         <scene sceneID="a4t-gm-70e">
             <objects>
-                <viewController title="Room Inventory" id="V8e-b1-BsA" userLabel="Inventory" customClass="InventoryTableViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Room Inventory" id="V8e-b1-BsA" userLabel="Inventory" customClass="InventoryTableViewController" customModule="Rooms_Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bhW-55-V6X"/>
                         <viewControllerLayoutGuide type="bottom" id="OqV-3F-Pcf"/>
@@ -98,7 +99,7 @@
                     <navigationItem key="navigationItem" title="Inventory" id="Nka-p1-wjE">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="T92-jA-FhG">
                             <connections>
-                                <segue destination="jtf-jp-D50" kind="show" identifier="editRoom" id="TGR-Bf-iOZ"/>
+                                <action selector="editButton:" destination="V8e-b1-BsA" id="kT8-Qe-cWB"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8ni-B1-0Pl">
@@ -112,6 +113,8 @@
                         <outlet property="inventoryTable" destination="Ocy-NW-4OX" id="RIn-8V-bfN"/>
                         <segue destination="flb-wc-P9S" kind="show" identifier="addBox" id="86s-ha-wns"/>
                         <segue destination="c6e-oH-cB4" kind="show" identifier="addItem" id="7dN-sP-HcS"/>
+                        <segue destination="jtf-jp-D50" kind="show" identifier="editRoom" id="Fuq-SD-kRJ"/>
+                        <segue destination="flb-wc-P9S" kind="show" identifier="editBox" id="wyB-rw-pu9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLZ-5I-4hM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,7 +124,7 @@
         <!--Edit Item-->
         <scene sceneID="4l2-F2-WVT">
             <objects>
-                <viewController storyboardIdentifier="Add Room" title="Edit Item" id="c6e-oH-cB4" customClass="AddItemViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Add Room" title="Edit Item" id="c6e-oH-cB4" customClass="AddItemViewController" customModule="Rooms_Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s2h-ra-iiT"/>
                         <viewControllerLayoutGuide type="bottom" id="Xer-AJ-CbO"/>
@@ -157,7 +160,7 @@
                                     <action selector="addPhotoButton:" destination="c6e-oH-cB4" eventType="touchUpInside" id="g4S-z6-ger"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u85-zf-xpN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="default-placeholder-300x300.png" translatesAutoresizingMaskIntoConstraints="NO" id="u85-zf-xpN">
                                 <rect key="frame" x="20" y="262" width="560" height="250"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jby-bu-Iv7">
@@ -264,7 +267,7 @@
         <!--Edit Box-->
         <scene sceneID="9iQ-ht-VB7">
             <objects>
-                <viewController title="Edit Box" id="flb-wc-P9S" customClass="AddBoxViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Box" id="flb-wc-P9S" customClass="AddBoxViewController" customModule="Rooms_Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yog-Ja-hRg"/>
                         <viewControllerLayoutGuide type="bottom" id="qQE-YE-GHr"/>
@@ -275,29 +278,25 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Box Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="flw-53-dEC">
                                 <rect key="frame" x="20" y="72" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jXj-g4-UHd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Box Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oKh-qb-Tye">
                                 <rect key="frame" x="20" y="110" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Alj-CD-vqj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-placeholder-300x300.png" translatesAutoresizingMaskIntoConstraints="NO" id="gXK-Wt-ayC">
-                                <rect key="frame" x="20" y="286" width="560" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="560" id="3P8-Dv-r6C"/>
-                                    <constraint firstAttribute="height" constant="250" id="EPK-Uf-lUQ"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="oMT-yb-Wl7"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Weu-Zr-S0N">
-                                <rect key="frame" x="20" y="248" width="127" height="30"/>
+                                <rect key="frame" x="20" y="148" width="127" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="127" id="XH5-dG-atV"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="YqV-sq-pQu"/>
-                                    <constraint firstAttribute="width" constant="127" id="ZdU-iA-2rg"/>
-                                    <constraint firstAttribute="height" constant="30" id="gMf-mS-FdD"/>
+                                    <constraint firstAttribute="height" constant="30" id="K8d-4M-nSR"/>
+                                    <constraint firstAttribute="width" constant="127" id="hBW-Eu-UOY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Add a Photo:">
@@ -308,27 +307,24 @@
                                     <action selector="addPhotoButton:" destination="c6e-oH-cB4" eventType="touchUpInside" id="cza-uv-J7J"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-placeholder-300x300.png" translatesAutoresizingMaskIntoConstraints="NO" id="gXK-Wt-ayC">
+                                <rect key="frame" x="20" y="186" width="560" height="250"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="gXK-Wt-ayC" secondAttribute="bottom" constant="20" symbolic="YES" id="3he-5J-4Wi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Weu-Zr-S0N" secondAttribute="trailing" constant="433" id="6v3-B2-uVP"/>
-                            <constraint firstItem="Weu-Zr-S0N" firstAttribute="top" secondItem="oKh-qb-Tye" secondAttribute="bottom" constant="108" id="7nY-7C-LYA"/>
-                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="trailing" secondItem="4mX-EQ-0t2" secondAttribute="trailingMargin" id="BpH-1r-EmM"/>
-                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="trailing" secondItem="oKh-qb-Tye" secondAttribute="trailing" id="CyU-zB-eRV"/>
-                            <constraint firstItem="oKh-qb-Tye" firstAttribute="top" secondItem="4mX-EQ-0t2" secondAttribute="top" constant="110" id="GCW-Dq-Bl7"/>
-                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="leading" secondItem="Weu-Zr-S0N" secondAttribute="leading" id="LyV-9I-1cD"/>
-                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="leading" secondItem="oKh-qb-Tye" secondAttribute="leading" id="Xca-sE-cvY"/>
-                            <constraint firstItem="oKh-qb-Tye" firstAttribute="top" secondItem="flw-53-dEC" secondAttribute="bottom" constant="8" symbolic="YES" id="XqI-Ze-Uok"/>
-                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="trailing" secondItem="flw-53-dEC" secondAttribute="trailing" id="ZMz-oH-dnW"/>
-                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="top" secondItem="Weu-Zr-S0N" secondAttribute="bottom" constant="8" symbolic="YES" id="c7g-Dl-Rrl"/>
-                            <constraint firstItem="Weu-Zr-S0N" firstAttribute="leading" secondItem="4mX-EQ-0t2" secondAttribute="leadingMargin" id="d3Z-7y-GVG"/>
-                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="trailing" secondItem="4mX-EQ-0t2" secondAttribute="trailingMargin" id="e6f-zd-hrJ"/>
-                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="leading" secondItem="4mX-EQ-0t2" secondAttribute="leadingMargin" id="iWw-Nd-vOD"/>
-                            <constraint firstItem="qQE-YE-GHr" firstAttribute="top" secondItem="gXK-Wt-ayC" secondAttribute="bottom" constant="20" id="mzX-aP-vKe"/>
-                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="leading" secondItem="flw-53-dEC" secondAttribute="leading" id="nwM-Hg-9D8"/>
-                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="leading" secondItem="4mX-EQ-0t2" secondAttribute="leadingMargin" id="qQg-9r-4gj"/>
-                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="top" secondItem="Weu-Zr-S0N" secondAttribute="bottom" constant="8" id="zSZ-ED-WzJ"/>
+                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="trailing" secondItem="4mX-EQ-0t2" secondAttribute="trailingMargin" id="ByI-nZ-N8D"/>
+                            <constraint firstItem="Weu-Zr-S0N" firstAttribute="leading" secondItem="oKh-qb-Tye" secondAttribute="leading" id="FOs-Jq-UTc"/>
+                            <constraint firstItem="Weu-Zr-S0N" firstAttribute="leading" secondItem="gXK-Wt-ayC" secondAttribute="leading" id="Qvh-N4-OaJ"/>
+                            <constraint firstItem="oKh-qb-Tye" firstAttribute="top" secondItem="flw-53-dEC" secondAttribute="bottom" constant="8" symbolic="YES" id="XfI-MS-Grr"/>
+                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="top" secondItem="Weu-Zr-S0N" secondAttribute="bottom" constant="8" symbolic="YES" id="ZuB-16-Ymf"/>
+                            <constraint firstItem="oKh-qb-Tye" firstAttribute="trailing" secondItem="flw-53-dEC" secondAttribute="trailing" id="ZzP-1j-ZB4"/>
+                            <constraint firstItem="flw-53-dEC" firstAttribute="top" secondItem="yog-Ja-hRg" secondAttribute="bottom" constant="8" symbolic="YES" id="c2L-Eq-Rsy"/>
+                            <constraint firstItem="oKh-qb-Tye" firstAttribute="leading" secondItem="flw-53-dEC" secondAttribute="leading" id="dAf-ew-8Eb"/>
+                            <constraint firstItem="Weu-Zr-S0N" firstAttribute="top" secondItem="oKh-qb-Tye" secondAttribute="bottom" constant="8" symbolic="YES" id="kGb-Bu-l48"/>
+                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="trailing" secondItem="oKh-qb-Tye" secondAttribute="trailing" id="oI1-Di-CYf"/>
+                            <constraint firstItem="gXK-Wt-ayC" firstAttribute="leading" secondItem="4mX-EQ-0t2" secondAttribute="leadingMargin" id="sJJ-2j-tjS"/>
+                            <constraint firstItem="qQE-YE-GHr" firstAttribute="top" secondItem="gXK-Wt-ayC" secondAttribute="bottom" constant="120" id="tgQ-92-pTk"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -346,7 +342,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Lxw-z5-hQ4"/>
                         <barButtonItem image="boxes.png" id="aHK-CP-GdT" userLabel="Box Button Item">
                             <connections>
-                                <segue destination="hyv-k1-VCB" kind="show" id="4WL-kF-aUl"/>
+                                <segue destination="hyv-k1-VCB" kind="show" identifier="showBoxes" id="4WL-kF-aUl"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="2eC-Lc-X9U"/>
@@ -389,7 +385,7 @@
         <!--Boxes-->
         <scene sceneID="kQ1-PF-GrG">
             <objects>
-                <tableViewController title="Boxes" id="hyv-k1-VCB" customClass="BoxesTableViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Boxes" id="hyv-k1-VCB" customClass="BoxesTableViewController" customModule="Rooms_Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="X8b-c3-DMo" userLabel="Boxes Table">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -402,28 +398,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gpw-4m-HXD">
+                                        <label opaque="NO" multipleTouchEnabled="YES" tag="20" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gpw-4m-HXD">
                                             <rect key="frame" x="74" y="6" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fiw-7f-GeF">
+                                        <label opaque="NO" multipleTouchEnabled="YES" tag="30" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fiw-7f-GeF">
                                             <rect key="frame" x="74" y="25.5" width="30.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="default-placeholder-300x300.png" id="Mle-j4-Grf">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="10" contentMode="scaleToFill" image="default-placeholder-300x300.png" id="Mle-j4-Grf">
                                             <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="V8e-b1-BsA" kind="show" identifier="showInventory" id="wBB-mV-tO7"/>
+                                    <segue destination="V8e-b1-BsA" kind="show" identifier="showBoxInventory" id="dZJ-Tv-vDI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -453,7 +449,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ker-WW-c4w"/>
                         <barButtonItem image="inventory.png" id="XXL-qP-a9M">
                             <connections>
-                                <segue destination="V8e-b1-BsA" kind="show" id="6gS-G9-7vE"/>
+                                <segue destination="V8e-b1-BsA" kind="show" identifier="showInventory" id="6gS-G9-7vE"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="hjh-tT-iAs"/>
@@ -463,6 +459,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="boxesTable" destination="X8b-c3-DMo" id="QTH-no-O0V"/>
                     </connections>
@@ -474,7 +471,7 @@
         <!--Show Item Detail-->
         <scene sceneID="AJT-JQ-ru6">
             <objects>
-                <viewController storyboardIdentifier="Show Item Detail" title="Show Item Detail" id="hAk-M8-m5e" customClass="ItemDetailViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Show Item Detail" title="Show Item Detail" id="hAk-M8-m5e" customClass="ItemDetailViewController" customModule="Rooms_Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lVC-0C-BBP"/>
                         <viewControllerLayoutGuide type="bottom" id="qyx-D1-aay"/>
@@ -575,11 +572,18 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Title" id="tJY-fF-sBG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="aBB-RV-Xs9">
-                            <connections>
-                                <segue destination="c6e-oH-cB4" kind="show" identifier="editItem" id="H26-hE-opi"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="trash" id="ney-3l-KAT">
+                                <connections>
+                                    <action selector="deleteItem:" destination="hAk-M8-m5e" id="5xn-ZP-nYV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="aBB-RV-Xs9">
+                                <connections>
+                                    <segue destination="c6e-oH-cB4" kind="show" identifier="editItem" id="H26-hE-opi"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -595,7 +599,7 @@
         <!--Feedback-->
         <scene sceneID="yCj-Hh-ock">
             <objects>
-                <viewController title="Feedback" id="pQL-UF-Cgl" customClass="MailViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Feedback" id="pQL-UF-Cgl" customClass="MailViewController" customModule="Rooms_Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M8f-1R-bfL"/>
                         <viewControllerLayoutGuide type="bottom" id="0Xp-DT-fIW"/>
@@ -655,7 +659,7 @@
         <!--Profile View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Profile View" title="Profile View" id="BYZ-38-t0r" customClass="ProfileController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile View" title="Profile View" id="BYZ-38-t0r" customClass="ProfileController" customModule="Rooms_Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -865,7 +869,7 @@
         <!--Edit Profile-->
         <scene sceneID="bM7-ZF-hKC">
             <objects>
-                <viewController storyboardIdentifier="Edit Profile View" title="Edit Profile" id="fEJ-Tm-DsC" customClass="EditProfileController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Edit Profile View" title="Edit Profile" id="fEJ-Tm-DsC" customClass="EditProfileController" customModule="Rooms_Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Q0-Dt-Utg"/>
                         <viewControllerLayoutGuide type="bottom" id="fbk-yB-iKM"/>
@@ -1015,7 +1019,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="izu-az-2UW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nDE-Zo-g3i" customClass="NavigationViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nDE-Zo-g3i" customClass="NavigationViewController" customModule="Rooms_Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems>
                         <barButtonItem image="profile.png" id="Ag4-w6-4k0"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="k85-fb-yDB"/>
@@ -1046,7 +1050,7 @@
         <!--Rooms-->
         <scene sceneID="S7G-Vb-dsE">
             <objects>
-                <viewController storyboardIdentifier="Rooms Table View" id="5jg-dB-Ng2" customClass="RoomsViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Rooms Table View" id="5jg-dB-Ng2" customClass="RoomsViewController" customModule="Rooms_Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oqt-Mn-Qv3"/>
                         <viewControllerLayoutGuide type="bottom" id="loH-i2-KDo"/>
@@ -1141,7 +1145,7 @@
         <!--Edit Rooms-->
         <scene sceneID="UzT-os-jy1">
             <objects>
-                <viewController storyboardIdentifier="Add Edit Room" title="Edit Rooms" id="jtf-jp-D50" customClass="EditRoomViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Add Edit Room" title="Edit Rooms" id="jtf-jp-D50" customClass="EditRoomViewController" customModule="Rooms_Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9K1-xU-l42"/>
                         <viewControllerLayoutGuide type="bottom" id="tDT-dO-W8k"/>
@@ -1232,14 +1236,15 @@
         <image name="profile.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sjj-oC-ver"/>
-        <segue reference="hjc-8p-cuD"/>
-        <segue reference="cIz-FC-S4B"/>
-        <segue reference="Yxk-2l-08W"/>
-        <segue reference="wBB-mV-tO7"/>
+        <segue reference="GtL-SO-T8N"/>
+        <segue reference="dZJ-Tv-vDI"/>
+        <segue reference="7Nj-sB-cvk"/>
+        <segue reference="TwH-xS-YD2"/>
+        <segue reference="Lcg-WX-bAb"/>
         <segue reference="7dN-sP-HcS"/>
+        <segue reference="Fuq-SD-kRJ"/>
         <segue reference="J9A-vX-ehj"/>
-        <segue reference="wEf-KC-gpl"/>
-        <segue reference="vhn-S4-MFx"/>
+        <segue reference="wyB-rw-pu9"/>
+        <segue reference="Yxk-2l-08W"/>
     </inferredMetricsTieBreakers>
 </document>
