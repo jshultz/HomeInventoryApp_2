@@ -37,26 +37,69 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         }
         self.inventoryTable.reloadData()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if (self.room != nil) {
+            if ((self.room?.items) != nil) {
+                self.array = Array(self.room!.items)
+            }
+        }
         
-        
-        // Set realm notification block
-        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
+        if (self.box != nil) {
+            if ((self.box?.items) != nil) {
+                self.array = Array(self.box!.items)
+            }
+        }
+        self.inventoryTable.reloadData()
+    }
+    
+    @IBOutlet var trashcanButton: UIBarButtonItem!
+    
+    @IBAction func deleteButton(sender: AnyObject) {
+        if (box != nil) {
             
-            if (self.room != nil) {
-                if ((self.room?.items) != nil) {
-                    self.array = Array(self.room!.items)
-                }
+            if box!.items.count > 0 {
+                let alertController = UIAlertController(title: "Can't Delete the Box", message:
+                    "You can't delete a box that still has items.", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.realm.beginWrite()
+                    self.realm.delete(self.box!)
+                    try! self.realm.commitWrite()
+                })
+                
+                
+                self.performSegueWithIdentifier("showBoxes", sender: self)
+                
+                
             }
             
-            if (self.box != nil) {
-                if ((self.box?.items) != nil) {
-                    self.array = Array(self.box!.items)
-                }
+        } else {
+            
+            if room!.items.count > 0 {
+                let alertController = UIAlertController(title: "Can't Delete the Room", message:
+                    "You can't delete a room that still has items.", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.realm.beginWrite()
+                    self.realm.delete(self.room!)
+                    try! self.realm.commitWrite()
+                })
+                self.performSegueWithIdentifier("showRooms", sender: self)
             }
-            self.inventoryTable.reloadData()
-
+            
         }
     }
+    
     
     @IBAction func editButton(sender: AnyObject) {
         
@@ -103,6 +146,12 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
     }
     
     func setupUI() {
+        
+//        if (box == nil) {
+//            trashcanButton.enabled = false
+//        }
+        
+        
         if (room != nil) {
             self.title = room?.name
             array = try! Array(Realm().objects(Room).filter(NSPredicate(format: "id = %@", "\(room!.id)")).first!.items)
