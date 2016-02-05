@@ -67,7 +67,7 @@
 		DEBDCF661C4712540051D171 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		DEC51F6B1BE3969200672069 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
-		DECD008B1BE17EAC006A5B7E /* Rooms: Home Inventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rooms: Home Inventory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DECD008B1BE17EAC006A5B7E /* HomeInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECD00901BE17EAC006A5B7E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		DECD00931BE17EAC006A5B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		DECD008C1BE17EAC006A5B7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DECD008B1BE17EAC006A5B7E /* Rooms: Home Inventory.app */,
+				DECD008B1BE17EAC006A5B7E /* HomeInventory.app */,
 				DEE2B1311C0F5AEC0030C114 /* HomeInventoryUITests.xctest */,
 			);
 			name = Products;
@@ -211,9 +211,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DECD008A1BE17EAC006A5B7E /* Rooms: Home Inventory */ = {
+		DECD008A1BE17EAC006A5B7E /* HomeInventory */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DECD00A01BE17EAC006A5B7E /* Build configuration list for PBXNativeTarget "Rooms: Home Inventory" */;
+			buildConfigurationList = DECD00A01BE17EAC006A5B7E /* Build configuration list for PBXNativeTarget "HomeInventory" */;
 			buildPhases = (
 				45E762E707C46C6BA8F22CF5 /* Check Pods Manifest.lock */,
 				DECD00871BE17EAC006A5B7E /* Sources */,
@@ -226,9 +226,9 @@
 			);
 			dependencies = (
 			);
-			name = "Rooms: Home Inventory";
+			name = HomeInventory;
 			productName = HomeInventory;
-			productReference = DECD008B1BE17EAC006A5B7E /* Rooms: Home Inventory.app */;
+			productReference = DECD008B1BE17EAC006A5B7E /* HomeInventory.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DEE2B1301C0F5AEC0030C114 /* HomeInventoryUITests */ = {
@@ -282,7 +282,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DECD008A1BE17EAC006A5B7E /* Rooms: Home Inventory */,
+				DECD008A1BE17EAC006A5B7E /* HomeInventory */,
 				DEE2B1301C0F5AEC0030C114 /* HomeInventoryUITests */,
 			);
 		};
@@ -403,7 +403,7 @@
 /* Begin PBXTargetDependency section */
 		DEE2B1371C0F5AEC0030C114 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DECD008A1BE17EAC006A5B7E /* Rooms: Home Inventory */;
+			target = DECD008A1BE17EAC006A5B7E /* HomeInventory */;
 			targetProxy = DEE2B1361C0F5AEC0030C114 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -467,7 +467,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "Rooms: Home Inventory";
 				PROVISIONING_PROFILE = "ef9c7c5b-4209-47ac-8ec0-7ddbfc0175c8";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -506,7 +505,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "Rooms: Home Inventory";
 				PROVISIONING_PROFILE = "ef9c7c5b-4209-47ac-8ec0-7ddbfc0175c8";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -589,7 +587,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DECD00A01BE17EAC006A5B7E /* Build configuration list for PBXNativeTarget "Rooms: Home Inventory" */ = {
+		DECD00A01BE17EAC006A5B7E /* Build configuration list for PBXNativeTarget "HomeInventory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DECD00A11BE17EAC006A5B7E /* Debug */,

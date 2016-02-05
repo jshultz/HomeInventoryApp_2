@@ -13,7 +13,6 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
     var activeInventory = -1
     var activeRoom = -1
     var room: Room? = nil
-    var box:Box? = nil
     var array = []
     let realm = try! Realm()
     var notificationToken: NotificationToken?
@@ -64,18 +63,9 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
     
     
     func setupUI() {
-        print("room: ", room)
-        
-        print("box: ", box)
-        
         if (room != nil) {
             self.title = room?.name
             array = try! Array(Realm().objects(Room).filter(NSPredicate(format: "id = %@", "\(room!.id)")).first!.items)
-        } else if ( box != nil) {
-        
-         self.title = box?.name
-            array = try! Array(Realm().objects(Box).filter(NSPredicate(format: "id = %@", "\(box!.id)")).first!.items)
-            
         } else {
             self.title = "All Your Stuff"
             array = try! Array(Realm().objects(Inventory))

@@ -9,7 +9,7 @@
         <!--Inventory-->
         <scene sceneID="a4t-gm-70e">
             <objects>
-                <viewController title="Room Inventory" id="V8e-b1-BsA" userLabel="Inventory" customClass="InventoryTableViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Room Inventory" id="V8e-b1-BsA" userLabel="Inventory" customClass="InventoryTableViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bhW-55-V6X"/>
                         <viewControllerLayoutGuide type="bottom" id="OqV-3F-Pcf"/>
@@ -121,7 +121,7 @@
         <!--Edit Item-->
         <scene sceneID="4l2-F2-WVT">
             <objects>
-                <viewController storyboardIdentifier="Add Room" title="Edit Item" id="c6e-oH-cB4" customClass="AddItemViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Add Room" title="Edit Item" id="c6e-oH-cB4" customClass="AddItemViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s2h-ra-iiT"/>
                         <viewControllerLayoutGuide type="bottom" id="Xer-AJ-CbO"/>
@@ -264,7 +264,7 @@
         <!--Edit Box-->
         <scene sceneID="9iQ-ht-VB7">
             <objects>
-                <viewController title="Edit Box" id="flb-wc-P9S" customClass="AddBoxViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Box" id="flb-wc-P9S" customClass="AddBoxViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yog-Ja-hRg"/>
                         <viewControllerLayoutGuide type="bottom" id="qQE-YE-GHr"/>
@@ -389,9 +389,9 @@
         <!--Boxes-->
         <scene sceneID="kQ1-PF-GrG">
             <objects>
-                <tableViewController title="Boxes" id="hyv-k1-VCB" customClass="BoxesTableViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Boxes" id="hyv-k1-VCB" customClass="BoxesTableViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="X8b-c3-DMo" userLabel="Boxes Table">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -422,9 +422,6 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="V8e-b1-BsA" kind="show" identifier="showInventory" id="wBB-mV-tO7"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -432,37 +429,6 @@
                             <outlet property="delegate" destination="hyv-k1-VCB" id="z1T-9S-oiN"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem image="profile.png" id="Afw-pG-ugX">
-                            <connections>
-                                <segue destination="fEJ-Tm-DsC" kind="show" id="Yxk-2l-08W"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="YoE-uI-eDo"/>
-                        <barButtonItem image="home.png" id="hmA-Dp-2y1">
-                            <connections>
-                                <segue destination="5jg-dB-Ng2" kind="show" id="sjj-oC-ver"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1KE-hA-eit"/>
-                        <barButtonItem image="boxes.png" id="Np2-md-kxS">
-                            <connections>
-                                <segue destination="hyv-k1-VCB" kind="show" id="gIm-dp-4ZP"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ker-WW-c4w"/>
-                        <barButtonItem image="inventory.png" id="XXL-qP-a9M">
-                            <connections>
-                                <segue destination="V8e-b1-BsA" kind="show" id="6gS-G9-7vE"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="hjh-tT-iAs"/>
-                        <barButtonItem image="email.png" id="4EN-tb-6JE">
-                            <connections>
-                                <segue destination="pQL-UF-Cgl" kind="show" id="cIz-FC-S4B"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
                     <connections>
                         <outlet property="boxesTable" destination="X8b-c3-DMo" id="QTH-no-O0V"/>
                     </connections>
@@ -474,7 +440,7 @@
         <!--Show Item Detail-->
         <scene sceneID="AJT-JQ-ru6">
             <objects>
-                <viewController storyboardIdentifier="Show Item Detail" title="Show Item Detail" id="hAk-M8-m5e" customClass="ItemDetailViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Show Item Detail" title="Show Item Detail" id="hAk-M8-m5e" customClass="ItemDetailViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lVC-0C-BBP"/>
                         <viewControllerLayoutGuide type="bottom" id="qyx-D1-aay"/>
@@ -595,7 +561,7 @@
         <!--Feedback-->
         <scene sceneID="yCj-Hh-ock">
             <objects>
-                <viewController title="Feedback" id="pQL-UF-Cgl" customClass="MailViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Feedback" id="pQL-UF-Cgl" customClass="MailViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M8f-1R-bfL"/>
                         <viewControllerLayoutGuide type="bottom" id="0Xp-DT-fIW"/>
@@ -655,7 +621,7 @@
         <!--Profile View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Profile View" title="Profile View" id="BYZ-38-t0r" customClass="ProfileController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile View" title="Profile View" id="BYZ-38-t0r" customClass="ProfileController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -865,7 +831,7 @@
         <!--Edit Profile-->
         <scene sceneID="bM7-ZF-hKC">
             <objects>
-                <viewController storyboardIdentifier="Edit Profile View" title="Edit Profile" id="fEJ-Tm-DsC" customClass="EditProfileController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Edit Profile View" title="Edit Profile" id="fEJ-Tm-DsC" customClass="EditProfileController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Q0-Dt-Utg"/>
                         <viewControllerLayoutGuide type="bottom" id="fbk-yB-iKM"/>
@@ -1015,7 +981,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="izu-az-2UW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nDE-Zo-g3i" customClass="NavigationViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nDE-Zo-g3i" customClass="NavigationViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems>
                         <barButtonItem image="profile.png" id="Ag4-w6-4k0"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="k85-fb-yDB"/>
@@ -1046,7 +1012,7 @@
         <!--Rooms-->
         <scene sceneID="S7G-Vb-dsE">
             <objects>
-                <viewController storyboardIdentifier="Rooms Table View" id="5jg-dB-Ng2" customClass="RoomsViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Rooms Table View" id="5jg-dB-Ng2" customClass="RoomsViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oqt-Mn-Qv3"/>
                         <viewControllerLayoutGuide type="bottom" id="loH-i2-KDo"/>
@@ -1141,7 +1107,7 @@
         <!--Edit Rooms-->
         <scene sceneID="UzT-os-jy1">
             <objects>
-                <viewController storyboardIdentifier="Add Edit Room" title="Edit Rooms" id="jtf-jp-D50" customClass="EditRoomViewController" customModule="Rooms__Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Add Edit Room" title="Edit Rooms" id="jtf-jp-D50" customClass="EditRoomViewController" customModule="HomeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9K1-xU-l42"/>
                         <viewControllerLayoutGuide type="bottom" id="tDT-dO-W8k"/>
@@ -1232,14 +1198,13 @@
         <image name="profile.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sjj-oC-ver"/>
-        <segue reference="hjc-8p-cuD"/>
-        <segue reference="cIz-FC-S4B"/>
-        <segue reference="Yxk-2l-08W"/>
-        <segue reference="wBB-mV-tO7"/>
+        <segue reference="kzJ-mx-Mky"/>
+        <segue reference="SIo-d3-1Py"/>
         <segue reference="7dN-sP-HcS"/>
-        <segue reference="J9A-vX-ehj"/>
-        <segue reference="wEf-KC-gpl"/>
-        <segue reference="vhn-S4-MFx"/>
+        <segue reference="TGR-Bf-iOZ"/>
+        <segue reference="jXP-wK-aKc"/>
+        <segue reference="4WL-kF-aUl"/>
+        <segue reference="gFC-Dr-tg8"/>
+        <segue reference="gNe-2p-e7O"/>
     </inferredMetricsTieBreakers>
 </document>

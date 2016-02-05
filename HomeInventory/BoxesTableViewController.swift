@@ -91,11 +91,9 @@ class BoxesTableViewController: UIViewController, UITableViewDelegate {
         if segue.identifier == "newPlace" {
             
         } else if segue.identifier == "showInventory" {
-            print("in showInventory")
             let cell = sender as! UITableViewCell
             let indexPath = boxesTable.indexPathForCell(cell)
             let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
-            inventoryController.box = array[indexPath!.row]
 //            inventoryController.room = array[indexPath!.row]
         } else if segue.identifier == "showAllInventory" {
             let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
