@@ -40,7 +40,7 @@ class AddBoxViewController: UIViewController,UIImagePickerControllerDelegate, UI
     
     @IBAction func cancelButton(sender: AnyObject) {
         if (box != nil) {
-            performSegueWithIdentifier("showInventory", sender: self)
+            performSegueWithIdentifier("showDetail", sender: self)
         } else {
             performSegueWithIdentifier("showInventory", sender: self)
         }
@@ -52,18 +52,24 @@ class AddBoxViewController: UIViewController,UIImagePickerControllerDelegate, UI
         
         if (self.box != nil) {
             
-            try! realm.write {
-                self.box?.name = self.boxNameField.text!
-                self.box?.box_description = self.boxDescriptionField.text!
-                
-                if (self.imageView.image != nil) {
-                    let filename = "\(self.randomStringWithLength(10)).jpg"
-                    self.saveImage(self.imageView.image!, path: self.fileInDocumentsDirectory("\(filename)"))
-                    self.box?.photo = filename
-                }
+            let updated_item = Box()
+            
+            updated_item.id = (box?.id)!
+            updated_item.name = self.boxNameField.text!
+            updated_item.box_description = self.boxDescriptionField.text!
+            if (self.imageView.image != nil) {
+                let filename = "\(self.randomStringWithLength(10)).jpg"
+                self.saveImage(self.imageView.image!, path: self.fileInDocumentsDirectory("\(filename)"))
+                updated_item.photo = filename
             }
             
-            performSegueWithIdentifier("showInventory", sender: self)
+            try! realm.write {
+                realm.add(updated_item, update: true)
+            }
+            
+            box = updated_item
+            
+            performSegueWithIdentifier("showBox", sender: self)
             
         } else {
             let newBox = Box()
@@ -188,16 +194,6 @@ class AddBoxViewController: UIViewController,UIImagePickerControllerDelegate, UI
         super.viewDidLoad()
         imagePicker.delegate = self
         setupUI()
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "newPlace" {
-            
-        } else if segue.identifier == "showInventory" {
-            let showBoxController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
-            showBoxController.box = self.box
-
-        }
     }
     
     override func didReceiveMemoryWarning() {

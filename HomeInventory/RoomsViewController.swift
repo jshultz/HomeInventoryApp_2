@@ -34,19 +34,13 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
         // Set realm notification block
         notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
             // TODO: you are going to need to update array
-            self.array = Array(realm.objects(Room.self))
             self.roomsTable.reloadData()
-            
         }
     }
     
     func setupUI() {
         
-        if (room != nil) {
-            self.title = room?.name
-        } else {
-            self.title = "Rooms: Home Inventory"
-        }
+        self.title = room?.name
 
     }
     
@@ -85,14 +79,9 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
                 print("array[indexPath.row]:", array[indexPath.row])
-                
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.realm.beginWrite()
-                    self.realm.delete(self.array[indexPath.row] as Object)
-                    try! self.realm.commitWrite()
-                })
-                
-                self.roomsTable.reloadData()
+                realm.beginWrite()
+                realm.delete(array[indexPath.row] as Object)
+                try! realm.commitWrite()
             }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -103,6 +92,7 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
         if segue.identifier == "newPlace" {
 
         } else if segue.identifier == "showInventory" {
+            print("in showInventory")
             let cell = sender as! UITableViewCell
             let indexPath = roomsTable.indexPathForCell(cell)
             let inventoryController:InventoryTableViewController = segue.destinationViewController as! InventoryTableViewController
