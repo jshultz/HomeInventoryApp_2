@@ -12,9 +12,6 @@
 		DE25D7B71C33063C007B00C3 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */; };
 		DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */; };
 		DEA31C691C0BB83100FAB110 /* string_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA31C681C0BB83100FAB110 /* string_extension.swift */; };
-		DEB62AF41C3F451700899E0A /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB62AF31C3F451700899E0A /* MailViewController.swift */; };
-		DEB62AFA1C3F46FB00899E0A /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = DEB62AF91C3F46FB00899E0A /* email.png */; };
-		DEBDCF671C4712540051D171 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBDCF661C4712540051D171 /* Box.swift */; };
 		DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6B1BE3969200672069 /* RoomsViewController.swift */; };
 		DEC51F701BE3ADAD00672069 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */; };
 		DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */; };
@@ -54,9 +51,6 @@
 		DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-placeholder-300x300.png"; sourceTree = "<group>"; };
 		DEA31C681C0BB83100FAB110 /* string_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = string_extension.swift; sourceTree = "<group>"; };
-		DEB62AF31C3F451700899E0A /* MailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
-		DEB62AF91C3F46FB00899E0A /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
-		DEBDCF661C4712540051D171 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		DEC51F6B1BE3969200672069 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		DECD008B1BE17EAC006A5B7E /* HomeInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				DEF4D45C1C07EBEC00C02B3E /* profile.png */,
-				DEB62AF91C3F46FB00899E0A /* email.png */,
 				DEF4D4581C07EB3600C02B3E /* inventory.png */,
 				DEF4D4591C07EB3600C02B3E /* room.png */,
 				DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */,
@@ -170,7 +163,6 @@
 				DECD009D1BE17EAC006A5B7E /* Info.plist */,
 				DEA31C681C0BB83100FAB110 /* string_extension.swift */,
 				DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */,
-				DEB62AF31C3F451700899E0A /* MailViewController.swift */,
 			);
 			path = HomeInventory;
 			sourceTree = "<group>";
@@ -181,7 +173,6 @@
 				DECD00B91BE1C411006A5B7E /* Inventory.swift */,
 				DECD00A61BE17F97006A5B7E /* Profile.swift */,
 				DED029D41BFD83E600E63B8F /* Room.swift */,
-				DEBDCF661C4712540051D171 /* Box.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -285,7 +276,6 @@
 				DEF4D45D1C07EBEC00C02B3E /* profile.png in Resources */,
 				DECD00991BE17EAC006A5B7E /* Assets.xcassets in Resources */,
 				DEF4D45A1C07EB3600C02B3E /* inventory.png in Resources */,
-				DEB62AFA1C3F46FB00899E0A /* email.png in Resources */,
 				DEF4D45B1C07EB3600C02B3E /* room.png in Resources */,
 				DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */,
 				DECD00941BE17EAC006A5B7E /* Main.storyboard in Resources */,
@@ -367,9 +357,7 @@
 				DEDE97D21C017BAA007ECE78 /* ItemDetailViewController.swift in Sources */,
 				DEF622141BE5165200D28EC9 /* AddItemViewController.swift in Sources */,
 				DE25D7B71C33063C007B00C3 /* NavigationViewController.swift in Sources */,
-				DEBDCF671C4712540051D171 /* Box.swift in Sources */,
 				DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */,
-				DEB62AF41C3F451700899E0A /* MailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +417,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chaos Elevators, Inc. (7QKXT44X7G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -451,7 +439,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "ef9c7c5b-4209-47ac-8ec0-7ddbfc0175c8";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -474,7 +461,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chaos Elevators, Inc. (7QKXT44X7G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -489,7 +476,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "ef9c7c5b-4209-47ac-8ec0-7ddbfc0175c8";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
