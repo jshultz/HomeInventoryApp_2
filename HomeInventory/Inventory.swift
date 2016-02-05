@@ -18,7 +18,6 @@ class Inventory: Object {
     dynamic var photo = ""
     dynamic var purchased_date = ""
     dynamic var purchase_price = ""
-    dynamic var box: Box? // Can be optional
     dynamic var room: Room? // Can be optional
     
     // Specify properties to ignore (Realm won't persist these)

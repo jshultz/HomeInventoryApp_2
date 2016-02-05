@@ -26,6 +26,9 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     let imagePicker = UIImagePickerController()
     
+    @IBOutlet weak var createButton: UIButton!
+    
+    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var itemNameField: UITextField!
@@ -85,12 +88,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             } else { print("some error message 2") }
             
         } else {
-            if (room != nil) {
-                self.title = "\(room!.name): Add Item"
-            } else {
-                self.title = "Add Item"
-            }
-            
+            self.title = room?.name
         }
 
     }

@@ -36,32 +36,6 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         inventoryTable.reloadData()
     }
     
-    @IBAction func addThingToRoom(sender: AnyObject) {
-        
-        showAlert("Add a Thing", errorMessage: "Add an Item (single thing) or a Box (box, dresser, etc.")
-        
-    }
-    
-    func showAlert(errorTitle:String, errorMessage:String) {
-        print("in the alert")
-        let alert = UIAlertController(title: "\(errorTitle)", message: "\(errorMessage)", preferredStyle: .Alert) // 1
-        let firstAction = UIAlertAction(title: "Item", style: .Default) { (alert: UIAlertAction!) -> Void in
-            NSLog("You pressed button one")
-            self.performSegueWithIdentifier("addItem", sender: self)
-            
-        } // 2
-        
-        let secondAction = UIAlertAction(title: "Box", style: .Default) { (alert: UIAlertAction!) -> Void in
-            NSLog("You pressed button two")
-            self.performSegueWithIdentifier("addBox", sender: self)
-        } // 3
-        
-        alert.addAction(firstAction) // 4
-        alert.addAction(secondAction) // 5
-        presentViewController(alert, animated: true, completion:nil) // 6
-    }
-    
-    
     func setupUI() {
         if (room != nil) {
             self.title = room?.name
@@ -167,11 +141,6 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
             let addItemController:AddItemViewController = segue.destinationViewController as! AddItemViewController
             
             addItemController.room = self.room
-        } else if segue.identifier == "addBox" {
-            
-            let addBoxController:AddBoxViewController = segue.destinationViewController as! AddBoxViewController
-            
-            addBoxController.room = self.room
         } else if segue.identifier == "editRoom" {
             
             let editRoomController:EditRoomViewController = segue.destinationViewController as! EditRoomViewController

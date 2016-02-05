@@ -13,9 +13,6 @@
 		DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */; };
 		DE559F6C1C4864B0001461CB /* boxes.png in Resources */ = {isa = PBXBuildFile; fileRef = DE559F6B1C4864B0001461CB /* boxes.png */; };
 		DEA31C691C0BB83100FAB110 /* string_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA31C681C0BB83100FAB110 /* string_extension.swift */; };
-		DEA494E91C4A8FE900305D40 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = DEA494E81C4A8FE900305D40 /* home.png */; };
-		DEA494EB1C4A9A9300305D40 /* AddBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA494EA1C4A9A9300305D40 /* AddBoxViewController.swift */; };
-		DEA494ED1C4AA7C600305D40 /* BoxesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA494EC1C4AA7C600305D40 /* BoxesTableViewController.swift */; };
 		DEB62AF41C3F451700899E0A /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB62AF31C3F451700899E0A /* MailViewController.swift */; };
 		DEB62AFA1C3F46FB00899E0A /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = DEB62AF91C3F46FB00899E0A /* email.png */; };
 		DEBDCF671C4712540051D171 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBDCF661C4712540051D171 /* Box.swift */; };
@@ -59,9 +56,6 @@
 		DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-placeholder-300x300.png"; sourceTree = "<group>"; };
 		DE559F6B1C4864B0001461CB /* boxes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boxes.png; sourceTree = "<group>"; };
 		DEA31C681C0BB83100FAB110 /* string_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = string_extension.swift; sourceTree = "<group>"; };
-		DEA494E81C4A8FE900305D40 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
-		DEA494EA1C4A9A9300305D40 /* AddBoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBoxViewController.swift; sourceTree = "<group>"; };
-		DEA494EC1C4AA7C600305D40 /* BoxesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxesTableViewController.swift; sourceTree = "<group>"; };
 		DEB62AF31C3F451700899E0A /* MailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
 		DEB62AF91C3F46FB00899E0A /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		DEBDCF661C4712540051D171 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
@@ -121,7 +115,6 @@
 		DE38CF1F1C0229C800F3A5AD /* images */ = {
 			isa = PBXGroup;
 			children = (
-				DEA494E81C4A8FE900305D40 /* home.png */,
 				DEF4D45C1C07EBEC00C02B3E /* profile.png */,
 				DEB62AF91C3F46FB00899E0A /* email.png */,
 				DE559F6B1C4864B0001461CB /* boxes.png */,
@@ -181,8 +174,6 @@
 				DEA31C681C0BB83100FAB110 /* string_extension.swift */,
 				DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */,
 				DEB62AF31C3F451700899E0A /* MailViewController.swift */,
-				DEA494EA1C4A9A9300305D40 /* AddBoxViewController.swift */,
-				DEA494EC1C4AA7C600305D40 /* BoxesTableViewController.swift */,
 			);
 			path = HomeInventory;
 			sourceTree = "<group>";
@@ -299,7 +290,6 @@
 				DECD00991BE17EAC006A5B7E /* Assets.xcassets in Resources */,
 				DEF4D45A1C07EB3600C02B3E /* inventory.png in Resources */,
 				DEB62AFA1C3F46FB00899E0A /* email.png in Resources */,
-				DEA494E91C4A8FE900305D40 /* home.png in Resources */,
 				DEF4D45B1C07EB3600C02B3E /* room.png in Resources */,
 				DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */,
 				DECD00941BE17EAC006A5B7E /* Main.storyboard in Resources */,
@@ -369,8 +359,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DECD00B01BE19287006A5B7E /* EditProfileController.swift in Sources */,
-				DEA494ED1C4AA7C600305D40 /* BoxesTableViewController.swift in Sources */,
-				DEA494EB1C4A9A9300305D40 /* AddBoxViewController.swift in Sources */,
 				DECD00BE1BE1C411006A5B7E /* Inventory.swift in Sources */,
 				DEC51F701BE3ADAD00672069 /* RoomViewController.swift in Sources */,
 				DECD00971BE17EAC006A5B7E /* HomeInventory.xcdatamodeld in Sources */,
