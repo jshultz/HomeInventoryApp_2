@@ -45,6 +45,9 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
             array = try! Array(Realm().objects(Inventory))
         }
         
+        self.inventoryTable.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
+        self.inventoryTable.separatorStyle = UITableViewCellSeparatorStyle.None
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,6 +90,12 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         let imageView = cell.viewWithTag(10) as! UIImageView
         let label = cell.viewWithTag(20) as! UILabel
         label.text = object.name
+        
+        label.textColor = UIColor.whiteColor()
+        
+        let Title = cell.viewWithTag(30) as! UILabel
+        Title.textColor = UIColor.whiteColor()
+        cell.backgroundColor = UIColor(red: 0.0627, green: 0.3882, blue: 0.9098, alpha: 1.0) /* #1063e8 */
         
         let shortDescription = cell.viewWithTag(30) as! UILabel
         

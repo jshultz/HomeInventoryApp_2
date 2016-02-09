@@ -19,10 +19,10 @@ class NavigationViewController: UINavigationController {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationBar.barStyle = UIBarStyle.BlackTranslucent
-        self.navigationBar.barTintColor = UIColor.redColor()
+        self.navigationBar.barTintColor = UIColor(red: 0.0627, green: 0.8353, blue: 0.9098, alpha: 1.0) /* #10d5e8 */
 //        self.navigationBar.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
         self.navigationBar.tintColor = UIColor.whiteColor()
-        self.toolbar.barTintColor = UIColor.redColor()
+        self.toolbar.barTintColor = UIColor(red: 0.0627, green: 0.8353, blue: 0.9098, alpha: 1.0) /* #10d5e8 */
         self.toolbar.tintColor = UIColor.whiteColor()
     }
 

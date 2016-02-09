@@ -34,6 +34,8 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
     func setupUI() {
         
         self.title = room?.name
+        self.roomsTable.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
+        self.roomsTable.separatorStyle = UITableViewCellSeparatorStyle.None
 
     }
     
@@ -46,8 +48,13 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
+
+        cell.backgroundColor = UIColor(red: 0.0627, green: 0.3882, blue: 0.9098, alpha: 1.0) /* #1063e8 */
+        
         let object = array[indexPath.row]
         cell.textLabel?.text = object.name
+        let Title = cell.viewWithTag(10) as! UILabel
+        Title.textColor = UIColor.whiteColor()
         //        cell.detailTextLabel?.text = object.date.description
         
         return cell

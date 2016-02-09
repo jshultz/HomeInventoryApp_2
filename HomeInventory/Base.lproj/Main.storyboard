@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nDE-Zo-g3i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nDE-Zo-g3i">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ocy-NW-4OX" userLabel="Inventory Table">
-                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="kCD-nd-Qvn" detailTextLabel="tFA-Lu-5Gg" imageView="3Kt-gE-XCP" rowHeight="78" style="IBUITableViewCellStyleSubtitle" id="6gW-zk-H7s">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="78"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6gW-zk-H7s" id="kNi-BO-ioo">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="77.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" tag="20" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kCD-nd-Qvn">
@@ -65,7 +65,7 @@
                             <constraint firstAttribute="bottom" secondItem="Ocy-NW-4OX" secondAttribute="bottom" id="6Lc-VF-T8b"/>
                             <constraint firstItem="Ocy-NW-4OX" firstAttribute="centerX" secondItem="Out-2f-sCY" secondAttribute="centerX" id="EOe-oz-2H1"/>
                             <constraint firstItem="Ocy-NW-4OX" firstAttribute="top" secondItem="Out-2f-sCY" secondAttribute="top" id="Isu-RM-Fjm"/>
-                            <constraint firstItem="Ocy-NW-4OX" firstAttribute="leading" secondItem="Out-2f-sCY" secondAttribute="leadingMargin" id="gz5-s4-nKG"/>
+                            <constraint firstItem="Ocy-NW-4OX" firstAttribute="leading" secondItem="Out-2f-sCY" secondAttribute="leadingMargin" constant="-20" id="gz5-s4-nKG"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -75,7 +75,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="daL-Aq-eQ9"/>
-                        <barButtonItem image="room.png" id="hxv-9v-izV">
+                        <barButtonItem image="home.png" id="hxv-9v-izV">
                             <connections>
                                 <segue destination="5jg-dB-Ng2" kind="show" identifier="showRooms" id="TwH-xS-YD2"/>
                             </connections>
@@ -197,7 +197,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="7ja-1e-OZm"/>
-                        <barButtonItem image="room.png" id="5KJ-Po-B8V">
+                        <barButtonItem image="home.png" id="5KJ-Po-B8V">
                             <connections>
                                 <segue destination="5jg-dB-Ng2" kind="show" identifier="showRooms" id="x8a-TA-cy3"/>
                             </connections>
@@ -314,7 +314,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="7DQ-lz-kPJ"/>
-                        <barButtonItem image="room.png" id="LbG-IL-cfX">
+                        <barButtonItem image="home.png" id="LbG-IL-cfX">
                             <connections>
                                 <segue destination="5jg-dB-Ng2" kind="show" identifier="showRooms" id="86b-P6-6tp"/>
                             </connections>
@@ -691,7 +691,7 @@
                     <toolbarItems>
                         <barButtonItem image="profile.png" id="Ag4-w6-4k0"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="k85-fb-yDB"/>
-                        <barButtonItem image="room.png" id="WeD-ym-MKJ"/>
+                        <barButtonItem image="home.png" id="WeD-ym-MKJ"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="NNU-f0-Eix"/>
                         <barButtonItem image="inventory.png" id="2ai-kQ-Zl7"/>
                     </toolbarItems>
@@ -728,18 +728,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-Md-Dqb">
-                                <rect key="frame" x="20" y="0.0" width="560" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="uwV-Tz-zST" rowHeight="35" style="IBUITableViewCellStyleDefault" id="wJ9-Ku-VQs">
-                                        <rect key="frame" x="0.0" y="92" width="560" height="35"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wJ9-Ku-VQs" id="MUF-iu-Nfl">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="34.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uwV-Tz-zST">
-                                                    <rect key="frame" x="15" y="0.0" width="530" height="34.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" tag="10" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uwV-Tz-zST">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="34.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -761,8 +761,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HMk-Md-Dqb" firstAttribute="top" secondItem="z8n-yV-SGK" secondAttribute="top" id="bbV-3q-Bho"/>
-                            <constraint firstItem="HMk-Md-Dqb" firstAttribute="leading" secondItem="z8n-yV-SGK" secondAttribute="leadingMargin" id="pFY-W2-D5F"/>
-                            <constraint firstItem="HMk-Md-Dqb" firstAttribute="trailing" secondItem="z8n-yV-SGK" secondAttribute="trailingMargin" id="qBB-uZ-X5a"/>
+                            <constraint firstItem="HMk-Md-Dqb" firstAttribute="leading" secondItem="z8n-yV-SGK" secondAttribute="leadingMargin" constant="-20" id="pFY-W2-D5F"/>
+                            <constraint firstItem="HMk-Md-Dqb" firstAttribute="trailing" secondItem="z8n-yV-SGK" secondAttribute="trailingMargin" constant="20" id="qBB-uZ-X5a"/>
                             <constraint firstItem="HMk-Md-Dqb" firstAttribute="bottom" secondItem="loH-i2-KDo" secondAttribute="top" id="uZs-Dh-2bM"/>
                         </constraints>
                     </view>
@@ -773,7 +773,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="m1w-EE-LU5"/>
-                        <barButtonItem image="room.png" id="Cow-Xc-xkW"/>
+                        <barButtonItem image="home.png" id="Cow-Xc-xkW"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="e5D-Rr-7Tc"/>
                         <barButtonItem image="inventory.png" id="ck2-4V-gOj">
                             <connections>
@@ -876,16 +876,17 @@
     </scenes>
     <resources>
         <image name="default-placeholder-300x300.png" width="300" height="300"/>
+        <image name="home.png" width="32" height="32"/>
         <image name="inventory.png" width="32" height="32"/>
         <image name="profile.png" width="32" height="32"/>
         <image name="room.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kaa-fz-nBS"/>
-        <segue reference="TGR-Bf-iOZ"/>
-        <segue reference="qjJ-SE-PLM"/>
-        <segue reference="jXP-wK-aKc"/>
-        <segue reference="H26-hE-opi"/>
-        <segue reference="tX5-gI-FgU"/>
+        <segue reference="TwH-xS-YD2"/>
+        <segue reference="ycM-3G-cHc"/>
+        <segue reference="J9A-vX-ehj"/>
+        <segue reference="3qq-NX-pri"/>
+        <segue reference="vhn-S4-MFx"/>
+        <segue reference="wEf-KC-gpl"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,8 @@
 		DEA31C691C0BB83100FAB110 /* string_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA31C681C0BB83100FAB110 /* string_extension.swift */; };
 		DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6B1BE3969200672069 /* RoomsViewController.swift */; };
 		DEC51F701BE3ADAD00672069 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */; };
+		DEC8EC011C6451DC006B6006 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = DEC8EC001C6451DC006B6006 /* home.png */; };
+		DEC8EC031C6451E3006B6006 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = DEC8EC021C6451E3006B6006 /* email.png */; };
 		DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */; };
 		DECD00911BE17EAC006A5B7E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00901BE17EAC006A5B7E /* ProfileController.swift */; };
 		DECD00941BE17EAC006A5B7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECD00921BE17EAC006A5B7E /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		DEA31C681C0BB83100FAB110 /* string_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = string_extension.swift; sourceTree = "<group>"; };
 		DEC51F6B1BE3969200672069 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		DEC8EC001C6451DC006B6006 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		DEC8EC021C6451E3006B6006 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		DECD008B1BE17EAC006A5B7E /* HomeInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECD00901BE17EAC006A5B7E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 			children = (
 				DEF4D45C1C07EBEC00C02B3E /* profile.png */,
 				DEF4D4581C07EB3600C02B3E /* inventory.png */,
+				DEC8EC001C6451DC006B6006 /* home.png */,
+				DEC8EC021C6451E3006B6006 /* email.png */,
 				DEF4D4591C07EB3600C02B3E /* room.png */,
 				DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */,
 			);
@@ -150,19 +156,19 @@
 				DED029D61BFD84AB00E63B8F /* Models */,
 				DEF622131BE5165200D28EC9 /* AddItemViewController.swift */,
 				DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */,
+				DECD00981BE17EAC006A5B7E /* Assets.xcassets */,
 				DECD00AF1BE19287006A5B7E /* EditProfileController.swift */,
+				DECD00951BE17EAC006A5B7E /* HomeInventory.xcdatamodeld */,
+				DECD009D1BE17EAC006A5B7E /* Info.plist */,
 				DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */,
 				DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */,
+				DECD009A1BE17EAC006A5B7E /* LaunchScreen.storyboard */,
 				DECD00921BE17EAC006A5B7E /* Main.storyboard */,
+				DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */,
 				DECD00901BE17EAC006A5B7E /* ProfileController.swift */,
 				DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */,
 				DEC51F6B1BE3969200672069 /* RoomsViewController.swift */,
-				DECD00981BE17EAC006A5B7E /* Assets.xcassets */,
-				DECD009A1BE17EAC006A5B7E /* LaunchScreen.storyboard */,
-				DECD00951BE17EAC006A5B7E /* HomeInventory.xcdatamodeld */,
-				DECD009D1BE17EAC006A5B7E /* Info.plist */,
 				DEA31C681C0BB83100FAB110 /* string_extension.swift */,
-				DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */,
 			);
 			path = HomeInventory;
 			sourceTree = "<group>";
@@ -276,6 +282,8 @@
 				DEF4D45D1C07EBEC00C02B3E /* profile.png in Resources */,
 				DECD00991BE17EAC006A5B7E /* Assets.xcassets in Resources */,
 				DEF4D45A1C07EB3600C02B3E /* inventory.png in Resources */,
+				DEC8EC011C6451DC006B6006 /* home.png in Resources */,
+				DEC8EC031C6451E3006B6006 /* email.png in Resources */,
 				DEF4D45B1C07EB3600C02B3E /* room.png in Resources */,
 				DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */,
 				DECD00941BE17EAC006A5B7E /* Main.storyboard in Resources */,
