@@ -78,6 +78,12 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
     func setupUI() {
         self.title = self.item?.name
         
+        self.view?.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
+        self.itemPurchasedLabel.textColor = UIColor.whiteColor()
+        self.itemDescriptionLabel.textColor = UIColor.whiteColor()
+        self.itemPurchasedLabel.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
+        self.itemDescriptionLabel.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
+        
     }
     
     override func didReceiveMemoryWarning() {

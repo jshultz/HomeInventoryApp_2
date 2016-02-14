@@ -90,6 +90,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         } else {
             self.title = room?.name
         }
+        
+        self.view?.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
 
     }
     

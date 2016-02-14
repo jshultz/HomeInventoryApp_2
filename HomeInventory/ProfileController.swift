@@ -36,6 +36,8 @@ class ProfileController: UIViewController {
     
     func setupUI() {
         
+        self.view?.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
+        
         if let profile = realm.objects(Profile).first {
             firstName.text = profile.fName
             lastName.text = profile.lName
@@ -45,6 +47,7 @@ class ProfileController: UIViewController {
             numberLabel.text = profile.phone
             
             self.profile = profile
+            
         }
         
         

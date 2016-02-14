@@ -14,6 +14,8 @@
 		DEA31C691C0BB83100FAB110 /* string_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA31C681C0BB83100FAB110 /* string_extension.swift */; };
 		DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6B1BE3969200672069 /* RoomsViewController.swift */; };
 		DEC51F701BE3ADAD00672069 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */; };
+		DEC6D29E1C6ADF2E008C786C /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC6D29D1C6ADF2E008C786C /* Box.swift */; };
+		DEC6D2A01C6ADFB2008C786C /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC6D29F1C6ADFB2008C786C /* MailViewController.swift */; };
 		DEC8EC011C6451DC006B6006 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = DEC8EC001C6451DC006B6006 /* home.png */; };
 		DEC8EC031C6451E3006B6006 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = DEC8EC021C6451E3006B6006 /* email.png */; };
 		DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */; };
@@ -55,6 +57,8 @@
 		DEA31C681C0BB83100FAB110 /* string_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = string_extension.swift; sourceTree = "<group>"; };
 		DEC51F6B1BE3969200672069 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		DEC6D29D1C6ADF2E008C786C /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		DEC6D29F1C6ADFB2008C786C /* MailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
 		DEC8EC001C6451DC006B6006 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		DEC8EC021C6451E3006B6006 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		DECD008B1BE17EAC006A5B7E /* HomeInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +167,7 @@
 				DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */,
 				DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */,
 				DECD009A1BE17EAC006A5B7E /* LaunchScreen.storyboard */,
+				DEC6D29F1C6ADFB2008C786C /* MailViewController.swift */,
 				DECD00921BE17EAC006A5B7E /* Main.storyboard */,
 				DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */,
 				DECD00901BE17EAC006A5B7E /* ProfileController.swift */,
@@ -179,6 +184,7 @@
 				DECD00B91BE1C411006A5B7E /* Inventory.swift */,
 				DECD00A61BE17F97006A5B7E /* Profile.swift */,
 				DED029D41BFD83E600E63B8F /* Room.swift */,
+				DEC6D29D1C6ADF2E008C786C /* Box.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -357,10 +363,12 @@
 				DEC51F701BE3ADAD00672069 /* RoomViewController.swift in Sources */,
 				DECD00971BE17EAC006A5B7E /* HomeInventory.xcdatamodeld in Sources */,
 				DECD00911BE17EAC006A5B7E /* ProfileController.swift in Sources */,
+				DEC6D2A01C6ADFB2008C786C /* MailViewController.swift in Sources */,
 				DECD00AC1BE17F97006A5B7E /* Profile.swift in Sources */,
 				DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */,
 				DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */,
 				DED029D51BFD83E600E63B8F /* Room.swift in Sources */,
+				DEC6D29E1C6ADF2E008C786C /* Box.swift in Sources */,
 				DEA31C691C0BB83100FAB110 /* string_extension.swift in Sources */,
 				DEDE97D21C017BAA007ECE78 /* ItemDetailViewController.swift in Sources */,
 				DEF622141BE5165200D28EC9 /* AddItemViewController.swift in Sources */,

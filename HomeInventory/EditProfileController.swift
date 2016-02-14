@@ -77,7 +77,7 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
         
         let realm = try! Realm() // Create realm pointing to default file
         
-        print("profile passed: ", profile)
+        self.view?.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
         
         if let profile = realm.objects(Profile).first {
             firstName.text = profile.fName
@@ -89,6 +89,7 @@ class EditProfileController: UIViewController, UITextFieldDelegate {
             phoneNumber.text = profile.phone
             
             self.profile = profile
+            
         }
         
     }

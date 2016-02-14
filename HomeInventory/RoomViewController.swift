@@ -70,6 +70,9 @@ class EditRoomViewController: UIViewController, UITextFieldDelegate {
             roomNameField.text = self.room?.name
             descriptionField.text = self.room?.room_description
         }
+        
+        self.view?.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
+        
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
