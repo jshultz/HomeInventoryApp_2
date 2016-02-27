@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Inventory" syncable="YES">
+        <attribute name="item_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purchase_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="purchase_price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="items" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rooms" inverseName="rooms" inverseEntity="Rooms" syncable="YES"/>
+    </entity>
+    <entity name="Rooms" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="room_description" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="rooms" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Inventory" inverseName="items" inverseEntity="Inventory" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Rooms" positionX="-261" positionY="18" width="128" height="88"/>
+        <element name="Inventory" positionX="-54" positionY="9" width="128" height="133"/>
+    </elements>
+</model>

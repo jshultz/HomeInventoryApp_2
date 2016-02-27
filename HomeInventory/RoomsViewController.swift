@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import RealmSwift
-
+import CoreData
 
 
 class RoomsViewController: UIViewController, UITableViewDelegate {
@@ -31,14 +30,30 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
         
         array = Array(realm.objects(Room.self))
         
-        // Set realm notification block
-        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
-            // TODO: you are going to need to update array
-            self.array = Array(realm.objects(Room.self))
-            self.roomsTable.reloadData()
-            
-        }
         // Do any additional setup after loading the view.
+    }
+    
+    // MARK:- Retrieve Rooms
+    
+    let sortBy = ""
+    
+    func getFetchedResultController(sortBy:String) -> NSFetchedResultsController {
+        fetchedResultController = NSFetchedResultsController(fetchRequest: legoSetFetchRequest(sortBy), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchedResultController
+    }
+    
+    func legoSetFetchRequest(sortBy:String) -> NSFetchRequest {
+        let fetchRequest = NSFetchRequest(entityName: "LegoSets")
+        
+        var sortDescriptor = NSSortDescriptor()
+        if (sortBy == "name") {
+            sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        } else {
+            sortDescriptor = NSSortDescriptor(key: "set_id", ascending: true)
+        }
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        return fetchRequest
     }
     
     func setupUI() {
@@ -47,6 +62,13 @@ class RoomsViewController: UIViewController, UITableViewDelegate {
         self.roomsTable.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
         self.view?.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
         self.roomsTable.separatorStyle = UITableViewCellSeparatorStyle.None
+        
+        fetchedResultController = getFetchedResultController("name")
+        fetchedResultController.delegate = self
+        do {
+            try fetchedResultController.performFetch()
+        } catch _ {
+        }
 
     }
     

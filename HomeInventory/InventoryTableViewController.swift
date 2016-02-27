@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class InventoryTableViewController: UIViewController, UITableViewDelegate {
     var activeInventory = -1
