@@ -7,17 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 class ItemDetailViewController: UIViewController, UITextFieldDelegate {
     
-    let realm = try! Realm()
-    var notificationToken: NotificationToken?
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
-    var room: Room? = nil
+    var room: Rooms? = nil
     var item: Inventory? = nil
     
     @IBOutlet weak var itemDescriptionLabel: UITextView!
-    
     
     @IBOutlet weak var itemPhoto: UIImageView!
     
@@ -45,7 +44,7 @@ class ItemDetailViewController: UIViewController, UITextFieldDelegate {
         let myImageName = self.item?.photo
         let imagePath = fileInDocumentsDirectory(myImageName!)
         
-        if let loadedImage = loadImageFromPath(imagePath) {
+        if let _ = loadImageFromPath(imagePath) {
             if self.item?.photo != "" {
                 itemPhoto.image = loadImageFromPath(imagePath)
             }

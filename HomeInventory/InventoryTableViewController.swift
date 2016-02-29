@@ -7,41 +7,57 @@
 //
 
 import UIKit
+import CoreData
 
-class InventoryTableViewController: UIViewController, UITableViewDelegate {
+class InventoryTableViewController: UIViewController, UITableViewDelegate, NSFetchedResultsControllerDelegate {
     var activeInventory = -1
     var activeRoom = -1
-    var room: Room? = nil
+    var room: Rooms? = nil
     var array = []
-    let realm = try! Realm()
-    var notificationToken: NotificationToken?
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+    var fetchedResultController: NSFetchedResultsController = NSFetchedResultsController()
     
     @IBOutlet weak var inventoryTable: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+                
+        inventoryTable.reloadData()
+    }
+    
+    // MARK:- Retrieve Room Inventory OR All Inventory
+    
+    let sortBy = ""
+    
+    func getFetchedResultController(sortBy:String) -> NSFetchedResultsController {
+        fetchedResultController = NSFetchedResultsController(fetchRequest: legoSetFetchRequest(sortBy), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchedResultController
+    }
+    
+    func legoSetFetchRequest(sortBy:String) -> NSFetchRequest {
+        let fetchRequest = NSFetchRequest(entityName: "LegoSets")
         
-        // Set realm notification block
-        notificationToken = realm.addNotificationBlock { [unowned self] note, realm in
-            
-            if ((self.room?.items) != nil) {
-                self.array = Array(self.room!.items)
-            }
-            
-            self.inventoryTable.reloadData()
+        var sortDescriptor = NSSortDescriptor()
+        if (sortBy == "description") {
+            sortDescriptor = NSSortDescriptor(key: "descr", ascending: true)
+        } else {
+            sortDescriptor = NSSortDescriptor(key: "set_id", ascending: true)
         }
         
-        inventoryTable.reloadData()
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        return fetchRequest
     }
     
     func setupUI() {
         if (room != nil) {
             self.title = room?.name
-            array = try! Array(Realm().objects(Room).filter(NSPredicate(format: "id = %@", "\(room!.id)")).first!.items)
+//            array = try! Array(Realm().objects(Room).filter(NSPredicate(format: "id = %@", "\(room!.id)")).first!.items)
         } else {
             self.title = "All Your Stuff"
-            array = try! Array(Realm().objects(Inventory))
+//            array = try! Array(Realm().objects(Inventory))
         }
         
         self.inventoryTable.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
@@ -77,8 +93,8 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
     // MARK: - Table view data source
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return array.count
+        let numberOfRowsInSection = fetchedResultController.sections?[section].numberOfObjects
+        return numberOfRowsInSection!
     }
 
 
@@ -98,19 +114,18 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
         
         let shortDescription = cell.viewWithTag(30) as! UILabel
         
-        
-        let item = realm.objects(Inventory).filter(NSPredicate(format: "id = %@", "\(object.id)")).first
-        
-        let myImageName = item!.photo
-        shortDescription.text = item!.item_description.trunc(90)
-        
-        let imagePath = fileInDocumentsDirectory(myImageName)
-        
-        if let loadedImage = loadImageFromPath(imagePath) {
-            if item!.photo != "" {
-                imageView.image = loadImageFromPath(imagePath)
-            }
-        } else { print("some error message 2") }
+//        let item = realm.objects(Inventory).filter(NSPredicate(format: "id = %@", "\(object.id)")).first
+//        
+//        let myImageName = item!.photo
+//        shortDescription.text = item!.item_description.trunc(90)
+//        
+//        let imagePath = fileInDocumentsDirectory(myImageName)
+//        
+//        if let loadedImage = loadImageFromPath(imagePath) {
+//            if item!.photo != "" {
+//                imageView.image = loadImageFromPath(imagePath)
+//            }
+//        } else { print("some error message 2") }
         return cell
     }
     
@@ -124,10 +139,12 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
     // Override to support editing the table view.
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            realm.beginWrite()
-            realm.delete(array[indexPath.row] as! Object)
-            try! realm.commitWrite()
+            let managedObject:NSManagedObject = fetchedResultController.objectAtIndexPath(indexPath) as! NSManagedObject
+            managedObjectContext.deleteObject(managedObject)
+            do {
+                try managedObjectContext.save()
+            } catch _ {
+            }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -161,7 +178,7 @@ class InventoryTableViewController: UIViewController, UITableViewDelegate {
             
             itemDetailController.room = self.room
             print("activeInventory: ", activeInventory)
-            itemDetailController.item = Inventory(value: array[activeInventory])
+//            itemDetailController.item = Inventory(value: array[activeInventory])
         }
         
         

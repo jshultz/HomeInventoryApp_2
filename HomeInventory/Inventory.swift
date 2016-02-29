@@ -2,30 +2,16 @@
 //  Inventory.swift
 //  HomeInventory
 //
-//  Created by Jason Shultz on 11/18/15.
-//  Copyright © 2015 Chaos Elevators, Inc.. All rights reserved.
+//  Created by Jason Shultz on 2/27/16.
+//  Copyright © 2016 HashRocket. All rights reserved.
 //
 
-import RealmSwift
 import Foundation
+import CoreData
 
-class Inventory: Object {
-    
-    dynamic var id = NSUUID().UUIDString
-    dynamic var name = ""
-    dynamic var item_description = ""
-    dynamic var purchased_date = ""
-    dynamic var purchase_price = ""
-    dynamic var photo = ""
-    dynamic var room: Room? // Can be optional
-    
-    // Specify properties to ignore (Realm won't persist these)
-    
-    //  override static func ignoredProperties() -> [String] {
-    //    return []
-    //  }
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
+@objc(Inventory)
+class Inventory: NSManagedObject {
+
+// Insert code here to add functionality to your managed object subclass
+
 }

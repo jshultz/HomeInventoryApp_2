@@ -9,24 +9,21 @@
 import UIKit
 import Photos
 import PhotosUI
-
+import CoreData
 
 class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var room: Room? = nil
+    var room: Rooms? = nil
     
     var item: Inventory? = nil
     
-    var return_room: Room? = nil
-    
-    var notificationToken: NotificationToken?
-    
+    var return_room: Rooms? = nil
+        
     var imageFilePath:String = ""
     
     let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var createButton: UIButton!
-    
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -74,13 +71,13 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             self.title = item?.name
             itemNameField.text = item?.name
             descriptionField.text = item?.item_description
-            purchaseDateField.text = item?.purchased_date
-            purchasePriceField.text = item?.purchase_price
+            purchaseDateField.text = String(item?.purchased_date)
+            purchasePriceField.text = String(item?.purchase_price)
             
             let myImageName = item?.photo
             let imagePath = fileInDocumentsDirectory(myImageName!)
             
-            if let loadedImage = loadImageFromPath(imagePath) {
+            if let _ = loadImageFromPath(imagePath) {
                 if self.item?.photo != "" {
                     imageView.image = loadImageFromPath(imagePath)
                 }
@@ -166,68 +163,80 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
         let pngImageData = UIImagePNGRepresentation(image)
         //let jpgImageData = UIImageJPEGRepresentation(image, 1.0)   // if you want to save as JPEG
-        let result = pngImageData!.writeToFile(path, atomically: true)
+        _ = pngImageData!.writeToFile(path, atomically: true)
         return path
         
     }
     
     @IBAction func saveButton(sender: AnyObject) {
-        let realm = try! Realm()
         // Add row via dictionary. Order is ignored.
         
-        if (self.item != nil) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        let date = dateFormatter.dateFromString(self.purchaseDateField.text!)
+        
+        // create an app delegate variable
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        // context is a handler for us to be able to access the database. this allows us to access the CoreData database.
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        
+        
+        // see if we are updating a LegoSet or not?
+        let request = NSFetchRequest(entityName: "Inventory")
+        
+        // if we want to search for something in particular we can use predicates:
+        request.predicate = NSPredicate(format: "id = %@", self.item!.id!) // search for users where username = Steve
+        
+        // by default, if we do a request and get some data back it returns false for the actual data. if we want to get data back and see it, then we need to set this as false.
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            // save the results of our fetch request to a variable.
+            let results = try context.executeFetchRequest(request)
             
-            let updated_item = Inventory()
-            
-            updated_item.id = (item?.id)!
-            updated_item.name = self.itemNameField.text!
-            updated_item.item_description = self.descriptionField.text!
-            updated_item.purchase_price = self.purchasePriceField.text!
-            updated_item.purchased_date = self.purchaseDateField.text!
-            if (self.imageView.image != nil) {
-                let filename = "\(self.randomStringWithLength(10)).jpg"
-                self.saveImage(self.imageView.image!, path: self.fileInDocumentsDirectory("\(filename)"))
-                updated_item.photo = filename
-            }
-            
-            try! realm.write {
-                realm.add(updated_item, update: true)
-            }
-            item = updated_item
-            
-            performSegueWithIdentifier("showDetail", sender: self)
-            
-        } else {
-            
-            let item = Inventory()
-            
-            item.name = self.itemNameField.text!
-            item.item_description = self.descriptionField.text!
-            item.purchased_date = self.purchaseDateField.text!
-            item.purchase_price = self.purchasePriceField.text!
-            if (imageView.image != nil) {
-                let filename = "\(randomStringWithLength(10)).jpg"
-                saveImage(imageView.image!, path: fileInDocumentsDirectory("\(filename)"))
-                item.photo = filename
-            }
-            
-            realm.beginWrite()
-            realm.add(item)
-            
-            do {
+            if results.count > 0 {
                 
-                self.room?.items.append(item)
-                try realm.commitWrite()
-                
-                return_room = self.room
-                
-                if let navController = self.navigationController {
-                    navController.popViewControllerAnimated(true)
+                for result in results as! [NSManagedObject] {
+                    
+                    result.setValue(item?.id, forKey: "id")
+                    result.setValue(self.itemNameField.text!, forKey: "name")
+                    result.setValue(self.descriptionField.text!, forKey: "item_description")
+                    result.setValue(self.purchasePriceField.text!, forKey: "purchase_price")
+                    result.setValue(date, forKey: "purchased_date")
+                    
+                    if (self.imageView.image != nil) {
+                        let filename = "\(self.randomStringWithLength(10)).jpg"
+                        self.saveImage(self.imageView.image!, path: self.fileInDocumentsDirectory("\(filename)"))
+                        result.setValue(filename, forKey: "photo")
+                    }
                 }
                 
-            } catch {
-                print("could not add item")
+            } else {
+                let newItem = NSEntityDescription.insertNewObjectForEntityForName("Inventory", inManagedObjectContext: context)
+                
+                newItem.setValue(item?.id, forKey: "id")
+                newItem.setValue(self.itemNameField.text!, forKey: "name")
+                newItem.setValue(self.descriptionField.text!, forKey: "item_description")
+                newItem.setValue(self.purchasePriceField.text!, forKey: "purchase_price")
+                newItem.setValue(date, forKey: "purchased_date")
+                
+                if (self.imageView.image != nil) {
+                    let filename = "\(self.randomStringWithLength(10)).jpg"
+                    self.saveImage(self.imageView.image!, path: self.fileInDocumentsDirectory("\(filename)"))
+                    newItem.setValue(filename, forKey: "photo")
+                }
             }
+        } catch {
+            
+        }
+        
+        do {
+            // save the context.
+            try context.save()
+            performSegueWithIdentifier("showDetail", sender: self)
+        } catch {
+            print("There was a problem")
         }
     }
     

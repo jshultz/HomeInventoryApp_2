@@ -1,5 +1,5 @@
 //
-//  Profile.swift
+//  Rooms.swift
 //  HomeInventory
 //
 //  Created by Jason Shultz on 2/27/16.
@@ -9,8 +9,8 @@
 import Foundation
 import CoreData
 
-@objc(Profile)
-class Profile: NSManagedObject {
+@objc(Rooms)
+class Rooms: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 

@@ -7,12 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class ProfileController: UIViewController {
     
-    let realm = try! Realm()
     var profile:Profile? = nil
-    var notificationToken: NotificationToken?
     
     @IBOutlet weak var firstName: UILabel!
     
@@ -25,8 +24,6 @@ class ProfileController: UIViewController {
     @IBOutlet weak var stateLabel: UILabel!
     
     @IBOutlet weak var numberLabel: UILabel!
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,18 +34,14 @@ class ProfileController: UIViewController {
         
         self.view?.backgroundColor = UIColor(red: 0.1176, green: 0.6902, blue: 1, alpha: 1.0) /* #1eb0ff */
         
-        if let profile = realm.objects(Profile).first {
-            firstName.text = profile.fName
-            lastName.text = profile.lName
-            streetLabel.text = profile.street
-            cityLabel.text = profile.city
-            stateLabel.text = profile.state
-            numberLabel.text = profile.phone
-            
-            self.profile = profile
-            
+        if (profile != nil) {
+            firstName.text = profile!.fName
+            lastName.text = profile!.lName
+            streetLabel.text = profile!.street
+            cityLabel.text = profile!.city
+            stateLabel.text = profile!.state
+            numberLabel.text = profile!.phone
         }
-        
         
     }
     

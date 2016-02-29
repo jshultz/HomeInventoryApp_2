@@ -7,13 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class EditRoomViewController: UIViewController, UITextFieldDelegate {
     
-    let realm = try! Realm()
-    var notificationToken: NotificationToken?
-    
-    var room: Room? = nil
+    var room: Rooms? = nil
     
     @IBOutlet weak var roomNameField: UITextField!
     
@@ -29,34 +27,56 @@ class EditRoomViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func saveButton(sender: AnyObject) {
+        
+        // create an app delegate variable
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        // context is a handler for us to be able to access the database. this allows us to access the CoreData database.
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        
+        
+        // see if we are updating a LegoSet or not?
+        let request = NSFetchRequest(entityName: "Rooms")
+        
         if (self.room != nil) {
-            
-            try! realm.write {
-                self.room?.name = self.roomNameField.text!
-                self.room?.room_description = self.descriptionField.text!
-            }
-            
-        } else {
-            let newRoom = Room()
-            
-            newRoom.name = self.roomNameField.text!
-            newRoom.room_description = self.descriptionField.text!
-            
-            realm.beginWrite()
-            realm.add(newRoom)
-            
-            do {
-                try realm.commitWrite()
-                if let navController = self.navigationController {
-                    navController.popViewControllerAnimated(true)
-                }
-                
-            } catch {
-                print("could not add room")
-            }
+            // if we want to search for something in particular we can use predicates:
+            request.predicate = NSPredicate(format: "id = %@", self.room!.id!) // search for users where username = Steve
         }
         
-        performSegueWithIdentifier("showRooms", sender: self)
+        
+        // by default, if we do a request and get some data back it returns false for the actual data. if we want to get data back and see it, then we need to set this as false.
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            // save the results of our fetch request to a variable.
+            let results = try context.executeFetchRequest(request)
+            
+            if results.count > 0 {
+                
+                for result in results as! [NSManagedObject] {
+                    result.setValue(self.roomNameField.text!, forKey: "name")
+                    result.setValue(self.descriptionField.text!, forKey: "room_description")
+                }
+                
+            } else {
+                // we are describing the Entity we want to insert the new user into. We are doing it for Entity Name Users. Then we tell it the context we want to insert it into, which we described previously.
+                let newSet = NSEntityDescription.insertNewObjectForEntityForName("Rooms", inManagedObjectContext: context)
+                
+                newSet.setValue(self.roomNameField.text!, forKey: "name")
+                newSet.setValue(self.descriptionField.text!, forKey: "room_description")
+            }
+            
+        } catch {
+            
+        }
+        
+        do {
+            // save the context.
+            try context.save()
+            self.performSegueWithIdentifier("showRooms", sender: self)
+        } catch {
+            print("There was a problem")
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

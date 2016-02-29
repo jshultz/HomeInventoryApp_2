@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D5C8CAFC82AF7904D47FE2C5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FA2FE161EC0CC8F11C6753 /* Pods.framework */; };
 		DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */; };
 		DE25D7B71C33063C007B00C3 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */; };
 		DE38CF1E1C0229BE00F3A5AD /* default-placeholder-300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */; };
-		DE4534081C81F6CE005DB5B5 /* RoomsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE4534061C81F6CE005DB5B5 /* RoomsModel.xcdatamodeld */; };
+		DE71B8731C8213340090E4D3 /* Rooms+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71B86D1C8213340090E4D3 /* Rooms+CoreDataProperties.swift */; };
+		DE71B8741C8213340090E4D3 /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71B86E1C8213340090E4D3 /* Rooms.swift */; };
+		DE71B8751C8213340090E4D3 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71B86F1C8213340090E4D3 /* Profile+CoreDataProperties.swift */; };
+		DE71B8761C8213340090E4D3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71B8701C8213340090E4D3 /* Profile.swift */; };
+		DE71B8771C8213340090E4D3 /* Inventory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71B8711C8213340090E4D3 /* Inventory+CoreDataProperties.swift */; };
+		DE71B8781C8213340090E4D3 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71B8721C8213340090E4D3 /* Inventory.swift */; };
 		DEA31C691C0BB83100FAB110 /* string_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA31C681C0BB83100FAB110 /* string_extension.swift */; };
 		DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6B1BE3969200672069 /* RoomsViewController.swift */; };
 		DEC51F701BE3ADAD00672069 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */; };
-		DEC6D29E1C6ADF2E008C786C /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC6D29D1C6ADF2E008C786C /* Box.swift */; };
 		DEC6D2A01C6ADFB2008C786C /* MailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC6D29F1C6ADFB2008C786C /* MailViewController.swift */; };
 		DEC8EC011C6451DC006B6006 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = DEC8EC001C6451DC006B6006 /* home.png */; };
 		DEC8EC031C6451E3006B6006 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = DEC8EC021C6451E3006B6006 /* email.png */; };
@@ -25,10 +28,7 @@
 		DECD00971BE17EAC006A5B7E /* HomeInventory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DECD00951BE17EAC006A5B7E /* HomeInventory.xcdatamodeld */; };
 		DECD00991BE17EAC006A5B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECD00981BE17EAC006A5B7E /* Assets.xcassets */; };
 		DECD009C1BE17EAC006A5B7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECD009A1BE17EAC006A5B7E /* LaunchScreen.storyboard */; };
-		DECD00AC1BE17F97006A5B7E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00A61BE17F97006A5B7E /* Profile.swift */; };
 		DECD00B01BE19287006A5B7E /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00AF1BE19287006A5B7E /* EditProfileController.swift */; };
-		DECD00BE1BE1C411006A5B7E /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD00B91BE1C411006A5B7E /* Inventory.swift */; };
-		DED029D51BFD83E600E63B8F /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED029D41BFD83E600E63B8F /* Room.swift */; };
 		DEDE97D21C017BAA007ECE78 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */; };
 		DEE2B1341C0F5AEC0030C114 /* HomeInventoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE2B1331C0F5AEC0030C114 /* HomeInventoryUITests.swift */; };
 		DEE2B13C1C0F5B6E0030C114 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE2B13B1C0F5B6E0030C114 /* SnapshotHelper.swift */; };
@@ -55,11 +55,15 @@
 		DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryTableViewController.swift; sourceTree = "<group>"; };
 		DE25D7B61C33063C007B00C3 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		DE38CF1D1C0229BE00F3A5AD /* default-placeholder-300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-placeholder-300x300.png"; sourceTree = "<group>"; };
-		DE4534071C81F6CE005DB5B5 /* RoomsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoomsModel.xcdatamodel; sourceTree = "<group>"; };
+		DE71B86D1C8213340090E4D3 /* Rooms+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rooms+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DE71B86E1C8213340090E4D3 /* Rooms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
+		DE71B86F1C8213340090E4D3 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DE71B8701C8213340090E4D3 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		DE71B8711C8213340090E4D3 /* Inventory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inventory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DE71B8721C8213340090E4D3 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DEA31C681C0BB83100FAB110 /* string_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = string_extension.swift; sourceTree = "<group>"; };
 		DEC51F6B1BE3969200672069 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		DEC51F6F1BE3ADAD00672069 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
-		DEC6D29D1C6ADF2E008C786C /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		DEC6D29F1C6ADFB2008C786C /* MailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailViewController.swift; sourceTree = "<group>"; };
 		DEC8EC001C6451DC006B6006 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		DEC8EC021C6451E3006B6006 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
@@ -71,10 +75,7 @@
 		DECD00981BE17EAC006A5B7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DECD009B1BE17EAC006A5B7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DECD009D1BE17EAC006A5B7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DECD00A61BE17F97006A5B7E /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		DECD00AF1BE19287006A5B7E /* EditProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
-		DECD00B91BE1C411006A5B7E /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
-		DED029D41BFD83E600E63B8F /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = Models/Room.swift; sourceTree = "<group>"; };
 		DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		DEE2B1311C0F5AEC0030C114 /* HomeInventoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeInventoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE2B1331C0F5AEC0030C114 /* HomeInventoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInventoryUITests.swift; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5C8CAFC82AF7904D47FE2C5 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +164,6 @@
 				DECD008E1BE17EAC006A5B7E /* AppDelegate.swift */,
 				DECD00981BE17EAC006A5B7E /* Assets.xcassets */,
 				DECD00AF1BE19287006A5B7E /* EditProfileController.swift */,
-				DECD00951BE17EAC006A5B7E /* HomeInventory.xcdatamodeld */,
 				DECD009D1BE17EAC006A5B7E /* Info.plist */,
 				DE0C11CB1BE47B5F00282E36 /* InventoryTableViewController.swift */,
 				DEDE97D11C017BAA007ECE78 /* ItemDetailViewController.swift */,
@@ -183,11 +182,13 @@
 		DED029D61BFD84AB00E63B8F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DECD00B91BE1C411006A5B7E /* Inventory.swift */,
-				DECD00A61BE17F97006A5B7E /* Profile.swift */,
-				DED029D41BFD83E600E63B8F /* Room.swift */,
-				DE4534061C81F6CE005DB5B5 /* RoomsModel.xcdatamodeld */,
-				DEC6D29D1C6ADF2E008C786C /* Box.swift */,
+				DECD00951BE17EAC006A5B7E /* HomeInventory.xcdatamodeld */,
+				DE71B86D1C8213340090E4D3 /* Rooms+CoreDataProperties.swift */,
+				DE71B86E1C8213340090E4D3 /* Rooms.swift */,
+				DE71B86F1C8213340090E4D3 /* Profile+CoreDataProperties.swift */,
+				DE71B8701C8213340090E4D3 /* Profile.swift */,
+				DE71B8711C8213340090E4D3 /* Inventory+CoreDataProperties.swift */,
+				DE71B8721C8213340090E4D3 /* Inventory.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -209,12 +210,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DECD00A01BE17EAC006A5B7E /* Build configuration list for PBXNativeTarget "HomeInventory" */;
 			buildPhases = (
-				45E762E707C46C6BA8F22CF5 /* Check Pods Manifest.lock */,
 				DECD00871BE17EAC006A5B7E /* Sources */,
 				DECD00881BE17EAC006A5B7E /* Frameworks */,
 				DECD00891BE17EAC006A5B7E /* Resources */,
-				C1ED7347026571A38B9D4876 /* Embed Pods Frameworks */,
-				C1C2F8901154C96596BA634E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,75 +306,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		45E762E707C46C6BA8F22CF5 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C1C2F8901154C96596BA634E /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C1ED7347026571A38B9D4876 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		DECD00871BE17EAC006A5B7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DECD00B01BE19287006A5B7E /* EditProfileController.swift in Sources */,
-				DECD00BE1BE1C411006A5B7E /* Inventory.swift in Sources */,
 				DEC51F701BE3ADAD00672069 /* RoomViewController.swift in Sources */,
 				DECD00971BE17EAC006A5B7E /* HomeInventory.xcdatamodeld in Sources */,
 				DECD00911BE17EAC006A5B7E /* ProfileController.swift in Sources */,
 				DEC6D2A01C6ADFB2008C786C /* MailViewController.swift in Sources */,
-				DECD00AC1BE17F97006A5B7E /* Profile.swift in Sources */,
+				DE71B8731C8213340090E4D3 /* Rooms+CoreDataProperties.swift in Sources */,
 				DE0C11CC1BE47B5F00282E36 /* InventoryTableViewController.swift in Sources */,
+				DE71B8751C8213340090E4D3 /* Profile+CoreDataProperties.swift in Sources */,
 				DECD008F1BE17EAC006A5B7E /* AppDelegate.swift in Sources */,
-				DED029D51BFD83E600E63B8F /* Room.swift in Sources */,
-				DEC6D29E1C6ADF2E008C786C /* Box.swift in Sources */,
+				DE71B8761C8213340090E4D3 /* Profile.swift in Sources */,
+				DE71B8771C8213340090E4D3 /* Inventory+CoreDataProperties.swift in Sources */,
+				DE71B8741C8213340090E4D3 /* Rooms.swift in Sources */,
+				DE71B8781C8213340090E4D3 /* Inventory.swift in Sources */,
 				DEA31C691C0BB83100FAB110 /* string_extension.swift in Sources */,
 				DEDE97D21C017BAA007ECE78 /* ItemDetailViewController.swift in Sources */,
 				DEF622141BE5165200D28EC9 /* AddItemViewController.swift in Sources */,
 				DE25D7B71C33063C007B00C3 /* NavigationViewController.swift in Sources */,
-				DE4534081C81F6CE005DB5B5 /* RoomsModel.xcdatamodeld in Sources */,
 				DEC51F6C1BE3969200672069 /* RoomsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,7 +454,6 @@
 		};
 		DECD00A11BE17EAC006A5B7E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE811725F7FA3E69CC32E736 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -523,7 +473,6 @@
 		};
 		DECD00A21BE17EAC006A5B7E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A3195AEDC59007088721135 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Chaos Elevators, Inc. (7QKXT44X7G)";
@@ -598,16 +547,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DE4534061C81F6CE005DB5B5 /* RoomsModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DE4534071C81F6CE005DB5B5 /* RoomsModel.xcdatamodel */,
-			);
-			currentVersion = DE4534071C81F6CE005DB5B5 /* RoomsModel.xcdatamodel */;
-			path = RoomsModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		DECD00951BE17EAC006A5B7E /* HomeInventory.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
